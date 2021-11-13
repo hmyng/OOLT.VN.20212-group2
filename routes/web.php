@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\BlogApiController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//api
+$routeAuth = function () {
+    Route::post('/blog', [BlogApiController::class, 'store']);
+    Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
+    Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
+};
+$routePublic = function () {
 
+};
+Route::middleware("auth")->prefix("web-api/auth")->group($routeAuth);
+Route::prefix("web-api")->group($routePublic);
+
+//auth route
+
+//public route
 Route::get('/', function () {
     return view('welcome');
 });
