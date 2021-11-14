@@ -15,12 +15,16 @@ class CreateTableUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->char('User_names');
+            $table->string('User_names');
             $table->dateTime('User_DOBs');
             $table->char('User_accounts');
             $table->char('User_passwords');
-            $table->integer('User_role');
+            $table->unsignedBigInteger('User_role');
             $table->timestamps();
+            
+        });
+        Schema::table('users', function ($table) {
+            $table->foreign('User_role')->references('id')->on('users_role');
         });
     }
 
