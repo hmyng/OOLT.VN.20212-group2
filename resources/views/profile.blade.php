@@ -1,2 +1,2 @@
-<?php
-{{--Code giao dien trang user profile--}}
+<?php ?>
+// {{--Code giao dien trang user profile--}}
