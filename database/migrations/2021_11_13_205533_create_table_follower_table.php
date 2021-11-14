@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableBlogTable extends Migration
+class CreateTableFollowerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateTableBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
+        Schema::create('follower', function (Blueprint $table) {
             $table->id();
-            $table->char('Cat_id');
-            $table->char('Blog_headings');
-            $table->integer('Blog_Seen_Nums');
-            $table->mediumText('Blog_contents');
-            $table->char('Blog_displays');
-            $table->char('Blog_tags');
+            $table->unsignedBigInteger('Parent_ID')->default(0);
+            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('Parent_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateTableBlogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog');
+        Schema::dropIfExists('follower');
     }
 }
