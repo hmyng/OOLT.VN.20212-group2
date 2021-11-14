@@ -9,7 +9,6 @@ class BlogController extends Controller
 {
     public function index(){
         $blog = Blog::orderBy('id', 'DESC')->get();
-        dd("dfhjahdsflja");
         return view('home', ["blog"=>$blog]);
     }
 }
