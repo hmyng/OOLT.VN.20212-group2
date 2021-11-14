@@ -43,7 +43,11 @@
 
 </head>
 <body>
-
+    @foreach($blog as $blogDetail)
+    <h1>
+       {{$blogDetail->id}} 
+    </h1>
+    @endforeach
     <!-- LOADER -->
     <div id="preloader">
         <img class="preloader" src="../images/loader.gif" alt="">
