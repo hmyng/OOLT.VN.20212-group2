@@ -30,9 +30,9 @@ Route::prefix("web-api")->group($routePublic);
 //auth route
 
 //public route
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home',[BlogController::class,'index']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/home', [BlogController::class,'index']);
 
 Route::get('/profile/{user}', [UserController::class, 'show']);

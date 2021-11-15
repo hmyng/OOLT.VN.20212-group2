@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index(){
-        $blog = Blog::orderBy('id', 'DESC')->get();
-        return view('home', ["blog"=>$blog]);
+        
+        return view('frontend.home');
     }
 }
