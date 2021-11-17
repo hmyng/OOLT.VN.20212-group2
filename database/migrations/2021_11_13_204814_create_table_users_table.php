@@ -19,6 +19,7 @@ class CreateTableUsersTable extends Migration
             $table->dateTime('User_DOBs');
             $table->char('User_accounts');
             $table->char('User_passwords');
+            $table->string('remember_token');
             $table->unsignedBigInteger('User_role');
             $table->timestamps();
             
