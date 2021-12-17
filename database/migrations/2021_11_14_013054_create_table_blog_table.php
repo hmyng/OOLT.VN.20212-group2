@@ -14,7 +14,7 @@ class CreateTableBlogTable extends Migration
     public function up()
     {
         Schema::create('blog', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
             $table->unsignedBigInteger('Cat_id');
             $table->string('Blog_headings');
             $table->integer('Blog_Seen_Nums');
@@ -22,9 +22,9 @@ class CreateTableBlogTable extends Migration
             $table->string('Blog_displays');
             $table->string('Blog_tags');
             $table->timestamps();
-            $table->foreign('Cat_id')->references('id')->on('catalogue');
            
-        });
+        });//chưa, giờ migrate nó bảo nothing to migrate, à, giờ phải làm ntn
+        
     }
 
     /**

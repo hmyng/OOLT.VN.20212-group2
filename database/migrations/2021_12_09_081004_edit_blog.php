@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableCatalogueTable extends Migration
+class EditBlog extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTableCatalogueTable extends Migration
      */
     public function up()
     {
-        Schema::create('catalogue', function (Blueprint $table) {
-            $table->id();
-            $table->string('Cat_name');
-            $table->timestamps();
+        Schema::table('blog', function (Blueprint $table) {
+            $table->foreign('Cat_id')->references('id')->on('category');
+           
+            $table->foreign('updated_by')->references('id')->on('users');      
+            
+            $table->foreign('author_id')->references('id')->on('users');
         });
     }
 
@@ -27,6 +29,6 @@ class CreateTableCatalogueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalogue');
+        //
     }
 }

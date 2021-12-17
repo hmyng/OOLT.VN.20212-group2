@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index(){
-        
-        return view('frontend.home');
+        $pageNumber = 15;
+        $blogs = Blog::paginate($pageNumber);
+        return view('frontend.home', ['blogs'=>$blogs]);        
     }
 }
