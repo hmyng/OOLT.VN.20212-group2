@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-
+use App\Models\Blog;
 class BlogApiController extends APIController
 {
     public function __construct(
@@ -19,7 +19,8 @@ class BlogApiController extends APIController
 
         $blog->blog_heading = $request->blog_heading;
         $blog->blog_content = $request->blog_content;
-
+        $blog->cat_id = $request->cat_id;
+        $blog->blog_display = "dfasdfas";
         $blog->save();
         return $this->respondSuccess([
             'blog' => $blog
