@@ -22,7 +22,8 @@ $routeAuth = function () {
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
 };
 $routePublic = function () {
-
+    Route::post('/blog', [BlogApiController::class, 'store']);
+    Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
 };
 Route::middleware("auth")->prefix("web-api/auth")->group($routeAuth);
 Route::prefix("web-api")->group($routePublic);
@@ -31,6 +32,7 @@ Route::prefix("web-api")->group($routePublic);
 
 //public route
 // Route::get('/', function () {
+    
 //     return view('welcome');
 // });
 Route::get('/home', [BlogController::class,'index']);
