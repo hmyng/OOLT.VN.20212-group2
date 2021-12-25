@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //api
+//
 $routeAuth = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
 };
+
+// /web-api/blog
 $routePublic = function () {
 
 };
