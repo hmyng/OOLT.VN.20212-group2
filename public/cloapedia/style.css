@@ -7,9 +7,10 @@
 
 **************************************/
 
+
 /**************************************
     Table of Content
-    
+
     1. BASIC
     2. HEADER
     3. SECTION
@@ -19,7 +20,8 @@
     7. WIDGETS
 **************************************/
 
-/* BASIC 
+
+/* BASIC
 **************************************/
 
 body {
@@ -130,7 +132,7 @@ a {
 }
 
 
-/* HEADER 
+/* HEADER
 **************************************/
 
 .header {
@@ -223,6 +225,28 @@ a {
     margin-bottom: 0;
 }
 
+.header-icon img {
+    width: 15%;
+}
+
+@media only screen and (max-width: 900px) {
+    .header-icon img {
+        width: 16%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .header-icon img {
+        width: 18%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header-icon img {
+        width: 20%;
+    }
+}
+
 .topsocial .fa {
     margin-right: 0.5rem;
     font-size: 15px;
@@ -233,7 +257,7 @@ a {
     position: relative;
     background-color: #ffffff;
     padding: 1rem 2rem;
-    font-size: 14px;
+    font-size: 16px;
     border-bottom: 1px dashed #e2e2e2;
 }
 
@@ -695,11 +719,11 @@ div.tab button:hover {
     -o-transition: all .7s ease-in-out;
     -ms-transition: all .7s ease-in-out;
     transition: all .7s ease-in-out;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 
-/* PAGES 
+/* PAGES
 **************************************/
 
 .notfound h2 {
@@ -833,7 +857,7 @@ div.tab button:hover {
 }
 
 
-/* BLOG 
+/* BLOG
 **************************************/
 
 .carousel-indicators li {
@@ -940,7 +964,7 @@ div.tab button:hover {
 }
 
 .blog-title-area .breadcrumb-item.active,
-.blog-title-area .breadcrumb-item + .breadcrumb-item::before,
+.blog-title-area .breadcrumb-item+.breadcrumb-item::before,
 .blog-title-area .blog-meta small,
 .blog-title-area a {
     color: #a3a5a8;
@@ -1270,14 +1294,14 @@ hr.invis3 {
 }
 
 .blog-list .blog-meta.big-meta h4 {
-    margin-left: -20%;
     margin-top: 1rem;
     background-color: #ffffff;
     padding: 1rem 1.5rem 1rem;
+    padding: 16px 0px;
 }
 
 .blog-custom-build .blog-meta {
-    margin: -4rem 3rem 0;
+    /* margin: -4rem 3rem 0; */
     z-index: 11;
     padding: 2rem 2rem;
     position: relative;
@@ -1320,7 +1344,7 @@ hr.invis3 {
 }
 
 
-/* WIDGETS 
+/* WIDGETS
 **************************************/
 
 .sidebar .widget {
