@@ -5,11 +5,11 @@
                         <div class="topsocial">
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-flickr"></i></a>
+                            {{-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a> --}}
+                            {{-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a> --}}
+                            {{-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-flickr"></i></a> --}}
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
+                            {{-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a> --}}
                         </div><!-- end social -->
                     </div><!-- end col -->
 
@@ -18,7 +18,7 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item"><a href="blog-category-01.html"><i class="fa fa-star"></i> Trends</a></li>
                                 <li class="list-inline-item"><a href="blog-category-02.html"><i class="fa fa-bolt"></i> Hot Topics</a></li>
-                                <li class="list-inline-item"><a href="page-contact.html"><i class="fa fa-user-circle-o"></i> Write for us</a></li>
+                                <li class="list-inline-item"><a href="trang-login"><i class="fa fa-user-circle-o"></i>Login</a></li>
                             </ul><!-- end ul -->
                         </div><!-- end topmenu -->
                     </div><!-- end col -->
