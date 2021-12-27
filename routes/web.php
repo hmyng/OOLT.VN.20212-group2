@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\BlogApiController;
+use App\Http\Controllers\API\CommentApiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -16,11 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //api
+//
 $routeAuth = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
+    Route::post('/blog/{blog:id}', [BlogApiController::class, 'likeBlog']);
+    Route::post('/comment', [CommentApiController::class, 'store']);
+    Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
+    Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
 };
+
+// /web-api/blog
 $routePublic = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
