@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-
+use App\Models\Blog;
 class BlogApiController extends APIController
 {
     public function __construct(
@@ -19,7 +19,8 @@ class BlogApiController extends APIController
 
         $blog->blog_heading = $request->blog_heading;
         $blog->blog_content = $request->blog_content;
-
+        $blog->cat_id = $request->cat_id;
+        $blog->blog_display = $request->blog_display;
         $blog->save();
         return $this->respondSuccess([
             'blog' => $blog
@@ -46,5 +47,20 @@ class BlogApiController extends APIController
         $blog->delete();
 
         $this->respondSuccessWithMessage("Delete successfully!");
+    }
+
+    public function likeBlog(Blog $blog, Request $request)
+    {
+        $like = Like::where('blog_id', $blog->id)->where('liker_id', $request->liker_id);
+        if (empty($like)){
+            $like = new Like;
+            $like->liker_id = $request->liker_id;
+            $like->blog_id = $blog->id;
+            $this->respondSuccessWithMessage("Like");
+        } else {
+            $like->delete();
+            $this->respondSuccessWithMessage("Unlike");
+        }
+
     }
 }

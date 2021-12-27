@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\BlogApiController;
+use App\Http\Controllers\API\CommentApiController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +22,16 @@ $routeAuth = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
+    Route::post('/blog/{blog:id}', [BlogApiController::class, 'likeBlog']);
+    Route::post('/comment', [CommentApiController::class, 'store']);
+    Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
+    Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
 };
 
 // /web-api/blog
 $routePublic = function () {
-
+    Route::post('/blog', [BlogApiController::class, 'store']);
+    Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
 };
 Route::middleware("auth")->prefix("web-api/auth")->group($routeAuth);
 Route::prefix("web-api")->group($routePublic);
@@ -32,11 +39,10 @@ Route::prefix("web-api")->group($routePublic);
 //auth route
 
 //public route
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+
+//     return view('welcome');
+// });
+Route::get('/home', [BlogController::class,'index']);
 
 Route::get('/profile/{user}', [UserController::class, 'show']);
