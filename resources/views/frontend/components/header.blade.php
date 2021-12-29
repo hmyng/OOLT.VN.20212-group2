@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('cloapedia/images/logo.png')}}" alt=""></a>
+                            <a class="header-icon" href="home"><img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" ></a>
                         </div><!-- end logo -->
                     </div>
                 </div><!-- end row -->
@@ -406,7 +406,7 @@
                                     <li><a class="dropdown-item" href="page-sitemap.html">Sitemap & Archives</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link color-pink-hover" href="blog-category-01.html">Fashion</a>
                             </li>
                             <li class="nav-item">
@@ -417,13 +417,13 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link color-green-hover" href="blog-category-04.html">Travel</a>
-                            </li>  
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link color-yellow-hover" href="blog-category-05.html"><i class="fa fa-play-circle-o"></i> Vlogs</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link color-grey-hover" href="blog-category-06.html">Health</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </nav>
