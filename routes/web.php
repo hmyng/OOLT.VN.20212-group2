@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\BlogApiController;
 use App\Http\Controllers\API\CommentApiController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +38,8 @@ Route::middleware("auth")->prefix("web-api/auth")->group($routeAuth);
 Route::prefix("web-api")->group($routePublic);
 
 //auth route
-
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('register', [RegisterController::class, 'store']);
 //public route
 
 // Route::get('/', function () {
@@ -45,6 +47,6 @@ Route::prefix("web-api")->group($routePublic);
 //     return view('welcome');
 // });
 
-Route::get('/home', [BlogController::class,'index']);
+Route::get('/home', [BlogController::class,'index'])->name('home');
 
 Route::get('/profile/{user}', [UserController::class, 'show']);
