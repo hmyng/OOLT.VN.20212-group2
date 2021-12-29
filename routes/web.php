@@ -39,10 +39,23 @@ Route::prefix("web-api")->group($routePublic);
 //auth route
 
 //public route
+
 // Route::get('/', function () {
 
 //     return view('welcome');
 // });
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/post', function () {
+    return view('frontend.post');
+});
+Route::get('/user', function () {
+    return view('frontend.user');
+});
+Route::get('/user/post', function () {
+    return view('frontend.post_a_status');
+});
 Route::get('/home', [BlogController::class,'index']);
 
 Route::get('/profile/{user}', [UserController::class, 'show']);
