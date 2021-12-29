@@ -500,15 +500,15 @@
         </section>
 
         <div class="dmtop">Scroll to Top</div>
-        
+
     </div><!-- end wrapper -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        axios.put('/web-api/blog/2', {
-        blog_heading: "123abc",
-        blog_content: "aijkfdnwei",
-        cat_id: 2,
-})
+//         axios.put('/web-api/blog/2', {
+//         blog_heading: "123abc",
+//         blog_content: "aijkfdnwei",
+//         cat_id: 2,
+// })
     </script>
 @endsection
-    
+
