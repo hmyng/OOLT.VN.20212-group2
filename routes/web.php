@@ -47,10 +47,28 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
+
 //logout
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 //public route
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
+
+//     return view('welcome');
+// });
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/post', function () {
+    return view('frontend.post');
+});
+Route::get('/user', function () {
+    return view('frontend.user');
+});
+Route::get('/user-post', function () {
+    return view('frontend.post_a_status');
+});
+Route::get('/home', [BlogController::class,'index']);
+
 
 Route::get('/profile/{user}', [UserController::class, 'show']);
