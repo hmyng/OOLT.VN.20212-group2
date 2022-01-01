@@ -18,7 +18,13 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item"><a href="blog-category-01.html"><i class="fa fa-star"></i> Trends</a></li>
                                 <li class="list-inline-item"><a href="blog-category-02.html"><i class="fa fa-bolt"></i> Hot Topics</a></li>
-                                <li class="list-inline-item"><a href="trang-login"><i class="fa fa-user-circle-o"></i>Login</a></li>
+                                @auth
+                                <li class="list-inline-item"><a href="{{route('logout')}}"><i class="fa fa-user-circle-o"></i>Logout</a></li>
+                                @endauth
+
+                                @guest
+                                <li class="list-inline-item"><a href="{{route('login')}}"><i class="fa fa-user-circle-o"></i>Login</a></li>
+                                @endguest
                             </ul><!-- end ul -->
                         </div><!-- end topmenu -->
                     </div><!-- end col -->
