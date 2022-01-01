@@ -28,7 +28,8 @@ class RegisterController extends Controller
             'user_role' => '1',
         ]);
         //sign the user in
+        auth()->attempt($request->only('user_account','user_password'));
         //redirect
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 }
