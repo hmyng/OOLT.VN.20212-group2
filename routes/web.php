@@ -54,11 +54,6 @@ Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
-//     return view('welcome');
-// });
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/post', function () {
     return view('frontend.post');
 });
@@ -68,10 +63,12 @@ Route::get('/user', function () {
 Route::get('/user-post', function () {
     return view('frontend.post_a_status');
 });
+
 Route::get('/new-post', function () {
     return view('frontend.new-post');
 });
 Route::get('/home', [BlogController::class,'index']);
+
 
 
 Route::get('/profile/{user}', [UserController::class, 'show']);
