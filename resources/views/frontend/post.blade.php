@@ -266,7 +266,7 @@
                         <h4 class="small-title">Leave a Reply</h4>
                         <div class="row">
                             <div class="col-lg-12">
-                                <form class="form-wrapper">
+                                <form class="form-wrapper" onsubmit="submit_comment(event)">
                                     <textarea class="form-control" placeholder="Your comment"></textarea>
                                     <button type="submit" class="btn btn-primary">Submit Comment</button>
                                 </form>
@@ -277,5 +277,17 @@
             </div><!-- end col -->
         </div>
     </div>
+    <script>
+        function submit_comment(event){
+            event.preventDefault();
+            axios.post('/web-api/auth/comment', {
+                comment_content: 'this is a cmt'
+            }).then(function (res) {
+                console.log(res)
+            }).catch(function (e) {
+                console.log(e)
+            })
+        }
+    </script>
 </section>
 @endsection
