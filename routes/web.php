@@ -64,4 +64,11 @@ Route::get('/user-post', function () {
     return view('frontend.post_a_status');
 });
 
+Route::get('/new-post', function () {
+    return view('frontend.new-post');
+});
+Route::get('/home', [BlogController::class,'index']);
+
+
+
 Route::get('/profile/{user}', [UserController::class, 'show']);
