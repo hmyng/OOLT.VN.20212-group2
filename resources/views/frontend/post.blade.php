@@ -70,7 +70,7 @@
 
                             <p>Proin ultricies nulla consectetur, sollicitudin dolor at, sollicitudin mauris. Maecenas at nunc nunc. Ut nulla felis, tincidunt et porttitor at, rutrum in dolor. Aenean id tincidunt ligula. Donec vitae placerat odio. Mauris accumsan nibh ut nunc maximus, ac auctor elit vehicula. Cras leo sem, vehicula a ultricies ac, condimentum vitae lectus. Sed ut eros euismod, luctus nisl eu, congue odio. </p>
 
-                            <p><img src="upload/blog_01.jpg" class="float-left" width="340" alt="">Suspendisse ultrices placerat dolor sed efficitur. Morbi in laoreet diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut massa id lectus laoreet porta non in metus. Donec nibh justo, tincidunt non justo ut, tincidunt malesuada turpis. Cras pellentesque sollicitudin ex eget pharetra.</p>
+                            <p>Suspendisse ultrices placerat dolor sed efficitur. Morbi in laoreet diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut massa id lectus laoreet porta non in metus. Donec nibh justo, tincidunt non justo ut, tincidunt malesuada turpis. Cras pellentesque sollicitudin ex eget pharetra.</p>
 
                             <h3><strong>Nam non velit est. Sed lobortis arcu vitae nunc molestie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </strong></h3>
 
@@ -89,21 +89,22 @@
                             <small><a href="#" title="">trending</a></small>
                             <small><a href="#" title="">another tag</a></small>
                         </div><!-- end meta -->
-
+{{--
                         <div class="post-sharing">
                             <ul class="list-inline">
                                 <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
                                 <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
                                 <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
                             </ul>
-                        </div><!-- end post-sharing -->
+                        </div> --}}
+                        <!-- end post-sharing -->
                     </div><!-- end title -->
 
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="banner-spot clearfix">
                                 <div class="banner-img">
-                                    <img src="upload/banner_01.jpg" alt="" class="img-fluid">
+                                    <img src="upload/banner_01.jpg" alt="" class="img-fluid single-post-image">
                                 </div><!-- end banner-img -->
                             </div><!-- end banner -->
                         </div><!-- end col -->
@@ -215,7 +216,7 @@
                     <hr class="invis1">
 
                     <div class="custombox clearfix">
-                        <h4 class="small-title">3 Comments</h4>
+                        <h4 class="small-title">Comments</h4>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="comments-list">
@@ -226,7 +227,7 @@
                                         <div class="media-body">
                                             <h4 class="media-heading user_name">Amanda Martines <small>5 days ago</small></h4>
                                             <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean.</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Reply</a>
+                                            {{-- <a href="#" class="btn btn-primary btn-sm">Reply</a> --}}
                                         </div>
                                     </div>
                                     <div class="media">
@@ -239,7 +240,7 @@
 
                                             <p>Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small.</p>
 
-                                            <a href="#" class="btn btn-primary btn-sm">Reply</a>
+                                            {{-- <a href="#" class="btn btn-primary btn-sm">Reply</a> --}}
                                         </div>
                                     </div>
                                     <div class="media last-child">
@@ -251,7 +252,7 @@
                                             <h4 class="media-heading user_name">Marie Johnson <small>5 days ago</small></h4>
                                             <p>Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small.</p>
 
-                                            <a href="#" class="btn btn-primary btn-sm">Reply</a>
+                                            {{-- <a href="#" class="btn btn-primary btn-sm">Reply</a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -266,9 +267,6 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <form class="form-wrapper">
-                                    <input type="text" class="form-control" placeholder="Your name">
-                                    <input type="text" class="form-control" placeholder="Email address">
-                                    <input type="text" class="form-control" placeholder="Website">
                                     <textarea class="form-control" placeholder="Your comment"></textarea>
                                     <button type="submit" class="btn btn-primary">Submit Comment</button>
                                 </form>
