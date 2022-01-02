@@ -29,12 +29,13 @@ $routeAuth = function () {
     Route::post('/comment', [CommentApiController::class, 'store']);
     Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
     Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
+    Route::post('/like/{blog}', [BlogApiController::class, 'likeBlog']);
 };
 
 // /web-api/blog
 $routePublic = function () {
-    Route::post('/blog', [BlogApiController::class, 'store']);
-    Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
+//    Route::post('/blog', [BlogApiController::class, 'store']);
+//    Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
 };
 Route::middleware("auth")->prefix("web-api/auth")->group($routeAuth);
 Route::prefix("web-api")->group($routePublic);

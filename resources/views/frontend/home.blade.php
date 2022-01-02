@@ -45,7 +45,7 @@
                              <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
-                                        <span class="bg-green"><a href="blog-category-01.html" title=""></a></span>
+                                        <span class="bg-green"><a href="blog-category-01.html" title="">{{$blogs[0]->blog_heading}}</a></span>
                                         <h4><a href="single.html" title="">Separate your place with exotic hotels</a></h4>
                                     </div><!-- end meta -->
                                 </div><!-- end shadow-desc -->

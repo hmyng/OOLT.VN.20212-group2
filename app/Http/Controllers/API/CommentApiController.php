@@ -15,15 +15,13 @@ class CommentApiController extends APIController
 
     public function store(Request $request)
     {
-        $blog = new Comment;
+        $comment = new Comment;
 
-        $blog->blog_heading = $request->blog_heading;
-        $blog->blog_content = $request->blog_content;
-        $blog->cat_id = $request->cat_id;
-        $blog->blog_display = $request->blog_display;
-        $blog->save();
+        $comment->user_id = $request->user_id;
+        $comment->comment_content = $request->comment_content;
+        $comment->save();
         return $this->respondSuccess([
-            'blog' => $blog
+            'comment' => $comment
         ]);
     }
 
