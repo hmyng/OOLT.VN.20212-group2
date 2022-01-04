@@ -1744,7 +1744,9 @@
             background-color: rgb(228, 224, 224);
             margin: 16px 0px;
             display: flex;
-            flex-direction: row;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            flex-flow: row wrap;
             align-items: center;
             justify-content: space-between;
         }
@@ -1784,6 +1786,7 @@
         } */
 
         .user-infor--follow-btn {
+            border: none;
             padding: 8px;
             font-size: 1.2rem;
             margin: 16px;
@@ -1798,9 +1801,9 @@
         }
 
         @media only screen and (max-width: 700px) {
-            .user-infor--wrapper {
+            /* .user-infor--wrapper {
                 flex-direction: column;
-            }
+            } */
             .user-infor--items {
                 font-size: 0.8rem;
             }
