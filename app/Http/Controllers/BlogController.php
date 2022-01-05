@@ -12,8 +12,9 @@ class BlogController extends Controller
     public function index(){
         $pageNumber = 15;
         // $blogs = Blog::paginate($pageNumber);
-        $categories = DB::table('categories')->take(6);
-        //dd($categories->cat_name);
+        $categories = Category::all();
+
+        //dd($categories[0]->cat_name);
         // return view('frontend.home', ['blogs'=>$blogs]);
         return view('frontend.home', compact('categories'));
     }

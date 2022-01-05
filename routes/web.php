@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,11 +54,14 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 //public route
 
+Route::get('/search', [SearchController::class, 'index']);
+Route::post('/search', [SearchController::class, 'store'])->name('search');
+
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
-Route::get('/post', function () {
-    return view('frontend.post');
-});
+Route::get('/post', 
+    [PostController::class, 'index']
+);
 Route::get('/user', function () {
     return view('frontend.user');
 });

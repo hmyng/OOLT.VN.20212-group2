@@ -24,11 +24,11 @@ class RegisterController extends Controller
         User::create([
             'user_name' => $request->name,
             'user_account' => $request->username,
-            'user_password' => Hash::make($request->password),
+            'password' => Hash::make($request->password),
             'user_role' => '1',
         ]);
         //sign the user in
-        auth()->attempt($request->only('user_account','user_password'));
+        auth()->attempt($request->only('user_account','password'));
         //redirect
         return redirect()->route('login');
     }
