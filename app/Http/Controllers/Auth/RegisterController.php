@@ -20,15 +20,17 @@ class RegisterController extends Controller
             'username' => 'required|max:255|unique:users,user_account',
             'password' => 'required|confirmed|min:6'
         ]);
+        
         //store user
         User::create([
             'user_name' => $request->name,
             'user_account' => $request->username,
-            'user_password' => Hash::make($request->password),
+            'password' => Hash::make($request->password),
             'user_role' => '1',
         ]);
         //sign the user in
-        auth()->attempt($request->only('user_account','user_password'));
+        dd(auth()->attempt($request->only('user_account','password')));
+        auth()->attempt($request->only('user_account','password'));
         //redirect
         return redirect()->route('login');
     }

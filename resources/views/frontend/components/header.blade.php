@@ -9,9 +9,7 @@
                 </div><!-- end row -->
             </div><!-- end header-logo -->
         </div><!-- end header -->
-<div>
-{{$blogs->title}}
-</div>
+
 
         <header class="header">
             <div class="container">

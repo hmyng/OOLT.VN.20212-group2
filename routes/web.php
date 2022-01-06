@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +28,6 @@ $routeAuth = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
-    Route::post('/blog/{blog:id}', [BlogApiController::class, 'likeBlog']);
     Route::post('/comment', [CommentApiController::class, 'store']);
     Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
     Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
@@ -55,11 +56,14 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 //public route
 
+Route::get('/search', [SearchController::class, 'index']);
+Route::post('/search', [SearchController::class, 'store'])->name('search');
+
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
-Route::get('/post', function () {
-    return view('frontend.post');
-});
+Route::get('/post',
+    [PostController::class, 'index']
+);
 Route::get('/user', function () {
     return view('frontend.user');
 });
