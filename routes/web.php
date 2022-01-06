@@ -56,6 +56,15 @@ Route::get('/user', function () {
 Route::get('/user-post', function () {
     return view('frontend.post_a_status');
 });
+Route::get('/search-result', function () {
+    return view('frontend.search-result');
+});
+Route::get('/search-result-fail', function () {
+    return view('frontend.search-result-fail');
+});
+Route::get('/blog-category', function () {
+    return view('frontend.blog-category');
+});
 Route::get('/new-post', function () {
     return view('frontend.new-post');
 });

@@ -149,7 +149,7 @@
             display: inline-block;
             width: auto;
             height: auto;
-            margin-left: 0.5em;
+            /* margin-left: 0.5em; */
             margin-top: 0rem;
             vertical-align: middle;
             content: "\f107";
@@ -168,8 +168,8 @@
         }
 
         .logo img {
-            max-width: 324px;
-            max-width: 100%;
+            max-width: 8rem;
+            /* max-width: 100%; */
             margin: auto;
             text-align: center;
             display: block;
@@ -223,6 +223,13 @@
             width: 6rem;
         }
 
+        .header-kumaguma {
+            text-align: center;
+            font-size: 2.2rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 0.8rem;
+        }
+
         @media only screen and (max-width: 900px) {
             .header-icon img {
                 width: 7rem;
@@ -250,7 +257,7 @@
             display: block;
             position: relative;
             background-color: #ffffff;
-            padding: 1rem 2rem;
+            padding: 0 1rem;
             font-size: 16px;
             border-bottom: 1px dashed #e2e2e2;
         }
@@ -274,7 +281,11 @@
         }
 
         .topbar-section .list-inline-item {
-            padding: 0 0.4rem !important;
+            padding: 1rem !important;
+        }
+
+        .list-inline-item:hover {
+            background-color: rgb(214, 214, 214);
         }
 
         .topmenu i {
@@ -414,7 +425,7 @@
             padding: 2rem 0;
             display: block;
             position: relative;
-            background-color: #ffffff;
+            background-color: #edfafa;
         }
 
         .section.lb {
@@ -560,6 +571,7 @@
 
         .post-media:hover img,
         .masonry-box:hover img {
+            border-radius: 16px;
             -webkit-transform: scale(1.1);
             -moz-transform: scale(1.1);
             -ms-transform: scale(1.1);
@@ -604,7 +616,7 @@
 
         .footer {
             padding: 4rem 0 4rem;
-            background: url(images/footer.png) repeat-x center bottom #edeff2;
+            background: url(images/footer.png) repeat-x center bottom #ebeff5;
         }
 
         .footer.wb {
@@ -1120,7 +1132,7 @@
         .blog-meta.big-meta h4 {
             padding: 1rem 0 0.6rem;
             margin: 0;
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .blog-meta.big-meta p {
@@ -1251,6 +1263,7 @@
         }
 
         .hovereffect span::before {
+            border-radius: 16px;
             width: 90px;
             text-align: center;
             left: 0;
@@ -1261,7 +1274,7 @@
             position: absolute;
             height: 90px;
             display: block;
-            content: url(images/hover.png);
+            /* content: url(images/hover.png); */
             -webkit-transition: all .3s ease-in-out;
             -moz-transition: all .3s ease-in-out;
             -ms-transition: all .3s ease-in-out;
@@ -1286,6 +1299,10 @@
             background-color: #ffffff;
             padding: 1rem 1.5rem 1rem;
             padding: 16px 0px;
+        }
+
+        .blog-meta {
+            margin: 1rem;
         }
 
         .blog-custom-build .blog-meta {
@@ -1354,6 +1371,7 @@
 
         .wb {
             background-color: #ffffff;
+            /* background-color: #edfafa; */
             border-top: 1px dashed #dadada;
         }
 
@@ -1690,6 +1708,7 @@
             /* background-color: #00f178; */
             margin-bottom: 10px;
             display: flex;
+            /* justify-content: space-around; */
             width: 100%;
         }
 
@@ -1902,7 +1921,7 @@
         }
 
         .content-container {
-            background-color: bisque;
+            background-color: rgb(250, 240, 228);
             min-height: 5rem;
             border-radius: 16px;
             border: 1.5px solid #000000;
@@ -1950,10 +1969,107 @@
         .button-container {
             margin: 0.5rem 0px;
             text-align: center;
+            display: flex;
+            align-items: center;
         }
 
         .button-container button {
             border: none;
             padding: 0 16px;
             background-color: lightcyan;
+        }
+
+        .search-result-header {
+            font-size: 20px;
+            margin: 0.6rem 0;
+        }
+
+        .post-category {
+            background-color: rgb(151, 233, 151);
+            padding: 0 0.5rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            margin: 0px 1rem;
+            border: 1px solid #000000;
+        }
+
+        .dropdown-item {
+            padding: 0.8rem 1rem;
+        }
+
+        .carousel-item {
+            max-height: 20rem;
+        }
+
+        .blog-box {
+            /* box-shadow: 2px 2px 2px #000000; */
+            border: 0.5px solid #000;
+            border-radius: 15px;
+            background-color: #fff;
+            /* max-height: 35rem; */
+            /* min-height: 20rem; */
+        }
+
+        .blog-box img {
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        small.blog-meta--like-cmt {
+            text-align: center;
+            margin: 0px;
+            padding: 0.2rem;
+        }
+
+        small.blog-meta--like-cmt:after {
+            content: "";
+            padding: 0px;
+        }
+
+        .blog-meta--like-cmt .blog-likes {
+            margin: 0px;
+        }
+
+        .about--heading {
+            background-color: #00B6F1;
+            border-radius: 16px;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .admin-infor--wrapper {
+            display: flex;
+            flex-direction: column;
+            border-radius: 16px;
+            min-height: 20rem;
+            background-color: #fff;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .admin-infor--avatar {
+            width: 80%;
+            align-self: center;
+            margin: 1rem;
+            border-radius: 16px;
+        }
+
+        .admin-infor--item {
+            margin: 0px 1rem;
+            text-align: center;
+        }
+
+        .post-media-image {
+            margin: 1rem 0rem 1rem 0rem;
+            border-radius: 16px !important;
+        }
+        /* .blog-box h4 {
+            font-size: 1.2rem;
+        } */
+
+        .error-img {
+            width: 25%;
+            align-self: center;
+            margin: 1.5rem 0;
         }
