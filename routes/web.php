@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\BlogApiController;
 use App\Http\Controllers\API\CommentApiController;
+use App\Http\Controllers\API\UserApiController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -27,11 +28,11 @@ $routeAuth = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
-    Route::post('/blog/{blog:id}', [BlogApiController::class, 'likeBlog']);
     Route::post('/comment', [CommentApiController::class, 'store']);
     Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
     Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
     Route::post('/like/{blog}', [BlogApiController::class, 'likeBlog']);
+    Route::post('/follow/{user}', [UserApiController::class, 'follow']);
 };
 
 // /web-api/blog
@@ -60,7 +61,7 @@ Route::post('/search', [SearchController::class, 'store'])->name('search');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
-Route::get('/post', 
+Route::get('/post',
     [PostController::class, 'index']
 );
 Route::get('/user', function () {
