@@ -26,8 +26,6 @@
                     </div>
                     <!-- end col -->
 
-
-
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <div class="topsearch text-right list-inline-item" style="position: absolute; right: 0px">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-search"></i> SEARCH</a>

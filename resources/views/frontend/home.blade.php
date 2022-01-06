@@ -8,7 +8,6 @@
 <div id="wrapper">
         <section class="section first-section">
             <div class="container">
-
                 <div id="post-image-slider" class="carousel slide" data-ride="carousel">
                     <!-- Indicators/dots -->
                     <ul class="carousel-indicators">

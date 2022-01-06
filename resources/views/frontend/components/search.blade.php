@@ -1,10 +1,14 @@
 <div class="collapse top-search" id="collapseExample">
-            <div class="card card-block">
-                <div class="newsletter-widget text-center">
-                    <form class="form-inline">
-                        <input type="text" class="form-control" placeholder="What you are looking for?">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                    </form>
-                </div><!-- end newsletter -->
-            </div>
-        </div><!-- end top-search -->
+    <div class="card card-block">
+        <div class="newsletter-widget text-center">
+            <form id="mySearch" class="form-inline" method="post" action="{{route('search')}}">
+                @csrf 
+                @method('POST')
+                <input type="text" class="form-control" placeholder="Tìm kiếm theo danh mục...">
+                <button onclick="document.getElementById('mySearch')" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </form>
+            {{csrf_field()}}
+        </div><!-- end newsletter -->
+    </div>
+</div><!-- end top-search -->
+

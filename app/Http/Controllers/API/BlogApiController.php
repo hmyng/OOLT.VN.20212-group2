@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Like;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
+
 class BlogApiController extends APIController
 {
     public function __construct(
@@ -54,7 +57,7 @@ class BlogApiController extends APIController
         $like = Like::where('blog_id', $blog->id)->where('liker_id', $request->liker_id);
         if (empty($like)){
             $like = new Like;
-            $like->liker_id = $request->liker_id;
+            $like->liker_id = Auth::user()->id;
             $like->blog_id = $blog->id;
             $this->respondSuccessWithMessage("Like");
         } else {

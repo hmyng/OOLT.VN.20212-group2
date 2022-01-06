@@ -17,7 +17,9 @@
             </div><!-- end header-logo -->
         </div><!-- end header -->
 
+
         {{-- <header class="header">
+
             <div class="container">
 
                 <nav class="navbar navbar-inverse navbar-toggleable-md">
@@ -29,6 +31,11 @@
                             {{-- <li class="nav-item">
                                 <a class="nav-link color-pink-hover" href="index.html">Home</a>
                             </li>
+                            @foreach ($categories as $category)
+                            <li class="nav-item">
+                                <a class="nav-link color-pink-hover" href="#">{{$category->cat_name}}</a>
+                            </li>
+                            @endforeach
                             <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                                 <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
@@ -48,6 +55,7 @@
                                     </li>
                                 </ul>
                             </li>
+
                          --}}
                             {{-- <li class="nav-item dropdown has-submenu">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
@@ -79,6 +87,7 @@
                                     <li><a class="dropdown-item" href="page-404.html">Not Found Page</a></li>
                                     <li><a class="dropdown-item" href="page-sitemap.html">Sitemap & Archives</a></li>
                                 </ul>
+
                             </li> --}}
 {{--
 
