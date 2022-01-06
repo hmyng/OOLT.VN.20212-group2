@@ -54,7 +54,7 @@ class BlogApiController extends APIController
 
     public function likeBlog(Blog $blog, Request $request)
     {
-        $like = Like::where('blog_id', $blog->id)->where('liker_id', $request->liker_id);
+        $like = Like::where('blog_id', $blog->id)->where('liker_id', $request->liker_id)->get();
         if (empty($like)){
             $like = new Like;
             $like->liker_id = Auth::user()->id;

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\BlogApiController;
 use App\Http\Controllers\API\CommentApiController;
+use App\Http\Controllers\API\UserApiController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -30,6 +31,7 @@ $routeAuth = function () {
     Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
     Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
     Route::post('/like/{blog}', [BlogApiController::class, 'likeBlog']);
+    Route::post('/follow/{user}', [UserApiController::class, 'follow']);
 };
 
 // /web-api/blog
