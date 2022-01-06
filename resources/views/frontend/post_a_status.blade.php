@@ -45,9 +45,11 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script>
-            function submit_form(event) {
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+    function submit_form(event) {
                     event.preventDefault();
                     axios.post('/web-api/auth/blog', {
                         blog_heading: $('#heading').val(),
@@ -60,8 +62,10 @@
                         console.log(e)
                     })
             }
-        </script>
-    </section>
+    </script>
+     <div class="dmtop">Scroll to Top</div>
+</section>
+
 
 
 @endsection

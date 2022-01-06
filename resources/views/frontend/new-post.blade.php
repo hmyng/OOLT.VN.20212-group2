@@ -145,6 +145,7 @@
                 })
             }
 
+
             function submit_comment(event){
                 event.preventDefault();
                 axios.post('/web-api/auth/comment', {
