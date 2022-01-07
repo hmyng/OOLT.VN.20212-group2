@@ -137,7 +137,7 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="section-title">
-                            <h3 class="color-pink"><a href="blog-category-01.html" title="">IT</a></h3>
+                            <h3 class="color-pink"><a href="blog-category-01.html" title="">Kiến thức IT</a></h3>
                         </div><!-- end title -->
                         <div class="row">
                             <div class="col-sm-12 col-xs-12">
@@ -221,7 +221,7 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="upload/banner_01.jpg" alt="" class="img-fluid">
+                                <img src="upload/blog-banner.jpg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end col -->
@@ -235,6 +235,27 @@
                             <div class="section-title">
                                 <h3 class="color-green"><a href="blog-category-01.html" title="">Tiếng Nhật</a></h3>
                             </div><!-- end title -->
+
+                            <div class="blog-box row">
+                                <div class="col-md-4 ">
+                                    <div class="post-media ">
+                                        <a href="single.html" title="">
+                                            <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid post-media-image">
+                                            {{-- <div class="hovereffect"></div> --}}
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="blog-meta big-meta col-md-7">
+                                    <h4><a href="single.html" title="">5 Beautiful buildings you need to visit without dying</a></h4>
+                                    <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
+                                    <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
+                                    <small><a href="blog-author.html" title="">by Hoanh</a></small>
+                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"> 100</i></span></small>
+                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> 17</i></span></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            <hr class="invis">
 
                             <div class="blog-box row">
                                 <div class="col-md-4 ">
@@ -307,7 +328,7 @@
 
                     <div class="col-lg-4">
                         <div class="section-title">
-                            <h3 class="color-yellow"><a href="blog-category-01.html" title="">Vlogs</a></h3>
+                            <h3 class="color-yellow"><a href="blog-category-01.html" title="">Chia sẻ tài liệu</a></h3>
                         </div><!-- end title -->
 
                         <div class="blog-box">
@@ -315,7 +336,7 @@
                                 <a href="single.html" title="">
                                     <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
                                     <div class="hovereffect">
-                                        <span class="videohover"></span>
+                                        <span class="hovereffect"></span>
                                     </div><!-- end hover -->
                                 </a>
                             </div><!-- end media -->
@@ -336,7 +357,7 @@
                                 <a href="single.html" title="">
                                     <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
                                     <div class="hovereffect">
-                                        <span class="videohover"></span>
+                                        <span class="hovereffect"></span>
                                     </div><!-- end hover -->
                                 </a>
                             </div><!-- end media -->
@@ -352,26 +373,6 @@
 
                         <hr class="invis">
 
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span class="videohover"></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">How to become a good vlogger</a></h4>
-                                <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"> 100</i></span></small>
-                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> 17</i></span></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
                     </div><!-- end col -->
                 </div><!-- end row -->
 
@@ -381,7 +382,7 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="upload/banner_02.jpg" alt="" class="img-fluid">
+                                <img src="upload/blog-banner.jpg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end col -->

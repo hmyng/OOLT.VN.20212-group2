@@ -51,7 +51,7 @@
     <script>
     function submit_form(event) {
                     event.preventDefault();
-                    axios.post('/web-api/auth/blog', {
+                    axios.post('/web-api/blog', {
                         blog_heading: $('#heading').val(),
                         blog_content: $('#post-content').val(),
                         cat_id: $('#category').val(),
