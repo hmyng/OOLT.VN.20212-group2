@@ -20,7 +20,7 @@
                                     </div>
                             </li>
                             <li class="list-inline-item"><a href=""> TRENDS</a></li>
-                            <li class="list-inline-item"><a href="#about-us"> ABOUT US</a></li>
+                            <li class="list-inline-item"><a href="/home#about-us"> ABOUT US</a></li>
                             <li class="list-inline-item"><a href="trang-login"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
                         </ul>
                     </div>

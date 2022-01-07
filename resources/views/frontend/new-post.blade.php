@@ -127,6 +127,7 @@
                 </div>
             </section>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
             function liked(blog_id) {
                 let like = document.getElementById('like');

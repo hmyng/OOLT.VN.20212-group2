@@ -15,8 +15,8 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{{asset('cloapedia/images/web-icon.png')}}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{{asset('cloapedia/images/apple-touch-icon.png')}}">
+    <link rel="shortcut icon" href="{{asset('cloapedia/images/gau-icon.png')}}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{asset('cloapedia/images/gau-icon.png')}}">
 
     <!-- Design fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">

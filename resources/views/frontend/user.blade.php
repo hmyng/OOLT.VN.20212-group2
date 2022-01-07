@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-<title>Home</title>
+<title>User</title>
 @endsection
 @section('content')
 <section class="section wb">
