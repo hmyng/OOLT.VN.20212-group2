@@ -56,8 +56,8 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 //public route
 
-Route::get('/search', [SearchController::class, 'index']);
-Route::post('/search', [SearchController::class, 'store'])->name('search');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+//Route::post('/search', [SearchController::class, 'store'])->name('search');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
