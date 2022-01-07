@@ -9,19 +9,24 @@
                         </div> --}}
                         <!-- end social -->
                         <ul class="list-inline nav">
-                            <li class="list-inline-item"><a href="/home">HOME</a></li>
+                            <li class="list-inline-item"><a href="{{route('home')}}">HOME</a></li>
                             <li class="list-inline-item nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="display: inline; padding: 0px">CATEGORIES</a>
                                     <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Chia sẻ kinh nghiệm học</a>
-                                      <a class="dropdown-item" href="#">Chia sẻ tài liệu</a>
-                                      <a class="dropdown-item" href="#">Tiếng Nhật</a>
-                                      <a class="dropdown-item" href="#">Kiến thức IT</a>
+                                    @foreach($categories as $category)
+                                      <a class="dropdown-item" href="#">{{$category->cat_name}}</a>
+                                    @endforeach
                                     </div>
                             </li>
-                            <li class="list-inline-item"><a href=""> TRENDS</a></li>
+                            <li class="list-inline-item"><a href="#"> TRENDS</a></li>
                             <li class="list-inline-item"><a href="/home#about-us"> ABOUT US</a></li>
-                            <li class="list-inline-item"><a href="trang-login"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
+                            @guest
+                            <li class="list-inline-item"><a href="{{route('login')}}"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
+                            @endguest
+
+                            @auth
+                            <li class="list-inline-item"><a href="{{route('logout')}}"><i class="fa fa-user-circle-o"></i> LOGOUT</a></li>
+                            @endauth
                         </ul>
                     </div>
                     <!-- end col -->
