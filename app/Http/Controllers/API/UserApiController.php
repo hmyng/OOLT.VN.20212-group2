@@ -16,7 +16,7 @@ class UserApiController extends APIController
 
     public function follow(User $user)
     {
-        $follow = Follower::where('parent_ID', $this->user->id)->where('follower_ID', $user->id)->get();
+        $follow = Follower::where('parent_ID', $this->user->id)->where('follower_ID', $user->id)->first();
         if (!empty($follow)){
             $follow->delete();
             return $this->respondSuccessWithMessage('unfollow');
