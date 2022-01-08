@@ -1,7 +1,7 @@
 <div class="collapse top-search" id="collapseExample">
     <div class="card card-block">
         <div class="newsletter-widget text-center">
-            <form id="mySearch" class="form-inline" method="post" action="{{route('search')}}">
+            <form id="mySearch" class="form-inline" type="get" action="{{route('search')}}">
                 @csrf 
                 @method('POST')
                 <input type="text" class="form-control" placeholder="Tìm kiếm theo danh mục...">
