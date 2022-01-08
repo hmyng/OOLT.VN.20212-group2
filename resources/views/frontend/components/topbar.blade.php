@@ -8,30 +8,33 @@
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
                         </div> --}}
                         <!-- end social -->
-                        <ul class="list-inline nav ">
-                            <li class="list-inline-item"><a href="/home">HOME</a></li>
+                        <ul class="list-inline nav">
+                            <li class="list-inline-item"><a href="{{route('home')}}">HOME</a></li>
+
                             <li class="list-inline-item nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="display: inline; padding: 0px">CATEGORIES</a>
                                     <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Chia sẻ kinh nghiệm học</a>
-                                      <a class="dropdown-item" href="#">Chia sẻ tài liệu</a>
-                                      <a class="dropdown-item" href="#">Tiếng Nhật</a>
-                                      <a class="dropdown-item" href="#">Kiến thức IT</a>
+                                    @foreach($categories as $category)
+                                      <a class="dropdown-item" href="#">{{$category->cat_name}}</a>
+                                    @endforeach
                                     </div>
                             </li>
+
                             <li class="list-inline-item hide-res"><a href="/trend"> TRENDS</a></li>
                             <li class="list-inline-item hide-res"><a href="/home#about-us"> ABOUT US</a></li>
-                            {{-- nếu chưa login --}}
-                            <li class="list-inline-item"><a href="trang-login"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
-                            {{-- nếu đã login thành công --}}
+                            @guest
+                            <li class="list-inline-item"><a href="{{route('login')}}"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
+                            @endguest
+                            @auth
                             <li class="list-inline-item nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown" href="/user"><img class="topbar-login-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">HoanhDZ</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Trang cá nhân</a>
                                     <a class="dropdown-item" href="/user-post">Đăng bài</a>
-                                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                                    <a class="dropdown-item" href="{{route('logout')}}">Đăng xuất</a>
                                 </div>
                             </li>
+                            @endauth
                         </ul>
                     </div>
                     <!-- end col -->
