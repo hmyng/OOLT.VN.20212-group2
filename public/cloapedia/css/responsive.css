@@ -53,6 +53,9 @@
     h3.about--heading {
         margin-top: 1rem;
     }
+    .topsearch {
+        visibility: hidden;
+    }
 }
 
 @media (max-width: 769px) {
@@ -104,8 +107,11 @@
 }
 
 @media (max-width: 601px) {
+    .topbar-section {
+        padding: 0;
+    }
     .list-inline-item {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
     .sidebar-container {
         position: relative;
@@ -217,5 +223,21 @@
     .header .navbar-nav .has-submenu>ul li ul.show-right {
         right: 130%;
         left: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .list-inline-item {
+        font-size: 0.55rem;
+    }
+    .hide-res {
+        display: none;
+        /* visibility: hidden; */
+    }
+}
+
+@media (max-width: 360px) {
+    .list-inline-item {
+        font-size: 0.55rem;
     }
 }
