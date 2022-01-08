@@ -22,6 +22,7 @@
             <div class="sidebar-container col-lg-4 sticky-top">
                  <h3 class="sidebar-header">Giới thiệu <i class="fa fa-user" aria-hidden="true"></i></h3>
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
+                 <button  class="sidebar-follow-btn" onclick="follow()"><span id="follow-btn">Follow</span> <i id="follow-btn-icon" class="fa fa-plus" aria-hidden="true"></i></button>
                  <div class="sidebar-item">Tên đầy đủ: <b> Nguyen Hoang Anh</b></div>
                  <div class="sidebar-item">Nickname: <b> HoanhDz</b></div>
                  <div class="sidebar-item">Ngày sinh: <b> 07/10/2001</b></div>
@@ -128,5 +129,20 @@
     </div>
     <div class="dmtop">Scroll to Top</div>
     {{-- </div> --}}
+    <script>
+        function follow(){
+            let f = document.getElementById('follow-btn-icon');
+            let content = document.getElementById('follow-btn')
+            if ($("#follow-btn-icon").hasClass("fa-plus")) {
+                        f.classList.remove('fa-plus');
+                        f.classList.add('fa-check');
+                        content.innerHTML = 'Unfollow';
+                    } else {
+                        f.classList.add('fa-plus');
+                        f.classList.remove('fa-check');
+                        content.innerHTML = 'Follow';
+                    }
+        }
+    </script>
 </section>
 @endsection
