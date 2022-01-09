@@ -61,9 +61,9 @@ Route::post('/search', [SearchController::class, 'store'])->name('search');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
-Route::get('/post',
-    [PostController::class, 'index']
-);
+// Route::get('/post',
+//     [PostController::class, 'index']
+// );
 Route::get('/user', function () {
     return view('frontend.user');
 });
