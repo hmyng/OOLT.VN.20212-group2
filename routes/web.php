@@ -65,9 +65,9 @@ Route::get('/home', [BlogController::class,'index'])->name('home');
 Route::get('/post',
     [PostController::class, 'index']
 );
-Route::get('/user', function () {
-    return view('frontend.user');
-});
+//Route::get('/user', function () {
+//    return view('frontend.user');
+//});
 Route::get('/user-post', function () {
     return view('frontend.post_a_status');
 });
@@ -86,4 +86,4 @@ Route::get('/blog-category', function () {
 Route::get('/new-post/{blog}', [PostController::class, 'index']);
 
 
-Route::get('/profile/{user}', [UserController::class, 'show']);
+Route::get('/user/{user}', [UserController::class, 'show']);
