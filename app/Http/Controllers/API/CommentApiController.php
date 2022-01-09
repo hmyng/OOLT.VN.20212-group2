@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class CommentApiController extends APIController
@@ -16,8 +17,8 @@ class CommentApiController extends APIController
     public function store(Request $request)
     {
         $comment = new Comment;
-
-        $comment->user_id = $request->user_id;
+        $comment->blog_id = $request->blog_id;
+        $comment->user_id = $this->user->id;
         $comment->comment_content = $request->comment_content;
         $comment->save();
         return $this->respondSuccess([

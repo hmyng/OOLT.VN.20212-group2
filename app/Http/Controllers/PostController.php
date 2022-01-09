@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
+    public function index(Blog $blog){
         $categories = Category::all();
-        return view('frontend.post', compact('categories'));
+        //dd($blog);
+        return view('frontend.new-post', compact('categories', 'blog'));
     }
 }

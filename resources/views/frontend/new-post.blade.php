@@ -159,7 +159,7 @@
             function follow(user_id) {
                 let f = document.getElementById('follow-btn-icon');
                 let content = document.getElementById('follow-btn')
-                axios.post('/web-api/follow/' + user_id).then(function (res) {
+                axios.post('/web-api/auth/follow/' + user_id).then(function (res) {
                     if ($("#follow-btn-icon").hasClass("fa-plus")) {
                         f.classList.remove('fa-plus');
                         f.classList.add('fa-check');
@@ -178,7 +178,8 @@
             function submit_comment(event) {
                 event.preventDefault();
                 axios.post('/web-api/auth/comment', {
-                    comment_content: 'this is a cmt'
+                    comment_content: 'this is a cmt',
+                    blog_id:1
                 }).then(function (res) {
                     console.log(res)
                 }).catch(function (e) {

@@ -10,15 +10,14 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $categories = Category::join('blogs', 'categories.id', '=', 'cat_id')
-            ->join('users', 'users.id', '=', 'author_id')
-            ->where('cat_name', 'like', '%' . $request->get('search') . '%')
-            ->select('*')->paginate(12);
-        
-        // if($categories == NULL){
-        //     return view('frontend.search-result-fail', compact('categories'));
-        // }
-
+        $categories = Category::
+            // ->join('users', 'users.id', '=', 'author_id')
+            where('cat_name', 'like', '%' . $request->get('search') . '%')
+            ->first();
+       // dd($categories->blogs);
+        if(empty($categories[0])){
+            return view('frontend.search-result-fail');
+        }
         return view('frontend.search-result', compact('categories'));
     }
 }

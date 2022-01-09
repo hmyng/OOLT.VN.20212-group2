@@ -82,9 +82,7 @@ Route::get('/blog-category', function () {
     return view('frontend.blog-category');
 });
 
-Route::get('/new-post', function () {
-    return view('frontend.new-post');
-});
+Route::get('/new-post/{blog}', [PostController::class, 'index']);
 
 
 Route::get('/profile/{user}', [UserController::class, 'show']);
