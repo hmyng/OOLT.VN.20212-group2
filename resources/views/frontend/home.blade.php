@@ -88,65 +88,44 @@
                     <div class="col-8 content">
                         <div class="row">
                             @foreach($categories as $category)
-                            <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
-                                <div class="section-title">
-                                    <h3 class="color-aqua"><a href="blog-category-01.html" title="">{{$category->name}}</a></h3>
-                                </div><!-- end title -->
+                                <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="section-title">
+                                        <h3 class="color-aqua"><a href="blog-category-01.html"
+                                                                  title="">{{$category->name}}</a></h3>
+                                    </div><!-- end title -->
 
-                                <div class="row">
-                                    @foreach($category->list_blog as $blog)
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="blog-box">
-                                            <div class="post-media">
-                                                <a href="single.html" title="">
-                                                    <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
-                                                    <div class="hovereffect">
-                                                        <span></span>
-                                                    </div><!-- end hover -->
-                                                </a>
-                                            </div><!-- end media -->
-                                            <div class="blog-meta big-meta">
-                                                <h4><a href="single.html" title="">The golden rules you need to know for a
-                                                        positive life</a></h4>
-                                                <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                                {{-- <small><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></small> --}}
-                                                <small><a href="single.html" title="">24-12-2021</a></small>
-                                                <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i
-                                                            class="fa fa-heart" aria-hidden="true"> 100</i></span></small>
-                                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i
-                                                            class="fa fa-comment" aria-hidden="true"> 17</i></span></small>
-                                            </div><!-- end meta -->
-                                        </div><!-- end blog-box -->
-
-                                        <hr class="invis">
-
-                                        <div class="blog-box">
-                                            <div class="post-media">
-                                                <a href="single.html" title="">
-                                                    <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
-                                                    <div class="hovereffect">
-                                                        <span></span>
-                                                    </div><!-- end hover -->
-                                                </a>
-                                            </div><!-- end media -->
-                                            <div class="blog-meta big-meta">
-                                                <h4><a href="single.html" title="">The golden rules you need to know for a
-                                                        positive life</a></h4>
-                                                <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                                {{-- <small><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></small> --}}
-                                                <small><a href="single.html" title="">24-12-2021</a></small>
-                                                <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i
-                                                            class="fa fa-heart" aria-hidden="true"> 100</i></span></small>
-                                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i
-                                                            class="fa fa-comment" aria-hidden="true"> 17</i></span></small>
-                                            </div><!-- end meta -->
-                                        </div><!-- end blog-box -->
-                                    </div><!-- end col -->
-                                    @endforeach
-                                </div><!-- end row -->
-                            </div><!-- end col -->
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            @foreach($category->list_blog as $blog)
+                                                <div class="blog-box">
+                                                    <div class="post-media">
+                                                        <a href="single.html" title="">
+                                                            <img src="{{asset('cloapedia/images/UHM.png')}}" alt=""
+                                                                 class="img-fluid">
+                                                            <div class="hovereffect">
+                                                                <span></span>
+                                                            </div><!-- end hover -->
+                                                        </a>
+                                                    </div><!-- end media -->
+                                                    <div class="blog-meta big-meta">
+                                                        <h4><a href="single.html" title="">{{$blog->blog_heading}}</a></h4>
+                                                        <p>{{$blog->blog_content}}</p>
+                                                        {{-- <small><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></small> --}}
+                                                        <small><a href="single.html" title="">24-12-2021</a></small>
+                                                        <small><a href="blog-author.html" title="">by Hoanh</a></small>
+                                                        <small class="blog-meta--like-cmt"><span class="blog-likes"><i
+                                                                    class="fa fa-heart"
+                                                                    aria-hidden="true"> 100</i></span></small>
+                                                        <small class="blog-meta--like-cmt"><span class="blog-likes"><i
+                                                                    class="fa fa-comment"
+                                                                    aria-hidden="true"> 17</i></span></small>
+                                                    </div><!-- end meta -->
+                                                </div><!-- end blog-box -->
+                                                <hr class="invis">
+                                            @endforeach
+                                        </div><!-- end col -->
+                                    </div><!-- end row -->
+                                </div><!-- end col -->
                             @endforeach
                         </div>
                     </div>
@@ -155,7 +134,8 @@
                             <section id="about-us">
                                 <h3 class="about--heading mx-5">ABOUT US</h3>
                                 <div class="admin-infor--wrapper mx-5">
-                                    <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt="" class="admin-infor--avatar">
+                                    <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""
+                                         class="admin-infor--avatar">
                                     <span class="admin-infor--item"><b>Nguyễn Hoàng Anh</b></span>
                                     <span class="admin-infor--name"><b>20194474</b></span>
                                     <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
