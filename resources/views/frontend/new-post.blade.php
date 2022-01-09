@@ -29,7 +29,7 @@
                             <i class="fa fa-cog"></i>
                         </button>
                         <div class="dropdown-menu  dropdown-menu-right">
-                            <button onclick="" class="dropdown-item" href="#" style="color:#000000"><b>Chỉnh sửa bài
+                            <button onclick="" class="dropdown-item" href="/edit-post/{{$blog->id}}" style="color:#000000"><b>Chỉnh sửa bài
                                     viết</b></button>
                         </div>
                     </div>
