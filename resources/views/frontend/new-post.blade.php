@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
+                <button type="button" onclick="follow(1)" class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
             </div>
             <section id="comments-section">
                 <form id="add-a-comment" onsubmit="submit_comment(event)">
