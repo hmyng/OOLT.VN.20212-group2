@@ -15,7 +15,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{{asset('cloapedia/images/gau-icon.png')}}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('cloapedia/images/gau-icon.png')}}" type="image/x-icon"/>
     <link rel="apple-touch-icon" href="{{asset('cloapedia/images/gau-icon.png')}}">
 
     <!-- Design fonts -->
@@ -39,7 +39,8 @@
     <!-- Colors for this template -->
     <link href="{{asset('cloapedia/css/colors.css')}}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}"></script>
       <script src="https://oss.maxcdn.com/libs/respond.{{asset('cloapedia/js/1.4.2/respond.min.js')}}"></script>
     <![endif]-->
@@ -47,25 +48,26 @@
 </head>
 
 <body>
-     <!-- LOADER -->
-     <div id="preloader">
-        <img class="preloader" src="{{asset('cloapedia/images/loader.gif')}}" alt="">
-    </div><!-- end loader -->
-    <!-- END LOADER -->
+<!-- LOADER -->
+<div id="preloader">
+    <img class="preloader" src="{{asset('cloapedia/images/loader.gif')}}" alt="">
+</div><!-- end loader -->
+<!-- END LOADER -->
 
-    @include('frontend.components.search')
-    @include('frontend.components.topbar')
-    @include('frontend.components.header')
-    @yield('content')
-    @include('frontend.components.footer')
+@include('frontend.components.search')
+@include('frontend.components.topbar')
+@include('frontend.components.header')
+@yield('content')
+@include('frontend.components.footer')
 
 
 <!-- Core JavaScript
     ================================================== -->
-    <script src="{{asset('cloapedia/js/jquery.min.js')}}"></script>
-    <script src="{{asset('cloapedia/js/tether.min.js')}}"></script>
-    <script src="{{asset('cloapedia/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('cloapedia/js/custom.js')}}"></script>
+<script src="{{asset('cloapedia/js/jquery.min.js')}}"></script>
+<script src="{{asset('cloapedia/js/tether.min.js')}}"></script>
+<script src="{{asset('cloapedia/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('cloapedia/js/custom.js')}}"></script>
+
 </body>
 
 </html>
