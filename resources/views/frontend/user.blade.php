@@ -9,7 +9,7 @@
     <div class="profile-wrapper">
         <div class="profile-items--container">
             <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
-            <div class="profile-item-name"><b>HoanhDZ</b> <i class="fa fa-check profile-item-check-icon" aria-hidden="true"></i></div>
+            <div class="profile-item-name"><b>{{$user->user_name}}</b> <i class="fa fa-check profile-item-check-icon" aria-hidden="true"></i></div>
             <div class="profile-item-infor">
                 <span>Bài đã đăng: <b>100</b></span>
                 <span>Lượt Like: <b>1900</b></span>
@@ -23,8 +23,8 @@
                  <h3 class="sidebar-header">Giới thiệu <i class="fa fa-user" aria-hidden="true"></i></h3>
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
                  <button  class="sidebar-follow-btn" onclick="follow(1)"><span id="follow-btn">Follow</span> <i id="follow-btn-icon" class="fa fa-plus" aria-hidden="true"></i></button>
-                 <div class="sidebar-item">Tên đầy đủ: <b> Nguyen Hoang Anh</b></div>
-                 <div class="sidebar-item">Nickname: <b> HoanhDz</b></div>
+                 <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>
+                 <div class="sidebar-item">Nickname: <b> {{$user->account}}</b></div>
                  <div class="sidebar-item">Ngày sinh: <b> 07/10/2001</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
             </div>
