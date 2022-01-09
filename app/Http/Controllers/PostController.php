@@ -13,4 +13,8 @@ class PostController extends Controller
         //dd($blog);
         return view('frontend.new-post', compact('categories', 'blog'));
     }
+
+    public function edit(Blog $blog){
+        return view('frontend.edit_post', compact('blog'));
+    }
 }

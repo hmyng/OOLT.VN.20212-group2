@@ -15,7 +15,7 @@
                             {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
                             <li class="breadcrumb-item active">Sửa_Bài</li>
                         </ol>
-                        <form id="post_a_status" class="needs-validation" onsubmit="submit_form(event)">
+                        <form id="post_a_status" class="needs-validation" onsubmit="edit_blog(event, 1)">
                             <div class="mb-3 mt-3">
                                 <b><label for="heading">Tiêu đề :</label></b>
                                 <input type="text" placeholder="Nhập tiêu đề" name="heading" id="heading"
@@ -49,9 +49,9 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-    function submit_form(event) {
+    function edit_blog(event, blog_id) {
                     event.preventDefault();
-                    axios.post('/web-api/blog', {
+                    axios.put('/web-api/blog/' + blog_id, {
                         blog_heading: $('#heading').val(),
                         blog_content: $('#post-content').val(),
                         cat_id: $('#category').val(),

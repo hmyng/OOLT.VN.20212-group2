@@ -71,9 +71,8 @@ Route::get('/user', function () {
 Route::get('/user-post', function () {
     return view('frontend.post_a_status');
 });
-Route::get('/edit-post', function () {
-    return view('frontend.edit_post');
-});
+Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
+
 Route::get('/search-result', function () {
     return view('frontend.search-result');
 });
