@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    <title>Home</title>
+    <title>Post</title>
 @endsection
 @section('content')
     <section class="section wb">
@@ -18,10 +18,18 @@
                     <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                     <div class="post-author--infor">
                         <a class="post-author--name" href="" style="color: #000000;">HoanhDZ</a>
-                        <button type="button" class="post-author--follow-btn"><i class="fa fa-plus"></i> Theo dõi
+                        <button type="button" onclick="follow()" class="post-author--follow-btn"><i id="follow-btn-icon" class="fa fa-plus"></i> <span id="follow-btn">Theo dõi</span>
                         </button>
                         <br><span class="post-author--posting-time">23 giờ</span>
                     </div>
+                    <div class="dropdown" style="position:absolute; right:0px">
+                    <button type="button" class="post-alter--btn" data-toggle="dropdown" >
+                        <i  class="fa fa-cog"></i>
+                     </button>
+                     <div class="dropdown-menu  dropdown-menu-right">
+                       <a class="dropdown-item" href="#" style="color:#000000"><b>Chỉnh sửa bài viết</b></a>
+                    </div>
+                </div>
                 </div>
                 <div id="post-image-slider" class="carousel slide" data-ride="carousel">
                     <!-- Indicators/dots -->
@@ -81,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
+                <button type="button"  class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
             </div>
             <section id="comments-section">
                 <form id="add-a-comment" onsubmit="submit_comment(event)">
@@ -144,6 +152,21 @@
                 }).catch(function (e) {
                     console.log(e)
                 })
+            }
+
+
+            function follow(){
+                    let f = document.getElementById('follow-btn-icon');
+                    let content = document.getElementById('follow-btn')
+                    if ($("#follow-btn-icon").hasClass("fa-plus")) {
+                                f.classList.remove('fa-plus');
+                                f.classList.add('fa-check');
+                                content.innerHTML = 'Bỏ theo dõi';
+                    } else {
+                                f.classList.add('fa-plus');
+                                f.classList.remove('fa-check');
+                                content.innerHTML = 'Theo dõi';
+                    }
             }
 
 

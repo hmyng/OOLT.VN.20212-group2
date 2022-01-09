@@ -2098,3 +2098,10 @@
             border: none;
             margin: 0.5rem 0;
         }
+        
+        .post-alter--btn {
+            font-size: 2rem;
+            padding: 0.5rem;
+            background-color: #fff;
+            border: none;
+        }
