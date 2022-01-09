@@ -65,16 +65,12 @@ Route::get('/home', [BlogController::class,'index'])->name('home');
 Route::get('/post',
     [PostController::class, 'index']
 );
-Route::get('/user', function () {
-    return view('frontend.user');
-});
-Route::get('/user-post', function () {
-    return view('frontend.post_a_status');
-});
+Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::get('/user-post', [UserController::class, 'post'])->name('user-post');
 
-Route::get('/search-result', function () {
-    return view('frontend.search-result');
-});
+// Route::get('/search-result', [
+//     SearchController::class, 'index'
+// ]);
 Route::get('/search-result-fail', function () {
     return view('frontend.search-result-fail');
 });
