@@ -84,6 +84,7 @@
                         </div>
                         <span class="post-category"><b>Chia sẻ kinh nghiệm học</b></span>
                     </div>
+                    
                     <div class="content-post-content">
                         <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px">Làm thế nào để được A+ môn CSDL lớp thầy Phương ?</h3>
                                 <p style="margin: 0px">Đ có kinh nghiệm gì đâu học đi em ê ko hối hận đấy :v</p>
