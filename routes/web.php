@@ -65,8 +65,10 @@ Route::get('/home', [BlogController::class,'index'])->name('home');
 Route::get('/post',
     [PostController::class, 'index']
 );
+
 Route::get('/user', [UserController::class, 'index'])->name('user');
 Route::get('/user-post', [UserController::class, 'post'])->name('user-post');
+Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
 
 // Route::get('/search-result', [
 //     SearchController::class, 'index'
@@ -81,4 +83,4 @@ Route::get('/blog-category', function () {
 Route::get('/new-post/{blog}', [PostController::class, 'index']);
 
 
-Route::get('/profile/{user}', [UserController::class, 'show']);
+Route::get('/user/{user}', [UserController::class, 'show']);

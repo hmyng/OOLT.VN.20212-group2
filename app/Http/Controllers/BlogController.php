@@ -14,7 +14,9 @@ class BlogController extends Controller
         $pageNumber = 15;
         // $blogs = Blog::paginate($pageNumber);
         $categories = Category::all();
-        
+        foreach ($categories as $category){
+            $category->list_blog = $category->blogs;
+        }
 
         //dd($categories[0]->cat_name);
         // return view('frontend.home', ['blogs'=>$blogs]);
