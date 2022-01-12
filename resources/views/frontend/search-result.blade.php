@@ -6,7 +6,7 @@
 @section('content')
 <section class="section wb" >
     <div class="container">
-        <div class="search-result-header"><b>Kết quả tìm kiếm cho: "Chia sẻ kinh nghiệm học" : </b></div>
+        <div class="search-result-header"><b>Kết quả tìm kiếm cho: "{{$mySearch}}" : </b></div>
         <div class="row">
             @foreach ($search as $searchResult)
             <div class="col-lg-4 col-md-6">
@@ -14,7 +14,7 @@
                     <div class="post-author--wrapper" style="margin: 0.5rem 0.5rem">
                         <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                         <div class="post-author--infor">
-                            <a class="post-author--name" href="" style="color: #000000;"><b>Username</b></a>
+                            <a class="post-author--name" href="" style="color: #000000;"><b>{{$searchResult->user_name}}</b></a>
                             <br><span class="post-author--posting-time">{{$searchResult->created_at}}</span>
                         </div>
                         <span class="post-category"><b>{{$searchResult->cat_name}}</b></span>
