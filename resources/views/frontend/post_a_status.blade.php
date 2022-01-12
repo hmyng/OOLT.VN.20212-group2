@@ -25,10 +25,10 @@
                                     <select class="form-select" id="category" name="category"
                                             style="height: 38px; margin : 1px">
                                         <option>Chọn chủ đề</option>
-                                        <option value="1">Tiếng Nhật</option>
+                                        <option value="4">Tiếng Nhật</option>
                                         <option value="2">Kiến thức IT</option>
-                                        <option value="3">Chia sẻ kinh nghiệm học</option>
-                                        <option value="4">Chia sẻ tài liệu</option>
+                                        <option value="1">Chia sẻ kinh nghiệm học</option>
+                                        <option value="3">Chia sẻ tài liệu</option>
                                         <option value="5">Khác..</option>
                                     </select>
                                     {{-- <label for="sel1" class="form-label"></label> --}}
@@ -39,7 +39,7 @@
                                 <textarea placeholder="Nhập nội dung ..." class="form-control mb-3 mt-2" rows="5"
                                           id="post-content" name="text" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -57,7 +57,8 @@
                         cat_id: $('#category').val(),
                         blog_display: "abcxyz",
                     }).then(function (res) {
-                        console.log(res)
+                        $('#submit-btn').attr('disabled', true);
+                        alert('Đăng bài thành công !');
                     }).catch(function (e) {
                         console.log(e)
                     })
