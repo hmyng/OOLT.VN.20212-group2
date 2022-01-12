@@ -10,14 +10,16 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $categories = Category::
-            // ->join('users', 'users.id', '=', 'author_id')
-            where('cat_name', 'like', '%' . $request->get('search') . '%')
-            ->first();
+        dd($request->mySearch);
+        //dd($request->get('mySearch'));
+        $categories = Category::all();
+        $search = Category::join('blogs', 'categories.id', '=', 'cat_id')
+            ->where('cat_name', 'like', '%' . $request->get('search') . '%')
+            ->get();
        // dd($categories->blogs);
         if(empty($categories[0])){
-            return view('frontend.search-result-fail');
+            return view('frontend.search-result-fail', compact('categories'));
         }
-        return view('frontend.search-result', compact('categories'));
+        return view('frontend.search-result', compact('search', 'categories'));
     }
 }
