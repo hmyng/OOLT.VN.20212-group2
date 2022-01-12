@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\BlogApiController;
 use App\Http\Controllers\API\CommentApiController;
+use App\Http\Controllers\API\UserApiController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -27,11 +28,11 @@ $routeAuth = function () {
     Route::post('/blog', [BlogApiController::class, 'store']);
     Route::put('/blog/{blog:id}', [BlogApiController::class, 'update']);
     Route::delete('/blog/{blog:id}', [BlogApiController::class, 'destroy']);
-    Route::post('/blog/{blog:id}', [BlogApiController::class, 'likeBlog']);
     Route::post('/comment', [CommentApiController::class, 'store']);
     Route::put('/comment/{comment}', [CommentApiController::class, 'update']);
     Route::delete('/comment/{comment}', [CommentApiController::class, 'destroy']);
     Route::post('/like/{blog}', [BlogApiController::class, 'likeBlog']);
+    Route::post('/follow/{user}', [UserApiController::class, 'follow']);
 };
 
 // /web-api/blog
@@ -56,23 +57,17 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 //public route
 
-Route::get('/search', [SearchController::class, 'index']);
-Route::post('/search', [SearchController::class, 'store'])->name('search');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+//Route::post('/search', [SearchController::class, 'store'])->name('search');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
-// Route::get('/post',
-//     [PostController::class, 'index']
-// );
-Route::get('/user', function () {
-    return view('frontend.user');
-});
+
 Route::get('/user-post', function () {
     return view('frontend.post_a_status');
 });
-Route::get('/edit-post', function () {
-    return view('frontend.edit_post');
-});
+Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
+
 Route::get('/search-result', function () {
     return view('frontend.search-result');
 });
@@ -83,11 +78,7 @@ Route::get('/blog-category', function () {
     return view('frontend.blog-category');
 });
 
-Route::get('/new-post', function () {
-    return view('frontend.new-post');
-});
-Route::get('/home', [BlogController::class,'index']);
+Route::get('/new-post/{blog}', [PostController::class, 'index']);
 
 
-
-Route::get('/profile/{user}', [UserController::class, 'show']);
+Route::get('/user/{user}', [UserController::class, 'show']);

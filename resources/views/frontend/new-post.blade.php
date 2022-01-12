@@ -18,18 +18,21 @@
                     <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                     <div class="post-author--infor">
                         <a class="post-author--name" href="" style="color: #000000;">HoanhDZ</a>
-                        <button type="button" onclick="follow()" class="post-author--follow-btn"><i id="follow-btn-icon" class="fa fa-plus"></i> <span id="follow-btn">Theo dõi</span>
+                        <button type="button" onclick="follow(1)" class="post-author--follow-btn"><i id="follow-btn-icon"
+                                                                                                    class="fa fa-plus"></i>
+                            <span id="follow-btn">Theo dõi</span>
                         </button>
                         <br><span class="post-author--posting-time">23 giờ</span>
                     </div>
                     <div class="dropdown" style="position:absolute; right:0px">
-                    <button type="button" class="post-alter--btn" data-toggle="dropdown" >
-                        <i  class="fa fa-cog"></i>
-                     </button>
-                     <div class="dropdown-menu  dropdown-menu-right">
-                       <a class="dropdown-item" href="#" style="color:#000000"><b>Chỉnh sửa bài viết</b></a>
+                        <button type="button" class="post-alter--btn" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i>
+                        </button>
+                        <div class="dropdown-menu  dropdown-menu-right">
+                            <button onclick="" class="dropdown-item" href="/edit-post/{{$blog->id}}" style="color:#000000"><b>Chỉnh sửa bài
+                                    viết</b></button>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div id="post-image-slider" class="carousel slide" data-ride="carousel">
                     <!-- Indicators/dots -->
@@ -89,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button"  class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
+                <button type="button" onclick="follow(1)" class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
             </div>
             <section id="comments-section">
                 <form id="add-a-comment" onsubmit="submit_comment(event)">
@@ -135,12 +138,10 @@
                 </div>
             </section>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
             function liked(blog_id) {
                 let like = document.getElementById('like');
-                axios.post('/web-api/like/' + blog_id, {
-                }).then(function (res) {
+                axios.post('/web-api/like/' + blog_id, {}).then(function (res) {
                     console.log(res);
                     if ($("#like").hasClass("fa-heart-o")) {
                         like.classList.remove('fa-heart-o');
@@ -155,25 +156,30 @@
             }
 
 
-            function follow(){
-                    let f = document.getElementById('follow-btn-icon');
-                    let content = document.getElementById('follow-btn')
+            function follow(user_id) {
+                let f = document.getElementById('follow-btn-icon');
+                let content = document.getElementById('follow-btn')
+                axios.post('/web-api/auth/follow/' + user_id).then(function (res) {
                     if ($("#follow-btn-icon").hasClass("fa-plus")) {
-                                f.classList.remove('fa-plus');
-                                f.classList.add('fa-check');
-                                content.innerHTML = 'Bỏ theo dõi';
+                        f.classList.remove('fa-plus');
+                        f.classList.add('fa-check');
+                        content.innerHTML = 'Bỏ theo dõi';
                     } else {
-                                f.classList.add('fa-plus');
-                                f.classList.remove('fa-check');
-                                content.innerHTML = 'Theo dõi';
+                        f.classList.add('fa-plus');
+                        f.classList.remove('fa-check');
+                        content.innerHTML = 'Theo dõi';
                     }
+                }).catch(function (e) {
+                    console.log(e)
+                })
+
             }
 
-
-            function submit_comment(event){
+            function submit_comment(event) {
                 event.preventDefault();
                 axios.post('/web-api/auth/comment', {
-                    comment_content: 'this is a cmt'
+                    comment_content: 'this is a cmt',
+                    blog_id:1
                 }).then(function (res) {
                     console.log(res)
                 }).catch(function (e) {

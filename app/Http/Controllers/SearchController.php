@@ -8,14 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
-    public function store(Request $request)
+    public function index(Request $request)
     {
-        if ($request->search) {
-            $categories = Category::where('cat_name', 'like', '%' . $request->get('search') . '%')
-                ->paginate(4);
-        } else {
-            $categories = Category::paginate(4);
+        $categories = Category::
+            // ->join('users', 'users.id', '=', 'author_id')
+            where('cat_name', 'like', '%' . $request->get('search') . '%')
+            ->first();
+       // dd($categories->blogs);
+        if(empty($categories[0])){
+            return view('frontend.search-result-fail');
         }
-        return view('front-end.contents.productList', ['categories' => $categories]);
+        return view('frontend.search-result', compact('categories'));
     }
 }
