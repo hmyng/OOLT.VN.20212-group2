@@ -29,7 +29,7 @@
                             <li class="list-inline-item nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown" href=""><img class="topbar-login-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">{{auth()->user()->user_name}}</a>
                                 <div class="dropdown-menu">
-                                    {{-- <a class="dropdown-item" href="{{route('user')}}">Trang cá nhân</a> --}}
+                                    <a class="dropdown-item" href="/user/{{Auth::user()->id}}">Trang cá nhân</a>
                                     <a class="dropdown-item" href="{{route('user-post')}}">Đăng bài</a>
                                     <a class="dropdown-item" href="{{route('logout')}}">Đăng xuất</a>
                                 </div>

@@ -1996,12 +1996,15 @@
         }
         
         .post-category {
-            background-color: rgb(151, 233, 151);
+            min-width: 7rem;
+            font-size: 0.6rem;
+            background-color: rgb(151, 233, 208);
             padding: 0 0.5rem;
             border-radius: 16px;
             display: flex;
             align-items: center;
-            margin: 0px 1rem;
+            justify-content: center;
+            margin: 0px 0px 0px 1.4rem;
             border: 1px solid #000000;
         }
         
