@@ -19,7 +19,7 @@
                     <div class="post-author--infor">
                         <a class="post-author--name" href="" style="color: #000000;">HoanhDZ</a>
                         <button type="button" onclick="follow(1)" class="post-author--follow-btn"><i id="follow-btn-icon"
-                                                                                                    class="fa fa-plus"></i>
+                                                                                                   class="fa fa-plus"></i>
                             <span id="follow-btn">Theo dõi</span>
                         </button>
                         <br><span class="post-author--posting-time">23 giờ</span>
