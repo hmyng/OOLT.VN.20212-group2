@@ -14,9 +14,9 @@
                             <li class="list-inline-item nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="display: inline; padding: 0px">CATEGORIES</a>
                                     <div class="dropdown-menu">
-                                    {{-- @foreach($categories as $category)
+                                    @foreach($categories as $category)
                                       <a class="dropdown-item" href="#">{{$category->cat_name}}</a>
-                                    @endforeach --}}
+                                    @endforeach
                                     </div>
                             </li>
 
