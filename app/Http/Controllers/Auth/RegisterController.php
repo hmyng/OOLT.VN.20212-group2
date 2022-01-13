@@ -20,7 +20,7 @@ class RegisterController extends Controller
             'username' => 'required|max:255|unique:users,user_account',
             'password' => 'required|confirmed|min:6'
         ]);
-        
+        //dd($request->password);
         //store user
         User::create([
             'user_name' => $request->name,
@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'user_role' => '1',
         ]);
         //sign the user in
-        dd(auth()->attempt($request->only('user_account','password')));
+        //dd(auth()->attempt($request->only('user_account','password')));
         auth()->attempt($request->only('user_account','password'));
         //redirect
         return redirect()->route('login');
