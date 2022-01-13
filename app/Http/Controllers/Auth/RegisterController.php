@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'user_role' => '1',
         ]);
         //sign the user in
-        dd(auth()->attempt($request->only('user_account','password')));
+        // dd(auth()->attempt($request->only('user_account','password')));
         auth()->attempt($request->only('user_account','password'));
         //redirect
         return redirect()->route('login');
