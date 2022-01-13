@@ -20,8 +20,13 @@
                         <span class="post-category"><b>{{$searchResult->cat_name}}</b></span>
                     </div>
                     <div class="content-post-content">
+
                         <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px">{{$searchResult->blog_heading}}</h3>
                                 <p style="margin: 0px">{{$searchResult->blog_content}}</p>
+
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px">{{$category->blog_heading}}</h3>
+                                <p style="margin: 0px">{{$category->blog_content}}</p>
+
                     </div>
                     <div class="content-post-image--container">
                     <img src="upload/Ezreal_20.jpg" alt="" class="content--post-image" style="width:100%;">
