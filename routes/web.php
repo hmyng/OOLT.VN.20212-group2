@@ -63,12 +63,21 @@ Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/home', [BlogController::class,'index'])->name('home');
 
 
+Route::get('/post',
+    [PostController::class, 'index']
+);
+
+Route::get('/user', [UserController::class, 'index'])->name('user');
+
+
+
 Route::get('/user-post', [PostController::class, 'post']);
+
 Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
 
-Route::get('/search-result', function () {
-    return view('frontend.search-result');
-});
+// Route::get('/search-result', [
+//     SearchController::class, 'index'
+// ]);
 Route::get('/search-result-fail', function () {
     return view('frontend.search-result-fail');
 });
