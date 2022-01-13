@@ -141,7 +141,7 @@
         <script>
             function liked(blog_id) {
                 let like = document.getElementById('like');
-                axios.post('/web-api/like/' + blog_id, {}).then(function (res) {
+                axios.post('/web-api/like/' + blog_id).then(function (res) {
                     console.log(res);
                     if ($("#like").hasClass("fa-heart-o")) {
                         like.classList.remove('fa-heart-o');

@@ -24,7 +24,7 @@
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
                  <button  class="sidebar-follow-btn" onclick="follow(1)"><span id="follow-btn">Follow</span> <i id="follow-btn-icon" class="fa fa-plus" aria-hidden="true"></i></button>
                  <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>
-                 <div class="sidebar-item">Nickname: <b> {{$user->account}}</b></div>
+                 <div class="sidebar-item">Nickname: <b> {{$user->user_account}}</b></div>
                  <div class="sidebar-item">Ngày sinh: <b> 07/10/2001</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
             </div>
