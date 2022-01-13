@@ -69,7 +69,7 @@
     <div class="dmtop">Scroll to Top</div>
     {{-- </div> --}}
     <script>
-        function follow(){
+        function follow(user_id){
             let f = document.getElementById('follow-btn-icon');
             let content = document.getElementById('follow-btn')
             axios.post('/web-api/auth/follow/' + user_id).then(function (res) {
