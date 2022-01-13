@@ -85,13 +85,14 @@
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-8 content">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                         <div class="row">
                             @foreach($categories as $category)
-                                <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
+                            @if($category->id <= 2)
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="section-title">
                                         <h3 class="color-aqua"><a href="blog-category-01.html"
-                                                                  title="">{{$category->name}}</a></h3>
+                                                                  title="">{{$category->cat_name}}</a></h3>
                                     </div><!-- end title -->
 
                                     <div class="row">
@@ -126,10 +127,11 @@
                                         </div><!-- end col -->
                                     </div><!-- end row -->
                                 </div><!-- end col -->
+                                @endif
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-4 aboutUs">
+                    {{-- <div class="col-4 aboutUs"> --}}
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <section id="about-us">
                                 <h3 class="about--heading mx-5">ABOUT US</h3>
@@ -162,7 +164,7 @@
                                 </div>
                             </section>
                         </div><!-- end col -->
-                    </div>
+                    {{-- </div> --}}
 
                 </div><!-- end row -->
 
@@ -180,13 +182,15 @@
                 <hr class="invis1">
 
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="blog-list clearfix">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    @foreach($categories as $category)
+                        @if($category->id == 3)
+                        <div class="blog-list clearfix" style="margin: 0px 15px">
                             <div class="section-title">
-                                <h3 class="color-green"><a href="blog-category-01.html" title="">Tiếng Nhật</a></h3>
+                                <h3 class="color-green"><a href="blog-category-01.html" title="">{{$category->cat_name}}</a></h3>
                             </div><!-- end title -->
-
-                            <div class="blog-box row">
+                            @foreach($category->list_blog as $blog)
+                            <div class="blog-box row" >
                                 <div class="col-md-4 ">
                                     <div class="post-media ">
                                         <a href="single.html" title="">
@@ -198,9 +202,8 @@
                                 </div><!-- end col -->
 
                                 <div class="blog-meta big-meta col-md-7">
-                                    <h4><a href="single.html" title="">5 Beautiful buildings you need to visit without
-                                            dying</a></h4>
-                                    <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
+                                    <h4><a href="single.html" title="">{{$blog->blog_heading}}</a></h4>
+                                    <p>{{$blog->blog_content}}</p>
                                     <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
                                     <small><a href="blog-author.html" title="">by Hoanh</a></small>
                                     <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
@@ -210,93 +213,21 @@
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                             <hr class="invis">
-
-                            <div class="blog-box row">
-                                <div class="col-md-4 ">
-                                    <div class="post-media ">
-                                        <a href="single.html" title="">
-                                            <img src="{{asset('cloapedia/images/UHM.png')}}" alt=""
-                                                 class="img-fluid post-media-image">
-                                            {{-- <div class="hovereffect"></div> --}}
-                                        </a>
-                                    </div><!-- end media -->
-                                </div><!-- end col -->
-
-                                <div class="blog-meta big-meta col-md-7">
-                                    <h4><a href="single.html" title="">5 Beautiful buildings you need to visit without
-                                            dying</a></h4>
-                                    <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                    <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                    <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
-                                                                                                   aria-hidden="true"> 100</i></span></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment"
-                                                                                                   aria-hidden="true"> 17</i></span></small>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-
-                            <hr class="invis">
-
-                            <div class="blog-box row">
-                                <div class="col-md-4">
-                                    <div class="post-media ">
-                                        <a href="single.html" title="">
-                                            <img src="{{asset('cloapedia/images/UHM.png')}}" alt=""
-                                                 class="img-fluid post-media-image">
-                                            {{-- <div class="hovereffect"></div> --}}
-                                        </a>
-                                    </div><!-- end media -->
-                                </div><!-- end col -->
-
-                                <div class="blog-meta big-meta col-md-7">
-                                    <h4><a href="single.html" title="">Let's make an introduction to the glorious world
-                                            of history</a></h4>
-                                    <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                    <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                    <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
-                                                                                                   aria-hidden="true"> 100</i></span></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment"
-                                                                                                   aria-hidden="true"> 17</i></span></small>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-
-                            <hr class="invis">
-
-                            <div class="blog-box row">
-                                <div class="col-md-4">
-                                    <div class="post-media ">
-                                        <a href="single.html" title="">
-                                            <img src="{{asset('cloapedia/images/UHM.png')}}" alt=""
-                                                 class="img-fluid post-media-image">
-                                            {{-- <div class="hovereffect"></div> --}}
-                                        </a>
-                                    </div><!-- end media -->
-                                </div><!-- end col -->
-
-                                <div class="blog-meta big-meta col-md-7">
-                                    <h4><a href="single.html" title="">Did you see the most beautiful sea in the
-                                            world?</a></h4>
-                                    <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                    <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                    <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
-                                                                                                   aria-hidden="true"> 100</i></span></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment"
-                                                                                                   aria-hidden="true"> 17</i></span></small>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-                        </div><!-- end blog-list -->
-
-                        <hr class="invis">
-
+                            @endforeach
+                        </div>
+                        @endif
+                    @endforeach
+                    <hr class="invis">
                     </div><!-- end col -->
+                    {{-- </div> --}}
 
-                    <div class="col-lg-4">
-                        <div class="section-title">
-                            <h3 class="color-yellow"><a href="blog-category-01.html" title="">Chia sẻ tài liệu</a></h3>
-                        </div><!-- end title -->
-
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    @foreach($categories as $category)
+                    @if($category->id == 4)
+                    <div class="section-title">
+                    <h3 class="color-green"><a href="blog-category-01.html" title="">{{$category->cat_name}}</a></h3>
+                    </div><!-- end title -->
+                        @foreach($category->list_blog as $blog)
                         <div class="blog-box">
                             <div class="post-media">
                                 <a href="single.html" title="">
@@ -307,8 +238,8 @@
                                 </a>
                             </div><!-- end media -->
                             <div class="blog-meta">
-                                <h4><a href="single.html" title="">We are guests of ABC Design Studio - Vlog</a></h4>
-                                <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
+                                <h4><a href="single.html" title="">{{$blog->blog_heading}}</a></h4>
+                                <p>{{$blog->blog_content}}</p>
                                 <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
                                 <small><a href="blog-author.html" title="">by Hoanh</a></small>
                                 <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
@@ -319,30 +250,9 @@
                         </div><!-- end blog-box -->
 
                         <hr class="invis">
-
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span class="hovereffect"></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">Nostalgia at work</a></h4>
-                                <p>Giới hạn kí tự kiểu gì cho mấy cái blog cân nhau nhớ :v</p>
-                                <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
-                                                                                               aria-hidden="true"> 100</i></span></small>
-                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment"
-                                                                                               aria-hidden="true"> 17</i></span></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
+                        @endforeach
+                    @endif
+                    @endforeach
                     </div><!-- end col -->
                 </div><!-- end row -->
 

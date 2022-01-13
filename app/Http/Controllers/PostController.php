@@ -17,4 +17,10 @@ class PostController extends Controller
     public function edit(Blog $blog){
         return view('frontend.edit_post', compact('blog'));
     }
+
+    public function post(Blog $blog){
+        $categories = Category::all();
+        //dd($blog);
+        return view('frontend.post_a_status', compact('categories', 'blog'));
+    }
 }
