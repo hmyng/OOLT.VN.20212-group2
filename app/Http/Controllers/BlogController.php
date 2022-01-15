@@ -16,6 +16,10 @@ class BlogController extends Controller
         $categories = Category::all();
         foreach ($categories as $category){
             $category->list_blog = $category->blogs;
+            foreach ($category->list_blog as $item)
+            {
+                $item->author_info = $item->author;
+            }
         }
 
         //dd($categories[0]->cat_name);
