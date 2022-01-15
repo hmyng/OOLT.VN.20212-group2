@@ -113,7 +113,9 @@
                                                         <p>{{$blog->blog_content}}</p>
                                                         {{-- <small><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></small> --}}
                                                         <small><a href="single.html" title="">24-12-2021</a></small>
+
                                                         <small><a href="blog-author.html" title="">by {{$blog->author_info->user_name}}</a></small>
+
                                                         <small class="blog-meta--like-cmt"><span class="blog-likes"><i
                                                                     class="fa fa-heart"
                                                                     aria-hidden="true"> 100</i></span></small>

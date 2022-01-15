@@ -10,8 +10,10 @@ class UserController extends Controller
 {
     public function show(User $user) // laravel 8 tu dong mapping nen k can tim user theo id nua
     {
+        $categories = Category::all();
         $blogs = Blog::where('author_id', $user->id)->get();
-        return view('frontend.user', ['user' => $user, 'blogs' => $blogs]);
+        // dd($user);
+        return view('frontend.user', compact('user', 'blogs', 'categories'));
     }
     public function index()
     {

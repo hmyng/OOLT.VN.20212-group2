@@ -57,12 +57,14 @@ class BlogApiController extends APIController
     {
         $like = Like::where('blog_id', $blog->id)->where('liker_id', $this->user->id)->first();
         if (!empty($like)) {
+            dd('Delete');
             $like->delete();
             $this->respondSuccessWithMessage("Unlike");
         } else {
             $like = new Like;
             $like->liker_id = $this->user->id;
             $like->blog_id = $blog->id;
+            dd('Like');
             $this->respondSuccessWithMessage("Like");
         }
 

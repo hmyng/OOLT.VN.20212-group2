@@ -24,7 +24,7 @@
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
                  <button  class="sidebar-follow-btn" onclick="follow(1)"><span id="follow-btn">Follow</span> <i id="follow-btn-icon" class="fa fa-plus" aria-hidden="true"></i></button>
                  <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>
-                 <div class="sidebar-item">Nickname: <b> {{$user->account}}</b></div>
+                 <div class="sidebar-item">Nickname: <b> {{$user->user_account}}</b></div>
                  <div class="sidebar-item">Ngày sinh: <b> 07/10/2001</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
             </div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="content-post-content">
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px">{{$blog->blog_heading}}</h3>
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$blog->blog_heading}}</a></h3>
                                 <p style="margin: 0px">{{$blog->blog_content}}</p>
                     </div>
                     <div class="content-post-image--container">
@@ -50,7 +50,7 @@
                     <div class="content-post-likes-cmt">
                          <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> 100</i></span>
                          <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
-                         <div class="content-like-cmt-bar container-fluid">
+                         {{-- <div class="content-like-cmt-bar container-fluid">
                              <div class="row">
                                  <div class="button-container col-6">
                                      <button id="like-button" class=""><i class="fa fa-heart-o" aria-hidden="true"></i> Like</button>
@@ -59,7 +59,7 @@
                                      <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
                                  </div>
                              </div>
-                       </div>
+                       </div> --}}
                     </div>
                 </div>
                 @endforeach

@@ -19,7 +19,7 @@
                     <div class="post-author--infor">
                         <a class="post-author--name" href="" style="color: #000000;">HoanhDZ</a>
                         <button type="button" onclick="follow(1)" class="post-author--follow-btn"><i id="follow-btn-icon"
-                                                                                                    class="fa fa-plus"></i>
+                                                                                                   class="fa fa-plus"></i>
                             <span id="follow-btn">Theo dõi</span>
                         </button>
                         <br><span class="post-author--posting-time">23 giờ</span>
@@ -141,7 +141,7 @@
         <script>
             function liked(blog_id) {
                 let like = document.getElementById('like');
-                axios.post('/web-api/like/' + blog_id, {}).then(function (res) {
+                axios.post('/web-api/like/' + blog_id).then(function (res) {
                     console.log(res);
                     if ($("#like").hasClass("fa-heart-o")) {
                         like.classList.remove('fa-heart-o');
