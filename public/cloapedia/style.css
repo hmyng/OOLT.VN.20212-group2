@@ -1957,6 +1957,7 @@
         
         .content-post-image--container {
             align-self: center;
+            margin: 0px 0.5rem;
             /* padding-bottom: 16px; */
         }
         
@@ -1965,7 +1966,7 @@
         }
         
         .content-post-content {
-            margin: 0.5rem 1rem;
+            margin: 0.5rem 0.5rem;
         }
         
         .content-post-likes-cmt {
@@ -2114,4 +2115,10 @@
             padding: 0.5rem;
             background-color: #fff;
             border: none;
+        }
+
+        .trends-header{
+            padding: 8px 16px;
+            background-color: rgb(0, 255, 200);
+            border-radius: 10px;
         }

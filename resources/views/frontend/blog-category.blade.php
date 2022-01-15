@@ -1,10 +1,10 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-<title>Result</title>
+<title></title>
 @endsection
 @section('content')
-<section class="section wb" >
+<section class="section wb">
     <div class="container">
         <div class="section-title">
             <h3 class="color-aqua"><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></h3>
@@ -30,7 +30,7 @@
                     <div class="content-post-likes-cmt">
                          <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> 100</i></span>
                          <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
-                         <div class="content-like-cmt-bar container-fluid">
+                         {{-- <div class="content-like-cmt-bar container-fluid">
                              <div class="row">
                                  <div class="button-container col-6">
                                      <button id="like-button" class=""><i class="fa fa-heart-o" aria-hidden="true"></i> Like</button>
@@ -39,7 +39,7 @@
                                      <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
                                  </div>
                              </div>
-                       </div>
+                       </div> --}}
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <div class="content-post-likes-cmt">
                          <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> 100</i></span>
                          <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
-                         <div class="content-like-cmt-bar container-fluid">
+                         {{-- <div class="content-like-cmt-bar container-fluid">
                              <div class="row">
                                  <div class="button-container col-6">
                                      <button id="like-button" class=""><i class="fa fa-heart-o" aria-hidden="true"></i> Like</button>
@@ -72,7 +72,7 @@
                                      <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
                                  </div>
                              </div>
-                       </div>
+                       </div> --}}
                     </div>
                 </div>
             </div>
@@ -96,16 +96,16 @@
                     <div class="content-post-likes-cmt">
                          <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> 100</i></span>
                          <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
-                         <div class="content-like-cmt-bar container-fluid">
-                             <div class="row">
-                                 <div class="button-container col-6">
+                         {{-- <div class="content-like-cmt-bar container-fluid">
+                            <div class="row">
+                                <div class="button-container col-6">
                                      <button id="like-button" class=""><i class="fa fa-heart-o" aria-hidden="true"></i> Like</button>
                                  </div>
-                                 <div class="button-container col-6">
+                                <div class="button-container col-6">
                                      <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
                                  </div>
-                             </div>
-                       </div>
+                            </div>
+                       </div> --}}
                     </div>
                 </div>
             </div>

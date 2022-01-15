@@ -67,6 +67,9 @@ Route::get('/post',
     [PostController::class, 'index']
 );
 
+Route::get('/trends', function () {
+    return view('frontend.trends');
+});
 
 
 
