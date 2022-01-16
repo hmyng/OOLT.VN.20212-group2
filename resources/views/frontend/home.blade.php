@@ -99,29 +99,23 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             @foreach($category->list_blog as $blog)
                                                 <div class="blog-box">
-                                                    <div class="post-media">
-                                                        <a href="single.html" title="">
-                                                            <img src="{{$blog->blog_display}}" alt=""
-                                                                 class="img-fluid">
-                                                            <div class="hovereffect">
-                                                                <span></span>
-                                                            </div><!-- end hover -->
-                                                        </a>
-                                                    </div><!-- end media -->
-                                                    <div class="blog-meta big-meta">
-                                                        <h4><a href="single.html" title="">{{$blog->blog_heading}}</a></h4>
-                                                        <p>{{$blog->blog_content}}</p>
-                                                        {{-- <small><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></small> --}}
-                                                        <small><a href="single.html" title="">24-12-2021</a></small>
-
-                                                        <small><a href="blog-author.html" title="">by {{$blog->author_info->user_name}}</a></small>
-
-                                                        <small class="blog-meta--like-cmt"><span class="blog-likes"><i
-                                                                    class="fa fa-heart"
-                                                                    aria-hidden="true"> 100</i></span></small>
-                                                        <small class="blog-meta--like-cmt"><span class="blog-likes"><i
-                                                                    class="fa fa-comment"
-                                                                    aria-hidden="true"> 17</i></span></small>
+                                                    <div class="blog-meta big-meta" >
+                                                        <h4 class="entry-title text-center" style="position: relative"><a href="/new-post/{{$blog->id}}" title="" >{{$blog->blog_heading}}</a></h4>
+                                                        <div class="text-center" style="padding: 0.5rem 0">
+                                                            <small class="blog-title--content"><a href="single.html" title="">{{$blog->updated_at->toDateString()}}</a></small>
+                                                            <small class="blog-title--content"><a href="/user/{{$blog->author_id}}" title="">by {{$blog->author_info->user_account}}</a></small>
+                                                        </div>
+                                                        <div class="post-media">
+                                                            <a href="single.html" title="">
+                                                                {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
+                                                                <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                                                <div class="hovereffect">
+                                                                    <span></span>
+                                                                </div><!-- end hover -->
+                                                            </a>
+                                                        </div><!-- end media -->
+                                                        <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                                                        <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
                                                     </div><!-- end meta -->
                                                 </div><!-- end blog-box -->
                                                 <hr class="invis">
@@ -180,86 +174,50 @@
                         </div><!-- end banner -->
                     </div><!-- end col -->
                 </div><!-- end row -->
+                <hr class="invis">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        @foreach($categories as $category)
+                        @if($category->id > 2)
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="section-title">
+                                    <h3 class="color-aqua"><a href="blog-category-01.html"
+                                                              title="">{{$category->cat_name}}</a></h3>
+                                </div><!-- end title -->
 
-                <hr class="invis1">
-
-                <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    @foreach($categories as $category)
-                        @if($category->id == 3)
-                        <div class="blog-list clearfix" style="margin: 0px 15px">
-                            <div class="section-title">
-                                <h3 class="color-green"><a href="blog-category-01.html" title="">{{$category->cat_name}}</a></h3>
-                            </div><!-- end title -->
-                            @foreach($category->list_blog as $blog)
-                            <div class="blog-box row" >
-                                <div class="col-md-4 ">
-                                    <div class="post-media ">
-                                        <a href="single.html" title="">
-                                            <img src="{{$blog->blog_display}}" alt=""
-                                                 class="img-fluid post-media-image">
-                                            {{-- <div class="hovereffect"></div> --}}
-                                        </a>
-                                    </div><!-- end media -->
-                                </div><!-- end col -->
-
-                                <div class="blog-meta big-meta col-md-7">
-                                    <h4><a href="single.html" title="">{{$blog->blog_heading}}</a></h4>
-                                    <p>{{$blog->blog_content}}</p>
-                                    <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                    <small><a href="blog-author.html" title="">{{$blog->author_info->user_name}}</a></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
-                                                                                                   aria-hidden="true"> 100</i></span></small>
-                                    <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment"
-                                                                                                   aria-hidden="true"> 17</i></span></small>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-                            <hr class="invis">
-                            @endforeach
-                        </div>
-                        @endif
-                    @endforeach
-                    <hr class="invis">
-                    </div><!-- end col -->
-                    {{-- </div> --}}
-
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    @foreach($categories as $category)
-                    @if($category->id == 4)
-                    <div class="section-title">
-                    <h3 class="color-green"><a href="blog-category-01.html" title="">{{$category->cat_name}}</a></h3>
-                    </div><!-- end title -->
-                        @foreach($category->list_blog as $blog)
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span class="hovereffect"></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">{{$blog->blog_heading}}</a></h4>
-                                <p>{{$blog->blog_content}}</p>
-                                <small><a href="blog-category-01.html" title="">11-12-2021</a></small>
-                                <small><a href="blog-author.html" title="">by Hoanh</a></small>
-                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-heart"
-                                                                                               aria-hidden="true"> 100</i></span></small>
-                                <small class="blog-meta--like-cmt"><span class="blog-likes"><i class="fa fa-comment"
-                                                                                               aria-hidden="true"> 17</i></span></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        @foreach($category->list_blog as $blog)
+                                            <div class="blog-box">
+                                                <div class="blog-meta big-meta" >
+                                                    <h4 class="entry-title text-center" style="position: relative"><a href="/new-post/{{$blog->id}}" title="" >{{$blog->blog_heading}}</a></h4>
+                                                    <div class="text-center" style="padding: 0.5rem 0">
+                                                        <small class="blog-title--content"><a href="single.html" title="">{{$blog->updated_at->toDateString()}}</a></small>
+                                                        <small class="blog-title--content"><a href="/user/{{$blog->author_id}}" title="">by {{$blog->author_info->user_account}}</a></small>
+                                                    </div>
+                                                    <div class="post-media">
+                                                        <a href="single.html" title="">
+                                                            {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
+                                                            <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                                            <div class="hovereffect">
+                                                                <span></span>
+                                                            </div><!-- end hover -->
+                                                        </a>
+                                                    </div><!-- end media -->
+                                                    <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                                                    <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
+                                                </div><!-- end meta -->
+                                            </div><!-- end blog-box -->
+                                            <hr class="invis">
+                                        @endforeach
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                            </div><!-- end col -->
+                            @endif
                         @endforeach
-                    @endif
-                    @endforeach
-                    </div><!-- end col -->
-                </div><!-- end row -->
-
+                    </div>
+                </div>
                 <hr class="invis1">
-
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="banner-spot clearfix">
