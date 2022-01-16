@@ -13,7 +13,7 @@
                                               title="">TRENDS</a></h3>
                 </div><!-- end title -->
                 <div class="row">
-                    @foreach($search as $searchResult)
+                    @foreach($blogs as $blog)
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="blog-box">
                                             <div class="blog-meta big-meta" >
