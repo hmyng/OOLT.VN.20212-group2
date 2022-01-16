@@ -51,11 +51,11 @@
                                             <div class="blog-meta big-meta" >
                                                 <h4 class="entry-title text-center" style="position: relative"><a href="/new-post/{{$searchResult->id}}" title="" >{{$searchResult->blog_heading}}</a></h4>
                                                 <div class="text-center" style="padding: 0.5rem 0">
-                                                    <small class="blog-title--content"><a href="single.html" title="">{{$searchResult->updated_at->toDateString()}}</a></small>
+                                                    <small class="blog-title--content"><a href="#" title="">{{$searchResult->updated_at->toDateString()}}</a></small>
                                                     <small class="blog-title--content"><a href="/user/{{$searchResult->author_id}}" title="">by {{$searchResult->author_id}}</a></small>
                                                 </div>
                                                 <div class="post-media">
-                                                    <a href="single.html" title="">
+                                                    <a href="/new-post/{{$searchResult->id}}" title="">
                                                         {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
                                                         <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
                                                         <div class="hovereffect">
