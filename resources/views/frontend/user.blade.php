@@ -22,7 +22,9 @@
             <div class="sidebar-container col-lg-4 sticky-top">
                  <h3 class="sidebar-header">Giới thiệu <i class="fa fa-user" aria-hidden="true"></i></h3>
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
-                 <button  class="sidebar-follow-btn" onclick="follow(1)"><span id="follow-btn">Follow</span> <i id="follow-btn-icon" class="fa fa-plus" aria-hidden="true"></i></button>
+                 <button  class="sidebar-follow-btn" onclick="follow({{$user->id}})"><i  class="fa fa-check follow-btn-icon" aria-hidden="true"></i>
+                    <span class="follow-btn">Bỏ theo dõi</span>
+                 </button>
                  <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>
                  <div class="sidebar-item">Nickname: <b> {{$user->user_account}}</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
@@ -61,7 +63,7 @@
                         <div class="post-media">
                             <a href="#" title="">
                                 {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
-                                <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                <img src="{{$blog->blog_display}}" alt=""class="img-fluid">
                                 <div class="hovereffect">
                                     <span></span>
                                 </div><!-- end hover -->
@@ -83,22 +85,21 @@
     <div class="dmtop">Scroll to Top</div>
     {{-- </div> --}}
     <script>
-        function follow(user_id){
-            let f = document.getElementById('follow-btn-icon');
-            let content = document.getElementById('follow-btn')
-            axios.post('/web-api/auth/follow/' + user_id).then(function (res) {
-                if ($("#follow-btn-icon").hasClass("fa-plus")) {
-                    f.classList.remove('fa-plus');
-                    f.classList.add('fa-check');
-                    content.innerHTML = 'Bỏ theo dõi';
-                } else {
-                    f.classList.add('fa-plus');
-                    f.classList.remove('fa-check');
-                    content.innerHTML = 'Theo dõi';
-                }
-            }).catch(function (e) {
-                console.log(e)
-            })
+        function follow(user_id) {
+                let f = $('.follow-btn-icon');
+                let content = $('.follow-btn')
+                axios.post('/web-api/auth/follow/' + user_id).then(function (res) {
+                    f.toggleClass("fa-check");
+                    f.toggleClass("fa-plus");
+                    if ($(".follow-btn-icon").hasClass("fa-plus")) {
+                        content.text('Theo dõi');
+                    } else {
+                        content.text('Bỏ theo dõi');
+                    }
+                }).catch(function (e) {
+                    console.log(e)
+                })
+
         }
     </script>
 </section>

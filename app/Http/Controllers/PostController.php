@@ -31,7 +31,8 @@ class PostController extends Controller
 
     public function post(){
         $categories = Category::all();
-        return view('frontend.post_a_status', compact('categories', 'blog'));
+        // return view('frontend.post_a_status', compact('categories', 'blog'));
+        return view('frontend.post_a_status', compact('categories'));
     }
 
     public function trend(){
@@ -61,6 +62,6 @@ class PostController extends Controller
                 $comment->commenter = User::find($comment->user_id);
             }
         }
-        return view('frontend.blog-category', compact('blogs', 'categories', 'author', 'blog','likes', 'comments', 'category'));
+        return view('frontend.blog-category', compact('blogs', 'categories'));
     }
 }
