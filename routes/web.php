@@ -67,11 +67,14 @@ Route::get('/post',
     [PostController::class, 'index']
 );
 
-Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::get('/trends', function () {
+    return view('frontend.trends');
+});
 
 
 
-Route::get('/user-post', [PostController::class, 'post']);
+Route::get('/user-post', [PostController::class, 'post'])->name('user-post');
+
 
 Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
 
@@ -85,7 +88,7 @@ Route::get('/blog-category', function () {
     return view('frontend.blog-category');
 });
 
-Route::get('/new-post/{blog}', [PostController::class, 'index']);
+Route::get('/new-post/{blog}', [PostController::class, 'index'])->name('new-post');
 
 
-Route::get('/user/{user}', [UserController::class, 'show']);
+Route::get('/user/{user}', [UserController::class, 'show'])->name('user');

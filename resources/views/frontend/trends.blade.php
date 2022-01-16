@@ -6,23 +6,27 @@
 @section('content')
 <section class="section wb" >
     <div class="container">
-        <div class="search-result-header"><b>Kết quả tìm kiếm cho: "{{$mySearch}}" : </b></div>
+        <span class="trends-header"><b>TRENDS</b></span>
+        <hr class="invis">
         <div class="row">
-            @foreach ($search as $searchResult)
+            {{-- @foreach ($search as $searchResult) --}}
             <div class="col-lg-4 col-md-6">
                 <div class="content-post-container">
                     <div class="post-author--wrapper" style="margin: 0.5rem 0.5rem">
                         <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                         <div class="post-author--infor">
-                            <a class="post-author--name" href="" style="color: #000000;"><b>{{$searchResult->user_name}}</b></a>
-                            <br><span class="post-author--posting-time">{{$searchResult->created_at}}</span>
+                            {{-- <a class="post-author--name" href="" style="color: #000000;"><b>{{$searchResult->user_name}}</b></a> --}}
+                            <a class="post-author--name" href="" style="color: #000000;"><b>HoanhDZ</b></a>
+                            {{-- <br><span class="post-author--posting-time">{{$searchResult->created_at}}</span> --}}
                         </div>
-                        <span class="post-category"><b>{{$searchResult->cat_name}}</b></span>
+                        {{-- <span class="post-category"><b>{{$searchResult->cat_name}}</b></span> --}}
+                        <span class="post-category"><b>Chia sẻ kinh nghiệm</b></span>
                     </div>
                     <div class="content-post-content">
-
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$searchResult->blog_heading}}</a></h3>
-                                <p style="margin: 0px">{{$searchResult->blog_content}}</p>
+                        {{-- <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$searchResult->blog_heading}}</a></h3> --}}
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">How to A+ CSDL</a></h3>
+                                {{-- <p style="margin: 0px">{{$searchResult->blog_content}}</p> --}}
+                                <p style="margin: 0px">d biet :v</p>
                     </div>
                     <div class="content-post-image--container">
                     <img src="upload/Ezreal_20.jpg" alt="" class="content--post-image" style="width:100%;">
@@ -39,11 +43,11 @@
                                      <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
                                  </div>
                              </div> --}}
-                         {{-- </div> --}}
+                         </div>
                     </div>
                 </div>
-            </div>
-            @endforeach
+            </div> 
+            {{-- @endforeach   --}}
         </div>
     </div>
     <div class="dmtop">Scroll to Top</div>

@@ -432,7 +432,7 @@
             padding: 2rem 0;
             display: block;
             position: relative;
-            background-color: #f8f5e2e1;
+            /* background-color: #effeff; */
         }
         
         .section.lb {
@@ -1137,9 +1137,11 @@
         }
         
         .blog-meta.big-meta h4 {
-            padding: 1rem 0 0.6rem;
-            margin: 0;
-            font-size: 24px;
+            padding: 1rem 0 1.5rem;
+            margin: 0.5rem 0px;
+            font-size: 22px;
+            font-weight: lighter;
+            text-transform: uppercase;
         }
         
         .blog-meta.big-meta p {
@@ -1158,10 +1160,10 @@
             margin-right: 0.5rem;
         }
         
-        .blog-meta small:after {
-            content: "/";
-            padding-left: 1rem;
-        }
+        /* .blog-meta small:after {
+            /* content: "/"; */
+            /* padding-left: 0.8rem; 
+        } */
         
         .blog-meta small:last-child:after {
             content: ""
@@ -1254,10 +1256,10 @@
             transition: all .3s ease-in-out;
             zoom: 1;
             filter: alpha(opacity=0);
-            opacity: 0.5;
+            /* opacity: 0.5;
             background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%);
             background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%);
-            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%); */
             filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
         }
         
@@ -1308,9 +1310,9 @@
             padding: 16px 0px;
         }
         
-        .blog-meta {
+        /* .blog-meta {
             margin: 1rem;
-        }
+        } */
         
         .blog-custom-build .blog-meta {
             /* margin: -4rem 3rem 0; */
@@ -1377,7 +1379,7 @@
         }
         
         .wb {
-            background-color: #ffffff;
+            /* background-color: #ffffff; */
             /* background-color: #edfafa; */
             border-top: 1px dashed #dadada;
         }
@@ -1864,7 +1866,7 @@
             justify-content: center;
             align-items: center;
             min-height: 10rem;
-            background-color: #a2dcf0;
+            background-color: #d4f2fc;
             border: 1.5px solid #000000;
             margin-bottom: 1rem;
             box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 19%);
@@ -1930,7 +1932,7 @@
         }
         
         .content-container {
-            background-color: rgb(250, 240, 228);
+            background-color: rgb(194, 230, 255);
             min-height: 5rem;
             border-radius: 16px;
             border: 1.5px solid #000000;
@@ -1957,6 +1959,7 @@
         
         .content-post-image--container {
             align-self: center;
+            margin: 0px 0.5rem;
             /* padding-bottom: 16px; */
         }
         
@@ -1965,7 +1968,7 @@
         }
         
         .content-post-content {
-            margin: 0.5rem 1rem;
+            margin: 0.5rem 0.5rem;
         }
         
         .content-post-likes-cmt {
@@ -1996,12 +1999,15 @@
         }
         
         .post-category {
-            background-color: rgb(151, 233, 151);
+            min-width: 7rem;
+            font-size: 0.6rem;
+            background-color: rgb(176, 238, 219);
             padding: 0 0.5rem;
             border-radius: 16px;
             display: flex;
             align-items: center;
-            margin: 0px 1rem;
+            justify-content: center;
+            margin: 0px 0px 0px 1.4rem;
             border: 1px solid #000000;
         }
         
@@ -2015,16 +2021,18 @@
         
         .blog-box {
             /* box-shadow: 2px 2px 2px #000000; */
-            border: 0.5px solid #000;
-            box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 19%);
             border-radius: 15px;
+            /* border: 0.5px solid #000; */
+            /* box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 19%); */
             background-color: #fff;
             /* max-height: 35rem; */
             /* min-height: 20rem; */
         }
         
         .blog-box img {
-            border-radius: 15px 15px 0px 0px;
+            /* border-radius: 15px 15px 0px 0px; */
+            margin: 0.5rem 0;
+            /* max-height: 15rem; */
         }
         
         small.blog-meta--like-cmt {
@@ -2111,4 +2119,60 @@
             padding: 0.5rem;
             background-color: #fff;
             border: none;
+        }
+
+        .trends-header{
+            padding: 8px 16px;
+            background-color: rgb(0, 255, 200);
+            border-radius: 10px;
+        }
+
+        /* entry-title:before {
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            width: 125px;
+            content: " ";
+            background-color: #d3b062;
+            /* border: 1px solid #d3b062; 
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        } */
+      
+        .entry-title:after {
+            display: block;
+            position: absolute;
+            /* bottom: -7px; */
+            bottom: 0;
+            height: 16px;
+            width: 16px;
+            content: " ";
+            background-color: transparent;
+            border: 1px solid #d3b062;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            /* padding: 1rem; */
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .blog-title--content{
+            margin-top: 0.5em ;
+        }
+
+        .blog-title--content a{
+            font-size: 1em;
+            padding: 0.5em;
+            margin: 0 0.5em;
+        }
+        .readmore-btn{
+            display: block;
+            padding: 10px 25px 10px 50px;
+            margin-top: 0.8rem;
+            /* width: 100%; */
+            text-align: center;
+            background-color: #ececec;
         }
