@@ -4,6 +4,7 @@
 <title>Post</title>
 @endsection
 @section('content')
+
 <section class="section wb">
     <div class="container">
         <div class="blog-title-area">
@@ -40,6 +41,7 @@
                     <li data-target="#post-image-slider" data-slide-to="1"></li>
                 </ul>
 
+
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -51,24 +53,26 @@
                     {{-- <div class="carousel-item">
                           <img src="ny.jpg" alt="New York" class="d-block" style="width:100%">
                         </div> --}}
-                </div>
 
-                <!-- Left and right controls/icons -->
-                <a class="carousel-control-prev" href="#post-image-slider" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#post-image-slider" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
+                    {{-- </div>  --}}
+{{-- 
+                    <!-- Left and right controls/icons -->
+                    <a class="carousel-control-prev" href="#post-image-slider" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#post-image-slider" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a> --}}
+                {{-- </div> --}}
             </div>
-        </div>
-        <h5 style="text-align: center">Một số hình ảnh vui nhộn trong lớp học</h5>
-        <div class="blog-content">
-            <b>Nội dung :</b>
-            <p>Đ có kinh nghiệm gì đâu học đi em ê ko hối hận đấy :v</p>
-        </div>
-        <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-        <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
+            {{-- <h5 style="text-align: center">Một số hình ảnh vui nhộn trong lớp học</h5> --}}
+            <div class="blog-content">
+                {{-- <b></b> --}}
+                <p>{{$blog->blog_content}}</p>
+            </div>
+            <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
+            <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
+
             <div class="blog-likes-cmt">
                 <button class="blog-likes-cmt--btn" onclick="liked(1)"><i id="like" class="fa fa-heart-o"
                                                                           aria-hidden="true"></i> Like
@@ -90,6 +94,7 @@
                         <div class="user-infor--items">Follower : <b>300</b></div>
                     </div>
                 </div>
+
     </div>
     <button type="button" onclick="follow(1)" class="user-infor--follow-btn"><i class="fa fa-plus"></i> Theo dõi</button>
     </div>
@@ -100,6 +105,7 @@
         </form>
         @foreach($comments as $comment)
         <div class="comments-items">
+
             <span class="comment-user">
                 <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
             </span>
@@ -132,22 +138,21 @@
         }
 
 
-        function follow(user_id) {
-            let f = document.getElementById('follow-btn-icon');
-            let content = document.getElementById('follow-btn')
-            axios.post('/web-api/auth/follow/' + user_id).then(function(res) {
-                if ($("#follow-btn-icon").hasClass("fa-plus")) {
-                    f.classList.remove('fa-plus');
-                    f.classList.add('fa-check');
-                    content.innerHTML = 'Bỏ theo dõi';
-                } else {
-                    f.classList.add('fa-plus');
-                    f.classList.remove('fa-check');
-                    content.innerHTML = 'Theo dõi';
-                }
-            }).catch(function(e) {
-                console.log(e)
-            })
+            function follow(user_id) {
+                let f = $('.follow-btn-icon');
+                let content = $('.follow-btn')
+                axios.post('/web-api/auth/follow/' + user_id).then(function (res) {
+                    f.toggleClass("fa-plus");
+                    f.toggleClass("fa-check");
+                    if ($(".follow-btn-icon").hasClass("fa-plus")) {
+                        content.text('Theo dõi');
+                    } else {
+                        content.text('Bỏ theo dõi');
+                    }
+                }).catch(function (e) {
+                    console.log(e)
+                })
+
 
         }
 
