@@ -48,13 +48,14 @@ class PostController extends Controller
 
     public function blog(Category $category){
         $categories = Category::all();
-        $blogs = Blog::orderBy('blog_seen_num', 'desc')->take(20)->get();
+        $blogs = Blog::where('cat_id', $category->id)
+                ->orderBy('blog_seen_num', 'desc')->get();
         foreach($blogs as $blog){
             $blog->author_name = $blog->author;
             $blog->count_like = count($blog->like);
             $blog->count_comment = count($blog->comment);
             $blog->category_name = $blog->category;
         }
-        return view('frontend.blog-category', compact('blogs', 'categories', 'author', 'blog','likes', 'comments', 'category'));
+        return view('frontend.blog-category', compact('blogs', 'categories', 'category'));
     }
 }
