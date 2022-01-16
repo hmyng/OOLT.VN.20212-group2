@@ -52,43 +52,26 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
-
 //logout
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 //public route
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
-//Route::post('/search', [SearchController::class, 'store'])->name('search');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
-
 
 Route::get('/post',
     [PostController::class, 'index']
 );
 
-Route::get('/trends', function () {
-    return view('frontend.trends');
-});
-
 Route::get('/trends', [PostController::class, 'trend'])->name('trend');
 
 Route::get('/user-post', [PostController::class, 'post'])->name('user-post');
 
-
 Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
 
-// Route::get('/search-result', [
-//     SearchController::class, 'index'
-// ]);
-Route::get('/search-result-fail', function () {
-    return view('frontend.search-result-fail');
-});
-Route::get('/blog-category', function () {
-    return view('frontend.blog-category');
-});
+Route::get('/blog-category', [PostController::class, 'blog'])->name('blog-category');
 
 Route::get('/new-post/{blog}', [PostController::class, 'index'])->name('new-post');
-
 
 Route::get('/user/{user}', [UserController::class, 'show'])->name('user');

@@ -14,14 +14,15 @@ class UserController extends Controller
     {
         $categories = Category::all();
         $blogs = Blog::where('author_id', $user->id)->orderBy('created_at', 'desc')->get();
+        foreach($blogs as $blog){
+            $blog->count_like = count($blog->like);
+            $blog->count_comment = count($blog->comment);
+        }
         $followers = Follower::where('parent_id', $user->id)->get();
         $sumOfLikes = Like::join('blogs','blogs.id', '=', 'blog_id')
             ->where('author_id',$user->id)->get();
-        foreach($blogs as $blog){
-            $likes = Like::where('blog_id',$blog)->get();
-        }
                 
-        return view('frontend.user', compact('user', 'categories', 'blogs', 'followers', 'sumOfLikes', 'likes'));
+        return view('frontend.user', compact('user', 'categories', 'blogs', 'followers', 'sumOfLikes'));
     }
 
     public function post()

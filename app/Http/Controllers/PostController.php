@@ -29,14 +29,38 @@ class PostController extends Controller
         return view('frontend.edit_post', compact('blog'));
     }
 
-    public function post(Blog $blog){
+    public function post(){
         $categories = Category::all();
-        //dd($blog);
         return view('frontend.post_a_status', compact('categories', 'blog'));
     }
 
     public function trend(){
-        $blogs = Blog::orderBy('blog_seen_num')->take(20)->get();
-        return view('frontend.trends', compact('blogs'));
+        $categories = Category::all();
+        $blogs = Blog::orderBy('blog_seen_num', 'desc')->take(20)->get();
+        foreach($blogs as $blog){
+            $author = $blog->author;
+            $likes = $blog->liker;
+            $comments = $blog->comment;
+            $category = $blog->category;
+            foreach($comments as $comment){
+                $comment->commenter = User::find($comment->user_id);
+            }
+        }
+        return view('frontend.trends', compact('blogs', 'categories', 'author', 'blog','likes', 'comments', 'category'));
+    }
+
+    public function blog(){
+        $categories = Category::all();
+        $blogs = Blog::orderBy('blog_seen_num', 'desc')->take(20)->get();
+        foreach($blogs as $blog){
+            $blog->author_name = $blog->author;
+            $blog->likes = $blog->like;
+            $blog->comments = $blog->comment;
+            $blog->category_name = $blog->category;
+            foreach($blog->comments as $comment){
+                $comment->commenter = User::find($comment->user_id);
+            }
+        }
+        return view('frontend.blog-category', compact('blogs', 'categories', 'author', 'blog','likes', 'comments', 'category'));
     }
 }

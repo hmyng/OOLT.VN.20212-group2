@@ -9,7 +9,7 @@
     <div class="container">
         <div class="blog-title-area">
             <ol class="breadcrumb hidden-xs-down">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Blog</a></li>
                 <li class="breadcrumb-item active">Làm thế nào để được A+ môn CSDL lớp thầy Phương ?</li>
             </ol>

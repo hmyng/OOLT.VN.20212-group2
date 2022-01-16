@@ -12,7 +12,7 @@ class Comment extends Model
     public function blogs(){
         $this->belongsTo(Blog::class, 'blog_id');
     }
-    public function users(){
+    public function user(){
         $this->belongsTo(User::class, 'user_id');
     }
 }
