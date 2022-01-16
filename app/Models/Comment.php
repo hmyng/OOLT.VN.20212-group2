@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+    protected $table = 'comments';
+    public function blogs(){
+        $this->belongsTo(Blog::class, 'blog_id');
+    }
+    public function users(){
+        $this->belongsTo(User::class, 'user_id');
+    }
 }
