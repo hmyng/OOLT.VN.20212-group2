@@ -40,15 +40,15 @@
                         </div>
                     </div>
                     <div class="content-post-content">
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$blog->blog_heading}}</a></h3>
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="/new-post/{{$blog->id}}">{{$blog->blog_heading}}</a></h3>
                                 <p style="margin: 0px">{{$blog->blog_content}}</p>
                     </div>
                     <div class="content-post-image--container">
                     <img src="upload/Ezreal_20.jpg" alt="" class="content--post-image" style="width:100%;">
                     </div>
                     <div class="content-post-likes-cmt">
-                         <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-                         <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
+                         <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{$blog->count_like}}</i></span>
+                         <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{$blog->count_comment}}</i></span>
                          {{-- <div class="content-like-cmt-bar container-fluid">
                              <div class="row">
                                  <div class="button-container col-6">
