@@ -38,28 +38,22 @@ class PostController extends Controller
         $categories = Category::all();
         $blogs = Blog::orderBy('blog_seen_num', 'desc')->take(20)->get();
         foreach($blogs as $blog){
-            $author = $blog->author;
-            $likes = $blog->liker;
-            $comments = $blog->comment;
-            $category = $blog->category;
-            foreach($comments as $comment){
-                $comment->commenter = User::find($comment->user_id);
-            }
+            $blog->author_name = $blog->author;
+            $blog->count_like = count($blog->like);
+            $blog->count_comment = count($blog->comment);
+            $blog->category_name = $blog->category;
         }
-        return view('frontend.trends', compact('blogs', 'categories', 'author', 'blog','likes', 'comments', 'category'));
+        return view('frontend.trends', compact('blogs', 'categories'));
     }
 
-    public function blog(){
+    public function blog(Category $category){
         $categories = Category::all();
         $blogs = Blog::orderBy('blog_seen_num', 'desc')->take(20)->get();
         foreach($blogs as $blog){
             $blog->author_name = $blog->author;
-            $blog->likes = $blog->like;
-            $blog->comments = $blog->comment;
+            $blog->count_like = count($blog->like);
+            $blog->count_comment = count($blog->comment);
             $blog->category_name = $blog->category;
-            foreach($blog->comments as $comment){
-                $comment->commenter = User::find($comment->user_id);
-            }
         }
         return view('frontend.blog-category', compact('blogs', 'categories', 'author', 'blog','likes', 'comments', 'category'));
     }
