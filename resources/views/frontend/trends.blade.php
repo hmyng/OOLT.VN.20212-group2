@@ -13,21 +13,22 @@
                     <div class="post-author--wrapper" style="margin: 0.5rem 0.5rem">
                         <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                         <div class="post-author--infor">
-                            <a class="post-author--name" href="" style="color: #000000;"><b> {{$author->user_name}}</b></a>
-                            <br><span class="post-author--posting-time">{{$blog->updated_at->toDateString()}}</span>
+                            <a class="post-author--name" href="/user/{{$blog->author_name->id}}" style="color: #000000;"><b> {{$blog->author_name->user_name}}</b></a>
+                            <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
+
                         </div>
-                        <span class="post-category"><b>{{$category->cat_name}}</b></span>
+                        <span class="post-category"><b>{{$blog->category_name->cat_name}}</b></span>
                     </div>
                     <div class="content-post-content">
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$blog->blog_heading}}</a></h3>
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="/new-post/{{$blog->id}}">{{$blog->blog_heading}}</a></h3>
                         <p style="margin: 0px">{{$blog->blog_content}}</p>
                     </div>
                     <div class="content-post-image--container">
                         <img src="upload/Ezreal_20.jpg" alt="" class="content--post-image" style="width:100%;">
                     </div>
                     <div class="content-post-likes-cmt">
-                        <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true">{{count($likes)}}</i></span>
-                        <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{count($comments)}}</i></span>
+                        <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true">{{$blog->count_like}}</i></span>
+                        <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{$blog->count_comment}}</i></span>
                         <div class="content-like-cmt-bar container-fluid">
                             - <div class="row">
                                 <div class="button-container col-6">
