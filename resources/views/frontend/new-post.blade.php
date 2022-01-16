@@ -17,7 +17,7 @@
                 <div class="post-author--wrapper">
                     <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                     <div class="post-author--infor">
-                        <a class="post-author--name" href="" style="color: #000000;">{{$author->user_account}}</a>
+                        <a class="post-author--name" href="/user/{{$blog->author_id}}" style="color: #000000;">{{$author->user_account}}</a>
                         <button type="button" onclick="follow({{$blog->author_id}})" class="post-author--follow-btn"><i id="follow-btn-icon"
                                                                                                    class="fa fa-plus follow-btn-icon"></i>
                             <span class="follow-btn">Theo dõi</span>
@@ -83,7 +83,7 @@
                     <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
                     <div class="user-infor">
                         <b>
-                            <div class="user-infor--name" style=" color: #00B6F1;"><a href="">{{$author->user_account}}</a></div>
+                            <div class="user-infor--name" style=" color: #00B6F1;"><a href="/user/{{$blog->author_id}}">{{$author->user_account}}</a></div>
                         </b>
                         <div class="user-infor--items--wrapper">
                             <div class="user-infor--items" style="padding-left: 0px">Bài viết : <b>20</b></div>
