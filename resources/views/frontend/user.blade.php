@@ -11,9 +11,9 @@
             <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
             <div class="profile-item-name"><b>{{$user->user_name}}</b> <i class="fa fa-check profile-item-check-icon" aria-hidden="true"></i></div>
             <div class="profile-item-infor">
-                <span>Bài đã đăng: <b>100</b></span>
-                <span>Lượt Like: <b>1900</b></span>
-                <span>Followers: <b>200</b></span>
+                <span>Bài đã đăng: <b>{{count($blogs)}}</b></span>
+                <span>Lượt Like: <b>{{count($sumOfLikes)}}</b></span>
+                <span>Followers: <b>{{count($followers)}}</b></span>
             </div>
         </div>
     </div>
@@ -25,7 +25,6 @@
                  <button  class="sidebar-follow-btn" onclick="follow(1)"><span id="follow-btn">Follow</span> <i id="follow-btn-icon" class="fa fa-plus" aria-hidden="true"></i></button>
                  <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>
                  <div class="sidebar-item">Nickname: <b> {{$user->user_account}}</b></div>
-                 <div class="sidebar-item">Ngày sinh: <b> 07/10/2001</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
             </div>
             <div class="content-container col-lg-7">
@@ -37,7 +36,7 @@
                         <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                         <div class="post-author--infor">
                             <a class="post-author--name" href="" style="color: #000000;"><b>{{$user->user_name}}</b></a>
-                            <br><span class="post-author--posting-time">23 giờ</span>
+                            <br><span class="post-author--posting-time">{{$user->created_at}}</span>
                         </div>
                     </div>
                     <div class="content-post-content">
@@ -48,7 +47,7 @@
                     <img src="upload/Ezreal_20.jpg" alt="" class="content--post-image" style="width:100%;">
                     </div>
                     <div class="content-post-likes-cmt">
-                         <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> 100</i></span>
+                         <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
                          <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
                          {{-- <div class="content-like-cmt-bar container-fluid">
                              <div class="row">
