@@ -71,7 +71,7 @@ Route::get('/trends', function () {
     return view('frontend.trends');
 });
 
-
+Route::get('/trends', [PostController::class, 'trend'])->name('trend');
 
 Route::get('/user-post', [PostController::class, 'post'])->name('user-post');
 
