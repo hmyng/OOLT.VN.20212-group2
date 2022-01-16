@@ -73,8 +73,10 @@
                 <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i class="fa fa-plus follow-btn-icon"></i>    <span class="follow-btn">Theo dõi</span></button>
             </div>
             <section id="comments-section">
-                <form id="add-a-comment" onsubmit="submit_comment(event)">
-                    <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5" id="add-comment-content" name="text" required></textarea>
+                <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
+                    <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
+                              id="add-comment-content" name="text" required></textarea>
+
                     <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
                 </form>
                 @foreach($comments as $comment)
@@ -163,7 +165,22 @@
                 })
 
 
+            function submit_comment(event, blog_id) {
+                event.preventDefault();
+                axios.post('/web-api/auth/comment', {
+                    comment_content: $('#add-comment-content').val(),
+                    blog_id: blog_id
+                }).then(function (res) {
+                    console.log(res);
+                    location.reload();
+                }).catch(function (e) {
+                    console.log(e)
+                })
+            }
+        </script>
+
         }
+
 
         function submit_comment(event) {
             event.preventDefault();

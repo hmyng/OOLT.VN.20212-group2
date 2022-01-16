@@ -57,6 +57,7 @@ class PostController extends Controller
             $blog->count_comment = count($blog->comment);
             $blog->category_name = $blog->category;
         }
-        return view('frontend.blog-category', compact('blogs', 'categories', 'category'));
+        return view('frontend.blog-category', compact('blogs', 'categories'));
+
     }
 }
