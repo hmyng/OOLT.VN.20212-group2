@@ -15,12 +15,12 @@
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="display: inline; padding: 0px">CATEGORIES</a>
                                     <div class="dropdown-menu">
                                     @foreach($categories as $category)
-                                      <a class="dropdown-item" href="#">{{$category->cat_name}}</a>
+                                      <a class="dropdown-item" href="{{route('blog-category')}}">{{$category->cat_name}}</a>
                                     @endforeach
                                     </div>
                             </li>
 
-                            <li class="list-inline-item hide-res"><a href="/trends"> TRENDS</a></li>
+                            <li class="list-inline-item hide-res"><a href="{{route('trend')}}"> TRENDS</a></li>
                             <li class="list-inline-item hide-res"><a href="/home#about-us"> ABOUT US</a></li>
                             @guest
                             <li class="list-inline-item"><a href="{{route('login')}}"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
