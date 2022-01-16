@@ -19,7 +19,7 @@
                     <div class="post-author--infor">
                         <a class="post-author--name" href="" style="color: #000000;">HoanhDZ</a>
                         <button type="button" onclick="follow(1)" class="post-author--follow-btn"><i id="follow-btn-icon"
-                                                                                                    class="fa fa-plus"></i>
+                                                                                                   class="fa fa-plus"></i>
                             <span id="follow-btn">Theo dõi</span>
                         </button>
                         <br><span class="post-author--posting-time">23 giờ</span>
@@ -44,10 +44,10 @@
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="upload/Ezreal.jpg" alt="" class="d-block" style="width:100%">
+                            <img src="{{$blog->blog_display}}" alt="" class="d-block" style="width:100%">
                         </div>
                         <div class="carousel-item">
-                            <img src="upload/Ezreal_20.jpg" alt="" class="d-block" style="width:100%">
+                            <img src="{{$blog->blog_display}}" alt="" class="d-block" style="width:100%">
                         </div>
                         {{-- <div class="carousel-item">
                           <img src="ny.jpg" alt="New York" class="d-block" style="width:100%">
@@ -83,7 +83,7 @@
                     <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
                     <div class="user-infor">
                         <b>
-                            <div class="user-infor--name" style=" color: #00B6F1;"><a href="">HoanhDZ</a></div>
+                            <div class="user-infor--name" style=" color: #00B6F1;"><a href="">{{$author->user_account}}</a></div>
                         </b>
                         <div class="user-infor--items--wrapper">
                             <div class="user-infor--items" style="padding-left: 0px">Bài viết : <b>20</b></div>
@@ -106,7 +106,7 @@
             </span>
                     <div class="comment-content">
                         <b>
-                            <div class="user-infor--name" style=" color: #00B6F1;"><a href="">HoanhDZ</a> <span
+                            <div class="user-infor--name" style=" color: #00B6F1;"><a href="">{{$author->user_account}}</a> <span
                                     class="comment-content--time">23 giờ</span></div>
                         </b>
                         <p>Oidoioi tramkam :< </p>
@@ -141,7 +141,7 @@
         <script>
             function liked(blog_id) {
                 let like = document.getElementById('like');
-                axios.post('/web-api/like/' + blog_id, {}).then(function (res) {
+                axios.post('/web-api/like/' + blog_id).then(function (res) {
                     console.log(res);
                     if ($("#like").hasClass("fa-heart-o")) {
                         like.classList.remove('fa-heart-o');

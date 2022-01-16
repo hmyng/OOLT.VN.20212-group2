@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="content-post-content">
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px">{{$blog->blog_heading}}</h3>
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$blog->blog_heading}}</a></h3>
                                 <p style="margin: 0px">{{$blog->blog_content}}</p>
                     </div>
                     <div class="content-post-image--container">
@@ -49,7 +49,7 @@
                     <div class="content-post-likes-cmt">
                          <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
                          <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
-                         <div class="content-like-cmt-bar container-fluid">
+                         {{-- <div class="content-like-cmt-bar container-fluid">
                              <div class="row">
                                  <div class="button-container col-6">
                                      <button id="like-button" class=""><i class="fa fa-heart-o" aria-hidden="true"></i> Like</button>
@@ -58,7 +58,7 @@
                                      <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
                                  </div>
                              </div>
-                       </div>
+                       </div> --}}
                     </div>
                 </div>
                 @endforeach
@@ -68,7 +68,7 @@
     <div class="dmtop">Scroll to Top</div>
     {{-- </div> --}}
     <script>
-        function follow(){
+        function follow(user_id){
             let f = document.getElementById('follow-btn-icon');
             let content = document.getElementById('follow-btn')
             axios.post('/web-api/auth/follow/' + user_id).then(function (res) {

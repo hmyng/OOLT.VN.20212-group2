@@ -20,16 +20,16 @@
                                     </div>
                             </li>
 
-                            <li class="list-inline-item hide-res"><a href="/trend"> TRENDS</a></li>
+                            <li class="list-inline-item hide-res"><a href="/trends"> TRENDS</a></li>
                             <li class="list-inline-item hide-res"><a href="/home#about-us"> ABOUT US</a></li>
                             @guest
                             <li class="list-inline-item"><a href="{{route('login')}}"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
                             @endguest
                             @auth
                             <li class="list-inline-item nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown" href=""><img class="topbar-login-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">{{auth()->user()->user_name}}</a>
+                                <a class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown" href=""><img class="topbar-login-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">{{auth()->user()->user_account}}</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('user')}}">Trang cá nhân</a>
+                                    <a class="dropdown-item" href="/user/{{Auth::user()->id}}">Trang cá nhân</a>
                                     <a class="dropdown-item" href="{{route('user-post')}}">Đăng bài</a>
                                     <a class="dropdown-item" href="{{route('logout')}}">Đăng xuất</a>
                                 </div>

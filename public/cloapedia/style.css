@@ -432,7 +432,7 @@
             padding: 2rem 0;
             display: block;
             position: relative;
-            background-color: #f8f5e2e1;
+            background-color: #effeff;
         }
         
         .section.lb {
@@ -1377,7 +1377,7 @@
         }
         
         .wb {
-            background-color: #ffffff;
+            /* background-color: #ffffff; */
             /* background-color: #edfafa; */
             border-top: 1px dashed #dadada;
         }
@@ -1864,7 +1864,7 @@
             justify-content: center;
             align-items: center;
             min-height: 10rem;
-            background-color: #a2dcf0;
+            background-color: #d4f2fc;
             border: 1.5px solid #000000;
             margin-bottom: 1rem;
             box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 19%);
@@ -1930,7 +1930,7 @@
         }
         
         .content-container {
-            background-color: rgb(250, 240, 228);
+            background-color: rgb(194, 230, 255);
             min-height: 5rem;
             border-radius: 16px;
             border: 1.5px solid #000000;
@@ -1957,6 +1957,7 @@
         
         .content-post-image--container {
             align-self: center;
+            margin: 0px 0.5rem;
             /* padding-bottom: 16px; */
         }
         
@@ -1965,7 +1966,7 @@
         }
         
         .content-post-content {
-            margin: 0.5rem 1rem;
+            margin: 0.5rem 0.5rem;
         }
         
         .content-post-likes-cmt {
@@ -1996,12 +1997,15 @@
         }
         
         .post-category {
-            background-color: rgb(151, 233, 151);
+            min-width: 7rem;
+            font-size: 0.6rem;
+            background-color: rgb(176, 238, 219);
             padding: 0 0.5rem;
             border-radius: 16px;
             display: flex;
             align-items: center;
-            margin: 0px 1rem;
+            justify-content: center;
+            margin: 0px 0px 0px 1.4rem;
             border: 1px solid #000000;
         }
         
@@ -2111,4 +2115,10 @@
             padding: 0.5rem;
             background-color: #fff;
             border: none;
+        }
+
+        .trends-header{
+            padding: 8px 16px;
+            background-color: rgb(0, 255, 200);
+            border-radius: 10px;
         }
