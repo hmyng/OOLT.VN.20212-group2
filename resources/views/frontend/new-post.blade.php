@@ -177,8 +177,6 @@
                     console.log(e)
                 })
             }
-        </script>
-
         }
 
 
