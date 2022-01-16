@@ -15,13 +15,13 @@
                     <div class="post-author--wrapper" style="margin: 0.5rem 0.5rem">
                         <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                         <div class="post-author--infor">
-                            <a class="post-author--name" href="" style="color: #000000;"><b> {{$blog->author_name->user_name}}</b></a>
+                            <a class="post-author--name" href="/user/{{$blog->author_name->id}}" style="color: #000000;"><b> {{$blog->author_name->user_name}}</b></a>
                             <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                         </div>
                         <span class="post-category"><b>{{$blog->category_name->cat_name}}</b></span>
                     </div>
                     <div class="content-post-content">
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$blog->blog_heading}}</a></h3>
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="/new-post/{{$blog->id}}">{{$blog->blog_heading}}</a></h3>
                         <p style="margin: 0px">{{$blog->blog_content}}</p>
                     </div>
                     <div class="content-post-image--container">
