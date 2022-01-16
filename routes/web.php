@@ -70,7 +70,7 @@ Route::get('/user-post', [PostController::class, 'post'])->name('user-post');
 
 Route::get('/edit-post/{blog}', [PostController::class, 'edit']);
 
-Route::get('/blog-category', [PostController::class, 'blog'])->name('blog-category');
+Route::get('/blog-category/{category}', [PostController::class, 'blog'])->name('blog-category');
 
 Route::get('/new-post/{blog}', [PostController::class, 'index'])->name('new-post');
 
