@@ -155,7 +155,6 @@
                 })
             }
 
-
             function follow(user_id) {
                 let f = $('.follow-btn-icon');
                 let content = $('.follow-btn')
