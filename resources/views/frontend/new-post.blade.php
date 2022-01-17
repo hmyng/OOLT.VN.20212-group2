@@ -51,7 +51,7 @@
                         <img src="{{$blog->blog_display}}" alt="" class="img-fluid">
                         <p class="pt-3">{{$blog->blog_content}}</p>
                     </div>
-                    <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"
+                    <span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"
                                                 id="like-count"> {{count($likes)}}</i></span>
                     <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"
                                                 id="cmt-count"> {{count($comments)}}</i></span>
