@@ -44,7 +44,7 @@
 
                 </div>
             </div>
-           
+
             <div class="blog-content">
                 {{-- <b></b> --}}
                 <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
@@ -116,7 +116,8 @@
                             </div>
                         @endforeach
                     </section>
-                </div> {{--end-col--}}
+        </section>
+                </div>{{--end-col--}}
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <section id="about-us">
                         <h3 class="about--heading mx-5">ABOUT US</h3>
