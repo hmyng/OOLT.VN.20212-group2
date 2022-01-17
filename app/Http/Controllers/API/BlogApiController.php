@@ -24,6 +24,7 @@ class BlogApiController extends APIController
         $blog->blog_content = $request->blog_content;
         $blog->cat_id = $request->cat_id;
         $blog->blog_display = $request->blog_display;
+        $blog->description = $request->description;
         $blog->author_id = $this->user->id;
         $blog->blog_seen_num = 0;
         $blog->save();
@@ -38,7 +39,7 @@ class BlogApiController extends APIController
 
         $blog->blog_heading = $request->blog_heading;
         $blog->blog_content = $request->blog_content;
-
+        $blog->description = $request->description;
         $blog->save();
         return $this->respondSuccess([
             'blog' => $blog

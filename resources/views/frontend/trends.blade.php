@@ -76,7 +76,7 @@
                                                         </div><!-- end hover -->
                                                     </a>
                                                 </div><!-- end media -->
-                                                <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                                                <p style="margin-top: 0.5rem">{{$blog->description}} [...]</p>
                                                 <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
