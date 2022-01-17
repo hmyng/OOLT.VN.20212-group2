@@ -42,7 +42,7 @@
             <div class="blog-content">
                 {{-- <b></b> --}}
                 <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
-                <p>{{$blog->blog_content}}</p>
+                <p class="pt-3">{{$blog->blog_content}}</p>
             </div>
             <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
             <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>

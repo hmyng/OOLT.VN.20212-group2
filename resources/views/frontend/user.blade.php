@@ -69,7 +69,7 @@
                                 </div><!-- end hover -->
                             </a>
                         </div><!-- end media -->
-                        <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                        <p style="margin-top: 0.5rem">{{$blog->description}} [...]</p>
                         <div class="content-post-likes-cmt">
                             <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{$blog->count_like}}</i></span>
                             <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{$blog->count_comment}}</i></span>
