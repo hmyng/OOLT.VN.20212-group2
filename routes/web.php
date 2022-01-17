@@ -59,10 +59,7 @@ Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/home', [BlogController::class,'index'])->name('home');
-
-Route::get('/post',
-    [PostController::class, 'index']
-);
+Route::get('/', [BlogController::class,'index'])->name('home');
 
 Route::get('/trends', [PostController::class, 'trend'])->name('trend');
 

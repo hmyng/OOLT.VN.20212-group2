@@ -15,7 +15,7 @@
                     <li class="breadcrumb-item"><a href="#">Blog</a></li>
                     <li class="breadcrumb-item active">Làm thế nào để được A+ môn CSDL lớp thầy Phương ?</li>
                 </ol> --}}
-                <span class="color-aqua" style="font-size: 16px"><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></span>
+                <span class="color-aqua" style="font-size: 16px"><a href="blog-category-01.html" title="">{{$blog->category_name->cat_name}}</a></span>
                 <h3 style="font-size: 1.7rem">{{$blog->blog_heading}}</h3>
                 <div class="post-author--wrapper">
                     <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
