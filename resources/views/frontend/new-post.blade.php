@@ -29,16 +29,20 @@
                                 </button>
                                 <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                             </div>
+                            @if($blog->author_id == auth()->user()->id)
                             <div class="dropdown" style="position:absolute; right:0px">
                                 <button type="button" class="post-alter--btn" data-toggle="dropdown">
                                     <i class="fa fa-cog"></i>
                                 </button>
+                                
                                 <div class="dropdown-menu  dropdown-menu-right">
                                     <a class="dropdown-item" href="/edit-post/{{$blog->id}}" style="color:#000000"><b>Chỉnh
                                             sửa bài
                                             viết</b></a>
                                 </div>
+                                
                             </div>
+                            @endif
                         </div>
                     </div>
 
