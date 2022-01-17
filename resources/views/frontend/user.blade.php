@@ -31,7 +31,7 @@
                 <h3 class="content-header">Bài viết <i class="fa fa-pencil" aria-hidden="true" style="font-size: 20px"></i></h3>
                 {{-- demo bài đăng trên timeline --}}
                 @foreach($blogs as $blog)
-                <div class="content-post-container">
+                {{-- <div class="content-post-container">
                     <div class="post-author--wrapper" style="margin: 0.5rem 0.5rem">
                         <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
                         <div class="post-author--infor">
@@ -40,27 +40,42 @@
                         </div>
                     </div>
                     <div class="content-post-content">
-                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="#">{{$blog->blog_heading}}</a></h3>
+                        <h3 class="content-post-header" style="font-size: 18px; margin: 10px 0px"><a href="/new-post/{{$blog->id}}">{{$blog->blog_heading}}</a></h3>
                                 <p style="margin: 0px">{{$blog->blog_content}}</p>
                     </div>
                     <div class="content-post-image--container">
                     <img src="upload/Ezreal_20.jpg" alt="" class="content--post-image" style="width:100%;">
                     </div>
                     <div class="content-post-likes-cmt">
-                         <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-                         <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> 17</i></span>
-                         {{-- <div class="content-like-cmt-bar container-fluid">
-                             <div class="row">
-                                 <div class="button-container col-6">
-                                     <button id="like-button" class=""><i class="fa fa-heart-o" aria-hidden="true"></i> Like</button>
-                                 </div>
-                                 <div class="button-container col-6">
-                                     <button id="cmt-button" class=""><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
-                                 </div>
-                             </div>
-                       </div> --}}
+                         <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{$blog->count_like}}</i></span>
+                         <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{$blog->count_comment}}</i></span>
                     </div>
-                </div>
+                </div> --}}
+                <div class="blog-box post-container">
+                    <div class="blog-meta big-meta" >
+                        <h4 class="entry-title text-center" style="position: relative"><a href="/new-post/{{$blog->id}}" title="" >{{$blog->blog_heading}}</a></h4>
+                        <div class="text-center" style="padding: 0.5rem 0">
+                            <small class="blog-title--content"><a href="single.html" title="">{{$blog->created_at->toDateString()}}</a></small>
+                            <small class="blog-title--content"><a href="/user/{{$blog->author_id}}" title="">{{$user->user_name}}</a></small>
+                        </div>
+                        <div class="post-media">
+                            <a href="#" title="">
+                                {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
+                                <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                <div class="hovereffect">
+                                    <span></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                        <div class="content-post-likes-cmt">
+                            <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{$blog->count_like}}</i></span>
+                            <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{$blog->count_comment}}</i></span>
+                       </div>
+                        <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
+                    </div><!-- end meta -->
+                </div><!-- end blog-box -->
+                <hr class="invis">
                 @endforeach
             </div>
         </div>
