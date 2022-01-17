@@ -163,30 +163,19 @@
                 }).catch(function (e) {
                     console.log(e)
                 })
-
-
-            function submit_comment(event, blog_id) {
-                event.preventDefault();
-                axios.post('/web-api/auth/comment', {
-                    comment_content: $('#add-comment-content').val(),
-                    blog_id: blog_id
-                }).then(function (res) {
-                    console.log(res);
-                    location.reload();
-                }).catch(function (e) {
-                    console.log(e)
-                })
             }
-        }
+
+        
 
 
-        function submit_comment(event) {
+        function submit_comment(event, blog_id) {
             event.preventDefault();
             axios.post('/web-api/auth/comment', {
-                comment_content: 'this is a cmt',
-                blog_id: 1
+                comment_content: $('#add-comment-content').val(),
+                blog_id: blog_id
             }).then(function(res) {
                 console.log(res)
+                location.reload();
             }).catch(function(e) {
                 console.log(e)
             })
