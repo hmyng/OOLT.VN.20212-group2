@@ -15,7 +15,7 @@
                             {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
                             <li class="breadcrumb-item active">Sửa_Bài</li>
                         </ol>
-                        <form id="post_a_status" class="needs-validation" onsubmit="edit_blog(event, 1)">
+                        <form id="post_a_status" class="needs-validation" onsubmit="edit_blog(event, {{$blog->id}})">
                             <div class="mb-3 mt-3">
                                 <b><label for="heading">Tiêu đề :</label></b>
                                 <input type="text" placeholder="Nhập tiêu đề" name="heading" id="heading"
