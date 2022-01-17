@@ -16,10 +16,9 @@ class SearchController extends Controller
         $mySearch = $request->get('mySearch');
         $categories = Category::get();
         $cat = Category::where('cat_name', 'like', '%' . $request->get('mySearch') . '%')->get();
-        $search = Blog::
-             whereIn('cat_id', $cat->pluck('id'))
+        $search = Blog::whereIn('cat_id', $cat->pluck('id'))
             ->orWhere('blog_heading', 'like', '%' . $request->get('mySearch') . '%')
-            ->get();
+            ->paginate(10);
 
         foreach($search as $searchResult){
             $searchResult->user = $searchResult->author;
