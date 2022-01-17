@@ -107,8 +107,8 @@
                                                         </div>
                                                         <div class="post-media">
                                                             <a href="single.html" title="">
-                                                                {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
-                                                                <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                                                <img src="{{$blog->blog_display}}" alt="link ảnh bị lỗi"class="img-fluid">
+                                                                {{-- <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid"> --}}
                                                                 <div class="hovereffect">
                                                                     <span></span>
                                                                 </div><!-- end hover -->
@@ -197,8 +197,8 @@
                                                     </div>
                                                     <div class="post-media">
                                                         <a href="single.html" title="">
-                                                            {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
-                                                            <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                                            <img src="{{$blog->blog_display}}" alt="link ảnh bị lỗi "class="img-fluid">
+                                                            {{-- <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid"> --}}
                                                             <div class="hovereffect">
                                                                 <span></span>
                                                             </div><!-- end hover -->

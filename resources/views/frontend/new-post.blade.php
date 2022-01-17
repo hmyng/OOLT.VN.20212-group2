@@ -173,6 +173,7 @@
                 console.log(e)
             })
 
+
         }
 
         function submit_comment(event, blog_id) {

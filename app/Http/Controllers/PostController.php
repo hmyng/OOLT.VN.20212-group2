@@ -31,7 +31,8 @@ class PostController extends Controller
 
     public function post(){
         $categories = Category::all();
-        return view('frontend.post_a_status', compact('categories', 'blog'));
+        // return view('frontend.post_a_status', compact('categories', 'blog'));
+        return view('frontend.post_a_status', compact('categories'));
     }
 
     public function trend(){
@@ -57,5 +58,6 @@ class PostController extends Controller
             $blog->category_name = $blog->category;
         }
         return view('frontend.blog-category', compact('blogs', 'categories', 'category'));
+
     }
 }
