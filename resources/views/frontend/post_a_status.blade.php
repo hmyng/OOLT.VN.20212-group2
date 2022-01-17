@@ -33,8 +33,11 @@
                                     </select>
                                     {{-- <label for="sel1" class="form-label"></label> --}}
                                 </div>
-                                <label for="picture">Thêm ảnh hoặc video :</label>
-                                <input type="file" placeholder="..." name="file" class="form-control mt-2 mb-3">
+                                <label for="picture">Thêm 1 ảnh cho bài viết nào :</label>
+                                <input type="text" placeholder="..." name="text" class="form-control mt-2 mb-3" id="picture">
+                                <label for="description">Mô tả :</label>
+                                <input type="text" placeholder="Nhập mô tả ngắn gọn ..." name="description" id="description"
+                                       class="form-control mt-2 mb-3" required>
                                 <label for="post-content">Nội dung :</label>
                                 <textarea placeholder="Nhập nội dung ..." class="form-control mb-3 mt-2" rows="5"
                                           id="post-content" name="text" required></textarea>
@@ -55,7 +58,8 @@
                         blog_heading: $('#heading').val(),
                         blog_content: $('#post-content').val(),
                         cat_id: $('#category').val(),
-                        blog_display: "abcxyz",
+                        description: $('#description').val(),
+                        blog_display: $('#picture').val(),
                     }).then(function (res) {
                         $('#submit-btn').attr('disabled', true);
                         alert('Đăng bài thành công !');

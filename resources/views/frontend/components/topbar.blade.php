@@ -15,7 +15,7 @@
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="display: inline; padding: 0px">CATEGORIES</a>
                                     <div class="dropdown-menu">
                                     @foreach($categories as $category)
-                                      <a class="dropdown-item" href="/blog-category/{$category->id}">{{$category->cat_name}}</a>
+                                      <a class="dropdown-item" href="/blog-category/{{$category->id}}">{{$category->cat_name}}</a>
                                     @endforeach
                                     </div>
                             </li>

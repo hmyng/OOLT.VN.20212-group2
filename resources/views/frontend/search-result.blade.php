@@ -56,14 +56,14 @@
                                                 </div>
                                                 <div class="post-media">
                                                     <a href="/new-post/{{$searchResult->id}}" title="">
-                                                        {{-- <img src="{{$blog->blog_display}}" alt=""class="img-fluid"> --}}
-                                                        <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
+                                                        <img src="{{$blog->blog_display}}" alt=""class="img-fluid">
+                                                        {{-- <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid"> --}}
                                                         <div class="hovereffect">
                                                             <span></span>
                                                         </div><!-- end hover -->
                                                     </a>
                                                 </div><!-- end media -->
-                                                <p style="margin-top: 0.5rem">{{$searchResult->blog_content}} [...]</p>
+                                                <p style="margin-top: 0.5rem">{{$searchResult->description}} [...]</p>
                                                 <a class="readmore-btn" href="/new-post/{{$searchResult->id}}">READ MORE</a>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
