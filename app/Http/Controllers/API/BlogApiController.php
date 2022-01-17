@@ -37,10 +37,11 @@ class BlogApiController extends APIController
     public function update(Blog $blog, Request $request)
     {
         $blog = Blog::find($blog->id);
-
         $blog->blog_heading = $request->blog_heading;
+        $blog->blog_display = $request->blog_display;
         $blog->blog_content = $request->blog_content;
         $blog->description = $request->description;
+        $blog->cat_id = $request->cat_id;
         $blog->save();
         return $this->respondSuccess([
             'blog' => $blog
