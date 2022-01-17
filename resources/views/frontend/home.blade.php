@@ -18,35 +18,35 @@
 
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item ">
                             {{-- <img src="upload/Ezreal.jpg" alt="" class="d-block" style="width:100%"> --}}
                             <div class="masonry-box post-media">
-                                <img src="upload/Ezreal.jpg" alt="" class="img-fluid">
+                                <img src="upload/HD.png" alt="" class="img-fluid">
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></span>
-                                            <h4><a href="single.html" title="">How to A+ môn CSDL lớp thầy Phương ?</a>
+                                            <span class="bg-green"><a href="/blog-category/1" title="">Chia sẻ kinh nghiệm</a></span>
+                                            <h4><a href="/new-post/20" title="">Tôi không đóng học phí, tôi đầu tư để nhận lại gấp 1.5 lần</a>
                                             </h4>
-                                            <small><a href="single.html" title="">31/12/2021</a></small>
-                                            <small><a href="blog-author.html" title="">HoanhDZ</a></small>
+                                            <small><a href="#" title="">2022-01-17</a></small>
+                                            <small><a href="/user/4" title="">hoanh710</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
                             </div><!-- end post-media -->
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item active">
                             {{-- <img src="upload/Ezreal_20.jpg" alt="" class="d-block" style="width:100%"> --}}
                             <div class="masonry-box post-media">
-                                <img src="upload/Ezreal_20.jpg" alt="" class="img-fluid">
+                                <img src="upload/clb.jpg" alt="" class="img-fluid">
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="blog-category-01.html"
-                                                                      title="">Tiếng Nhật</a></span>
-                                            <h4><a href="single.html" title="">How to Manten N2 mà k cần học ?</a></h4>
-                                            <small><a href="single.html" title="">30/12/2021</a></small>
-                                            <small><a href="blog-author.html" title="">UHM</a></small>
+                                            <span class="bg-green"><a href="/blog-category/2"
+                                                                      title="">Kiến thức IT</a></span>
+                                            <h4><a href="/new-post/8" title="">How to A+ C Basic</a></h4>
+                                            <small><a href="#" title="">2022-01-12</a></small>
+                                            <small><a href="/user/1" title="">HoanhDz</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
@@ -55,15 +55,15 @@
                         <div class="carousel-item">
                             {{-- <img src="upload/Ezreal_20.jpg" alt="" class="d-block" style="width:100%"> --}}
                             <div class="masonry-box post-media">
-                                <img src="upload/Ezreal.jpg" alt="" class="img-fluid">
+                                <img src="upload/jlpt.jpg" alt="" class="img-fluid">
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="blog-category-01.html"
+                                            <span class="bg-green"><a href="/blog-category/4"
                                                                       title="">Tiếng Nhật</a></span>
-                                            <h4><a href="single.html" title="">How to Manten N3 mà k cần học ?</a></h4>
-                                            <small><a href="single.html" title="">30/12/2021</a></small>
-                                            <small><a href="blog-author.html" title="">HoaKhanhHL</a></small>
+                                            <h4><a href="/new-post/11" title="">How to Manten N2 mà k cần học ?</a></h4>
+                                            <small><a href="#" title="">30/12/2021</a></small>
+                                            <small><a href="/user/5" title="">HoaKhanhHelen</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
