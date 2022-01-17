@@ -73,6 +73,4 @@ Route::get('/new-post/{blog}', [PostController::class, 'index'])->name('new-post
 
 Route::get('/user/{user}', [UserController::class, 'show'])->name('user');
 
-Route::get('/about-us', function(){ 
-    return view('frontend.about-us');
-});
+Route::get('/about-us', [UserController::class, 'aboutUs']);
