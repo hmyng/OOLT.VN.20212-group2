@@ -21,7 +21,7 @@
                             </li>
 
                             <li class="list-inline-item hide-res"><a href="{{route('trend')}}"> TRENDS</a></li>
-                            <li class="list-inline-item hide-res"><a href="/home#about-us"> ABOUT US</a></li>
+                            <li class="list-inline-item hide-res"><a href="/about-us"> ABOUT US</a></li>
                             @guest
                             <li class="list-inline-item"><a href="{{route('login')}}"><i class="fa fa-user-circle-o"></i> LOGIN</a></li>
                             @endguest

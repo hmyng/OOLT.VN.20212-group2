@@ -49,7 +49,7 @@
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
                     <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
-        
+                    <span class="blog-likes"><i class="fa fa-eye" aria-hidden="true"> {{count($comments)}}</i></span>
                             <div class="blog-likes-cmt">
                                 <button class="blog-likes-cmt--btn" onclick="liked(1)"><i id="like" class="fa fa-heart-o"
                                                                                           aria-hidden="true"></i> Like
@@ -95,7 +95,7 @@
                                         <div class="comment-content">
                                             <b>
                                                 <div class="user-infor--name" style=" color: #00B6F1;"><a
-                                                        href="">{{$comment->commenter->user_account}}</a> <span
+                                                        href="/user/{{$comment->commenter->id}}">{{$comment->commenter->user_account}}</a> <span
                                                         class="comment-content--time">23 giờ</span></div>
                                             </b>
                                             <p>{{$comment->comment_content}} </p>
