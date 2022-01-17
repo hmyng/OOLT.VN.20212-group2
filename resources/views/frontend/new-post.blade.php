@@ -58,6 +58,17 @@
                     <span class="blog-likes"><i class="fa fa-eye"
                                                 aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
                     <div class="blog-likes-cmt">
+                        @if(Auth::guest())
+                            <button class="blog-likes-cmt--btn" onclick="loginRequest()"><i id="like"
+                                                                                                  class="fa fa-heart-o"
+                                                                                                  aria-hidden="true"></i>
+                                Like
+                            </button>
+                            <button class="blog-likes-cmt--btn" onclick="loginRequest()"><i class="fa fa-comment"
+                                                                   aria-hidden="true"></i>
+                                    Comments
+                            </button>
+                        @else
                         <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
                                                                                               class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
                                                                                               aria-hidden="true"></i>
@@ -67,6 +78,7 @@
                                                                                            aria-hidden="true"></i>
                                 Comments</a>
                         </button>
+                        @endif
                     </div>
                     <div class="user-infor--wrapper">
                         <div class="user-infor--content">
@@ -89,12 +101,14 @@
                         </button>
                     </div>
                     <section id="comments-section">
+                        @if(Auth::user())
                         <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
                             <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
                                       id="add-comment-content" name="text" required></textarea>
 
                             <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
                         </form>
+                        @endif
                         @foreach($comments as $comment)
                             <div class="comments-items">
 
@@ -157,6 +171,9 @@
 
 
     <script>
+        function loginRequest() {
+            alert('Bạn cần phải đăng nhập để thực hiện chức năng này')
+        }
         function liked(blog_id) {
             axios.post('/web-api/auth/like/' + blog_id).then(function (res) {
                 console.log(res);
