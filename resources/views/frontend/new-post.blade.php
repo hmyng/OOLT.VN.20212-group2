@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item"><a href="#">Blog</a></li>
                             <li class="breadcrumb-item active">Làm thế nào để được A+ môn CSDL lớp thầy Phương ?</li>
                         </ol> --}}
-                        <span class="color-aqua" style="font-size: 16px"><a href="blog-category-01.html" title="">Chia sẻ kinh nghiệm</a></span>
+                        <span class="color-aqua" style="font-size: 16px"><a href="{{$blog->cat_id}}" title="">{{$blog->category_name->cat_name}}</a></span>
                         <h3 style="font-size: 1.7rem">{{$blog->blog_heading}}</h3>
                         <div class="post-author--wrapper">
                             <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
@@ -44,66 +44,72 @@
 
                     <div class="blog-content">
                         {{-- <b></b> --}}
-                        <img src="{{$blog->blog_display}}" alt=""class="img-fluid">
+                        <img src="{{$blog->blog_display}}" alt="" class="img-fluid">
                         <p class="pt-3">{{$blog->blog_content}}</p>
                     </div>
-                    <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-                    <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
-                    <span class="blog-likes"><i class="fa fa-eye" aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
-                            <div class="blog-likes-cmt">
-                                <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like" class="fa fa-heart-o"
-                                                                                          aria-hidden="true"></i> Like
-                                </button>
-                                <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
-                                                                                                   aria-hidden="true"></i>
-                                        Comments</a>
-                                </button>
+                    <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"
+                                                id="like-count"> {{count($likes)}}</i></span>
+                    <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"
+                                                id="cmt-count"> {{count($comments)}}</i></span>
+                    <span class="blog-likes"><i class="fa fa-eye"
+                                                aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
+                    <div class="blog-likes-cmt">
+                        <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
+                                                                                              class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
+                                                                                              aria-hidden="true"></i>
+                            Like
+                        </button>
+                        <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
+                                                                                           aria-hidden="true"></i>
+                                Comments</a>
+                        </button>
+                    </div>
+                    <div class="user-infor--wrapper">
+                        <div class="user-infor--content">
+                            <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
+
+                            <div class="user-infor">
+                                <b>
+                                    <div class="user-infor--name" style=" color: #00B6F1;"><a
+                                            href="/user/{{$blog->author_id}}">{{$author->user_account}}</a></div>
+                                </b>
+                                {{-- <div class="user-infor--items--wrapper">
+                                    <div class="user-infor--items" style="padding-left: 0px">Bài viết : <b>20</b></div>
+                                    <div class="user-infor--items">Likes : <b>{{count($likes)}}</b></div>
+                                    <div class="user-infor--items">Follower : <b>300</b></div>
+                                </div> --}}
                             </div>
-                            <div class="user-infor--wrapper">
-                                <div class="user-infor--content">
-                                    <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
-        
-                                    <div class="user-infor">
-                                        <b>
-                                            <div class="user-infor--name" style=" color: #00B6F1;"><a
-                                                    href="/user/{{$blog->author_id}}">{{$author->user_account}}</a></div>
-                                        </b>
-                                        {{-- <div class="user-infor--items--wrapper">
-                                            <div class="user-infor--items" style="padding-left: 0px">Bài viết : <b>20</b></div>
-                                            <div class="user-infor--items">Likes : <b>{{count($likes)}}</b></div>
-                                            <div class="user-infor--items">Follower : <b>300</b></div>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                                <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
-                                        class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
-                                </button>
-                            </div>
-                            <section id="comments-section">
-                                <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
+                        </div>
+                        <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
+                                class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
+                        </button>
+                    </div>
+                    <section id="comments-section">
+                        <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
                             <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
                                       id="add-comment-content" name="text" required></textarea>
-        
-                                    <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
-                                </form>
-                                @foreach($comments as $comment)
-                                    <div class="comments-items">
-        
+
+                            <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
+                        </form>
+                        @foreach($comments as $comment)
+                            <div class="comments-items">
+
                             <span class="comment-user">
                                 <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
                             </span>
-                                        <div class="comment-content">
-                                            <b>
-                                                <div class="user-infor--name" style=" color: #00B6F1;"><a
-                                                        href="/user/{{$comment->commenter->id}}">{{$comment->commenter->user_account}}</a> <span
-                                                        class="comment-content--time">23 giờ</span></div>
-                                            </b>
-                                            <p>{{$comment->comment_content}} </p>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </section>
-                </div>    {{--end col--}}
+                                <div class="comment-content">
+                                    <b>
+                                        <div class="user-infor--name" style=" color: #00B6F1;"><a
+                                                href="/user/{{$comment->commenter->id}}">{{$comment->commenter->user_account}}</a>
+                                            <span
+                                                class="comment-content--time">23 giờ</span></div>
+                                    </b>
+                                    <p>{{$comment->comment_content}} </p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </section>
+                </div> {{--end col--}}
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <section id="about-us">
                         <h3 class="about--heading mx-5">ABOUT US</h3>
@@ -138,30 +144,26 @@
                 </div><!-- end col -->
             </div>
 
-            
+
         </section>
     </div>{{--end-col--}}
-                
-        
-</section>
-    
+
+
+    </section>
+
 
     <script>
         function liked(blog_id) {
-            let like = document.getElementById('like');
             axios.post('/web-api/auth/like/' + blog_id).then(function (res) {
                 console.log(res);
-                if ($("#like").hasClass("fa-heart-o")) {
-                    like.classList.remove('fa-heart-o');
-                    like.classList.add('fa-heart');
-                } else {
-                    like.classList.add('fa-heart-o');
-                    like.classList.remove('fa-heart');
-                }
+                $("#like").toggleClass('fa-heart-o');
+                $("#like").toggleClass('fa-heart');
+                $('#like-count').html(res['data']['count']);
             }).catch(function (e) {
                 console.log(e)
             })
         }
+
         function follow(user_id) {
             let f = $('.follow-btn-icon');
             let content = $('.follow-btn')
@@ -177,15 +179,16 @@
                 console.log(e)
             })
         }
+
         function submit_comment(event, blog_id) {
             event.preventDefault();
             axios.post('/web-api/auth/comment', {
                 comment_content: $('#add-comment-content').val(),
                 blog_id: blog_id
-            }).then(function(res) {
+            }).then(function (res) {
                 console.log(res)
                 location.reload();
-            }).catch(function(e) {
+            }).catch(function (e) {
                 console.log(e)
             })
         }

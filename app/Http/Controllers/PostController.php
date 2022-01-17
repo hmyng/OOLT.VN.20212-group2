@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Like;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -19,6 +20,11 @@ class PostController extends Controller
         $likes = $blog->liker;
         $comments = $blog->comment;
         $blog->category_name = $blog->category;
+        $blog->checkLike = false;
+        if (Auth::user()){
+            $like = Like::where('blog_id', $blog->id)->where('liker_id', Auth::user()->id)->first();
+            $blog->checkLike = empty($like) ? false : true;
+        }
         foreach($comments as $comment){
             $comment->commenter = User::find($comment->user_id);
             //dd($comment->commenter);
@@ -35,7 +41,7 @@ class PostController extends Controller
     public function post(){
         $categories = Category::all();
         $author = User::get();
-        
+
         // return view('frontend.post_a_status', compact('categories', 'blog'));
         return view('frontend.post_a_status', compact('categories', 'author'));
     }
