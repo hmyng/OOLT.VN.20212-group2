@@ -51,7 +51,7 @@
                     <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
                     <span class="blog-likes"><i class="fa fa-eye" aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
                             <div class="blog-likes-cmt">
-                                <button class="blog-likes-cmt--btn" onclick="liked(1)"><i id="like" class="fa fa-heart-o"
+                                <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like" class="fa fa-heart-o"
                                                                                           aria-hidden="true"></i> Like
                                 </button>
                                 <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
