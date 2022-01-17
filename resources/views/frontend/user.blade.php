@@ -73,7 +73,7 @@
                         <div class="content-post-likes-cmt">
                             <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{$blog->count_like}}</i></span>
                             <span class="blog-likes"><i class="fa fa-comment-o" aria-hidden="true"> {{$blog->count_comment}}</i></span>
-                            <span class="blog-likes"><i class="fa fa-eye" aria-hidden="true"> 100</i></span>
+                            <span class="blog-likes"><i class="fa fa-eye" aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
                        </div>
                         <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
                     </div><!-- end meta -->

@@ -5,13 +5,14 @@
     <title>Let's post a blog</title>
 @endsection
 @section('content')
+
     <section class="section wb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-wrapper">
                         <ol class="breadcrumb hidden-xs-down" style="text-align: left; font-size: 20px;">
-                            <li class="breadcrumb-item"><a href="#">Tên_Tài_Khoản</a></li>
+                            <li class="breadcrumb-item"><a href="#">{{auth()->user()->user_name}}</a></li>
                             {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
                             <li class="breadcrumb-item active">Đăng_Bài</li>
                         </ol>

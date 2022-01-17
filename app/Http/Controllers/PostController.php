@@ -33,8 +33,10 @@ class PostController extends Controller
 
     public function post(){
         $categories = Category::all();
+        $author = User::get();
+        
         // return view('frontend.post_a_status', compact('categories', 'blog'));
-        return view('frontend.post_a_status', compact('categories'));
+        return view('frontend.post_a_status', compact('categories', 'author'));
     }
 
     public function trend(){
