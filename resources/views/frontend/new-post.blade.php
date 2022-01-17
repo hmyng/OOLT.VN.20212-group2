@@ -185,7 +185,6 @@
                 console.log(e)
             })
 
-
         }
 
         function submit_comment(event, blog_id) {
@@ -193,10 +192,11 @@
             axios.post('/web-api/auth/comment', {
                 comment_content: $('#add-comment-content').val(),
                 blog_id: blog_id
-            }).then(function (res) {
-                console.log(res);
+            }).then(function(res) {
+                console.log(res)
                 location.reload();
-            }).catch(function (e) {
+            }).catch(function(e) {
+
                 console.log(e)
             })
         }
