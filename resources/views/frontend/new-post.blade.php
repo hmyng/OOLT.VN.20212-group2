@@ -38,82 +38,68 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-            <div class="blog-content">
-                {{-- <b></b> --}}
-                <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
-                <p class="pt-3">{{$blog->blog_content}}</p>
-            </div>
-            <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-            <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
-
-
                     <div class="blog-content">
                         {{-- <b></b> --}}
-                        <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt="" class="img-fluid">
-                        <p>{{$blog->blog_content}}</p>
+                        <img src="{{$blog->blog_display}}" alt=""class="img-fluid">
+                        <p class="pt-3">{{$blog->blog_content}}</p>
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-                    <span class="blog-likes"><i class="fa fa-comment"
-                                                aria-hidden="true"> {{count($comments)}}</i></span>
-
-                    <div class="blog-likes-cmt">
-                        <button class="blog-likes-cmt--btn" onclick="liked(1)"><i id="like" class="fa fa-heart-o"
-                                                                                  aria-hidden="true"></i> Like
-                        </button>
-                        <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
-                                                                                           aria-hidden="true"></i>
-                                Comments</a>
-                        </button>
-                    </div>
-                    <div class="user-infor--wrapper">
-                        <div class="user-infor--content">
-                            <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
-
-                            <div class="user-infor">
-                                <b>
-                                    <div class="user-infor--name" style=" color: #00B6F1;"><a
-                                            href="/user/{{$blog->author_id}}">{{$author->user_account}}</a></div>
-                                </b>
-                                <div class="user-infor--items--wrapper">
-                                    <div class="user-infor--items" style="padding-left: 0px">Bài viết : <b>20</b></div>
-                                    <div class="user-infor--items">Likes : <b>{{count($likes)}}</b></div>
-                                    <div class="user-infor--items">Follower : <b>300</b></div>
-                                </div>
+                    <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
+        
+                            <div class="blog-likes-cmt">
+                                <button class="blog-likes-cmt--btn" onclick="liked(1)"><i id="like" class="fa fa-heart-o"
+                                                                                          aria-hidden="true"></i> Like
+                                </button>
+                                <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
+                                                                                                   aria-hidden="true"></i>
+                                        Comments</a>
+                                </button>
                             </div>
-                        </div>
-                        <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
-                                class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
-                        </button>
-                    </div>
-                    <section id="comments-section">
-                        <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
-                    <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
-                              id="add-comment-content" name="text" required></textarea>
-
-                            <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
-                        </form>
-                        @foreach($comments as $comment)
-                            <div class="comments-items">
-
-                    <span class="comment-user">
-                        <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
-                    </span>
-                                <div class="comment-content">
-                                    <b>
-                                        <div class="user-infor--name" style=" color: #00B6F1;"><a
-                                                href="">{{$comment->commenter->user_account}}</a> <span
-                                                class="comment-content--time">23 giờ</span></div>
-                                    </b>
-                                    <p>{{$comment->comment_content}} </p>
+                            <div class="user-infor--wrapper">
+                                <div class="user-infor--content">
+                                    <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
+        
+                                    <div class="user-infor">
+                                        <b>
+                                            <div class="user-infor--name" style=" color: #00B6F1;"><a
+                                                    href="/user/{{$blog->author_id}}">{{$author->user_account}}</a></div>
+                                        </b>
+                                        <div class="user-infor--items--wrapper">
+                                            <div class="user-infor--items" style="padding-left: 0px">Bài viết : <b>20</b></div>
+                                            <div class="user-infor--items">Likes : <b>{{count($likes)}}</b></div>
+                                            <div class="user-infor--items">Follower : <b>300</b></div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
+                                        class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
+                                </button>
                             </div>
-                        @endforeach
-                    </section>
-        </section>
-                </div>{{--end-col--}}
+                            <section id="comments-section">
+                                <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
+                            <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
+                                      id="add-comment-content" name="text" required></textarea>
+        
+                                    <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
+                                </form>
+                                @foreach($comments as $comment)
+                                    <div class="comments-items">
+        
+                            <span class="comment-user">
+                                <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
+                            </span>
+                                        <div class="comment-content">
+                                            <b>
+                                                <div class="user-infor--name" style=" color: #00B6F1;"><a
+                                                        href="">{{$comment->commenter->user_account}}</a> <span
+                                                        class="comment-content--time">23 giờ</span></div>
+                                            </b>
+                                            <p>{{$comment->comment_content}} </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </section>
+                </div>    {{--end col--}}
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <section id="about-us">
                         <h3 class="about--heading mx-5">ABOUT US</h3>
@@ -147,8 +133,14 @@
                     </section>
                 </div><!-- end col -->
             </div>
+
+            
         </section>
-    </div>
+    </div>{{--end-col--}}
+                
+        
+</section>
+    
 
     <script>
         function liked(blog_id) {
