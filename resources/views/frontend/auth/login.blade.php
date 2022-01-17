@@ -59,24 +59,7 @@
                   {{$message}}
                 </div>
               @enderror
-              <div class="flex items-center justify-between">
-                <!-- Remember me toggle -->
-                <label class="flex items-center">
-                  <div class="relative inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="remember"
-                      class="w-10 h-4 transition bg-gray-200 border-none rounded-full shadow-inner outline-none appearance-none toggle checked:bg-primary-light disabled:bg-gray-200 focus:outline-none"
-                    />
-                    <span
-                      class="absolute top-0 left-0 w-4 h-4 transition-all transform scale-150 bg-white rounded-full shadow-sm"
-                    ></span>
-                  </div>
-                  <span class="ml-3 text-sm font-normal text-gray-500 dark:text-gray-400">Remember me</span>
-                </label>
-
-                <a href="forgot-password.html" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
-              </div>
+              
               <div>
                 <button type="submit"class="w-full px-4 py-2 font-medium text-center text-white transition-colors duration-200 rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 dark:focus:ring-offset-darker">
                   Login

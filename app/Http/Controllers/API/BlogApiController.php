@@ -31,6 +31,7 @@ class BlogApiController extends APIController
         return $this->respondSuccess([
             'blog' => $blog
         ]);
+        
     }
 
     public function update(Blog $blog, Request $request)
