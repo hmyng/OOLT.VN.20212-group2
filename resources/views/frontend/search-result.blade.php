@@ -71,6 +71,7 @@
                         </div><!-- end col -->
                     @endforeach
                 </div><!-- end row -->
+                {{ $search->links('pagination::bootstrap-4') }}  
             </div><!-- end col -->
             {{-- <div class="col-4 aboutUs"> --}}
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">

@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    public function __construct(Blog $trend)
+    {
+        $this->trend=$trend;
+    }
+
     public function index(Blog $blog){
         $categories = Category::all();
         $author = $blog->author;
@@ -47,8 +52,9 @@ class PostController extends Controller
     }
 
     public function trend(){
+        
         $categories = Category::all();
-        $blogs = Blog::orderBy('blog_seen_num', 'desc')->take(20)->get();
+        $blogs = Blog::orderBy('blog_seen_num', 'desc')->paginate(10);
         foreach($blogs as $blog){
             $blog->author_name = $blog->author;
             $blog->count_like = count($blog->like);
@@ -61,7 +67,7 @@ class PostController extends Controller
     public function blog(Category $category){
         $categories = Category::all();
         $blogs = Blog::where('cat_id', $category->id)
-                ->orderBy('blog_seen_num', 'desc')->get();
+                ->orderBy('blog_seen_num', 'desc')->paginate(10);
         foreach($blogs as $blog){
             $blog->author_name = $blog->author;
             $blog->count_like = count($blog->like);

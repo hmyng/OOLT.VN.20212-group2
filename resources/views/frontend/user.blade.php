@@ -80,6 +80,7 @@
                 </div><!-- end blog-box -->
                 <hr class="invis">
                 @endforeach
+                {{ $blogs->links('pagination::bootstrap-4') }}  
             </div>
         </div>
     </div>
