@@ -101,7 +101,7 @@
                                                 <div class="blog-box">
                                                     <div class="blog-meta big-meta" >
                                                         <h4 class="entry-title text-center" style="position: relative"><a href="/new-post/{{$blog->id}}" title="" >{{$blog->blog_heading}}</a></h4>
-                                                        <div class="text-center" style="padding: 0.5rem 0">
+                                                        <div class="text-center-1" style="padding: 0.5rem 0">
                                                             <small class="blog-title--content"><a href="/new-post/{{$blog->id}}" title="">{{$blog->created_at->toDateString()}}</a></small>
                                                             <small class="blog-title--content"><a href="/user/{{$blog->author_id}}" title="">by {{$blog->author_info->user_account}}</a></small>
                                                         </div>
