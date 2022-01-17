@@ -44,16 +44,18 @@
                         <p class="pt-3">{{$blog->blog_content}}</p>
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart-o" aria-hidden="true"> {{count($likes)}}</i></span>
-                    <span class="blog-likes"><i class="fa fa-comment" aria-hidden="true"> {{count($comments)}}</i></span>
-        
-                            <div class="blog-likes-cmt">
-                                <button class="blog-likes-cmt--btn" onclick="liked(1)"><i id="like" class="fa fa-heart-o"
-                                                                                          aria-hidden="true"></i> Like
-                                </button>
-                                <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
-                                                                                                   aria-hidden="true"></i>
-                                        Comments</a>
-                                </button>
+
+<span class="blog-likes"><i class="fa fa-comment"
+                                                aria-hidden="true"> {{count($comments)}}</i></span>
+
+                    <div class="blog-likes-cmt">
+                        <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like" class="fa fa-heart-o"
+                                                                                  aria-hidden="true"></i> Like
+                        </button>
+                        <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
+                                                                                           aria-hidden="true"></i>
+                                Comments</a>
+                        </button>
                             </div>
                             <div class="user-infor--wrapper">
                                 <div class="user-infor--content">
