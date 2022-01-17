@@ -63,7 +63,7 @@
                                                         </div><!-- end hover -->
                                                     </a>
                                                 </div><!-- end media -->
-                                                <p style="margin-top: 0.5rem">{{$searchResult->blog_content}} [...]</p>
+                                                <p style="margin-top: 0.5rem">{{$searchResult->description}} [...]</p>
                                                 <a class="readmore-btn" href="/new-post/{{$searchResult->id}}">READ MORE</a>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
