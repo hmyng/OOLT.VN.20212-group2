@@ -31,6 +31,7 @@ class BlogApiController extends APIController
         return $this->respondSuccess([
             'blog' => $blog
         ]);
+        
     }
 
     public function update(Blog $blog, Request $request)
@@ -52,7 +53,7 @@ class BlogApiController extends APIController
 
         $blog->delete();
 
-        $this->respondSuccessWithMessage("Delete successfully!");
+        return $this->respondSuccessWithMessage("Delete successfully!");
     }
 
     public function likeBlog(Blog $blog)
@@ -60,12 +61,13 @@ class BlogApiController extends APIController
         $like = Like::where('blog_id', $blog->id)->where('liker_id', $this->user->id)->first();
         if (!empty($like)) {
             $like->delete();
-            $this->respondSuccessWithMessage("Unlike");
+            return $this->respondSuccessWithMessage("Unlike");
         } else {
             $like = new Like;
             $like->liker_id = $this->user->id;
             $like->blog_id = $blog->id;
-            $this->respondSuccessWithMessage("Like");
+            $like->save();
+            return $this->respondSuccessWithMessage("Like");
         }
 
     }

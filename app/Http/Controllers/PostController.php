@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Like;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class PostController extends Controller
         //dd($blog);
         $likes = $blog->liker;
         $comments = $blog->comment;
+        $blog->category_name = $blog->category;
         foreach($comments as $comment){
             $comment->commenter = User::find($comment->user_id);
             //dd($comment->commenter);

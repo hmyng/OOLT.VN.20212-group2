@@ -102,11 +102,11 @@
                                                     <div class="blog-meta big-meta" >
                                                         <h4 class="entry-title text-center" style="position: relative"><a href="/new-post/{{$blog->id}}" title="" >{{$blog->blog_heading}}</a></h4>
                                                         <div class="text-center" style="padding: 0.5rem 0">
-                                                            <small class="blog-title--content"><a href="single.html" title="">{{$blog->created_at->toDateString()}}</a></small>
+                                                            <small class="blog-title--content"><a href="/new-post/{{$blog->id}}" title="">{{$blog->created_at->toDateString()}}</a></small>
                                                             <small class="blog-title--content"><a href="/user/{{$blog->author_id}}" title="">by {{$blog->author_info->user_account}}</a></small>
                                                         </div>
                                                         <div class="post-media">
-                                                            <a href="single.html" title="">
+                                                            <a href="/new-post/{{$blog->id}}" title="">
                                                                 <img src="{{$blog->blog_display}}" alt="link ảnh bị lỗi"class="img-fluid">
                                                                 {{-- <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid"> --}}
                                                                 <div class="hovereffect">
