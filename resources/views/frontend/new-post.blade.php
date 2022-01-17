@@ -8,7 +8,7 @@
     <section class="section wb">
     <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-      
+
             <div class="blog-title-area">
                 {{-- <ol class="breadcrumb hidden-xs-down">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <div class="blog-content">
                 {{-- <b></b> --}}
                 <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""class="img-fluid">
@@ -81,7 +81,7 @@
                 </form>
                 @foreach($comments as $comment)
                 <div class="comments-items">
-        
+
                     <span class="comment-user">
                         <img src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" class="user-infor--avatar">
                     </span>
@@ -175,23 +175,10 @@
                 }).catch(function (e) {
                     console.log(e)
                 })
+                }
             }
-        </script>
-
-        }
 
 
-        function submit_comment(event) {
-            event.preventDefault();
-            axios.post('/web-api/auth/comment', {
-                comment_content: 'this is a cmt',
-                blog_id: 1
-            }).then(function(res) {
-                console.log(res)
-            }).catch(function(e) {
-                console.log(e)
-            })
-        }
     </script>
 
 
