@@ -30,4 +30,9 @@ class UserController extends Controller
         $categories = Category::all();
         return view('frontend.post-a-status', compact('categories'));
     }
+
+    public function aboutUs(){
+        $categories = Category::all();
+        return view('frontend.about-us', compact('categories'));
+    }
 }
