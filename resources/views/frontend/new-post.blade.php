@@ -55,7 +55,7 @@
                                                 aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
                     <div class="blog-likes-cmt">
                         <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
-                                                                                              class="fa fa-heart-o"
+                                                                                              class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
                                                                                               aria-hidden="true"></i>
                             Like
                         </button>
