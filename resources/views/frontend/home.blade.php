@@ -91,7 +91,7 @@
                             @if($category->id <= 2)
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="section-title">
-                                        <h3 class="color-aqua"><a href="blog-category-01.html"
+                                        <h3 class="color-aqua"><a href="/blog-category/{{$category->id}}"
                                                                   title="">{{$category->cat_name}}</a></h3>
                                     </div><!-- end title -->
 
@@ -120,12 +120,13 @@
                                                 </div><!-- end blog-box -->
                                                 <hr class="invis">
                                             @endforeach
-                                        </div><!-- end col -->
+                                        </div><!-- end col --> 
                                     </div><!-- end row -->
                                 </div><!-- end col -->
                                 @endif
                             @endforeach
                         </div>
+                       
                     </div>
                     {{-- <div class="col-4 aboutUs"> --}}
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -149,13 +150,13 @@
                                     <img src="{{asset('cloapedia/images/TrangNgan.jpg')}}" alt=""
                                          class="admin-infor--avatar">
                                     <span class="admin-infor--item"><b>Phan Thị Trang Ngân</b></span>
-                                    <span class="admin-infor--name"><b>20194474</b></span>
+                                    <span class="admin-infor--name"><b>20194634</b></span>
                                     <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 03 - K64</span>
                                 </div>
                                 <div class="admin-infor--wrapper mx-5">
                                     <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="admin-infor--avatar">
                                     <span class="admin-infor--item"><b>Uông Hồng Minh</b></span>
-                                    <span class="admin-infor--name"><b>20194474</b></span>
+                                    <span class="admin-infor--name"><b>20194625</b></span>
                                     <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                                 </div>
                             </section>

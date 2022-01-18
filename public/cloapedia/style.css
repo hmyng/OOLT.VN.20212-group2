@@ -202,7 +202,7 @@
         .header .dropdown-item:hover,
         .header .dropdown-item:focus {
             color: #121212 !important;
-            background-color: #edeff2;
+            background-color: #f2f7ff;
         }
         
         .header .dropdown ul li:last-child {
@@ -2186,26 +2186,30 @@
 
         .about-us--wrapper {
             display: flex;
-            flex-direction: column;
-            height: 45rem;
+            flex-direction: row;
+            /* height: 30rem; */
             background-color: #fff;
             margin-bottom: 1rem;
-            align-items: center;
+            /* align-items: center; */
             box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
             border-radius: 16px;
         }
 
         .about-us--avatar {
-            margin-top: 1rem;
-            width: 90%;
+            margin: 1rem;
+            width: 40%;
             border-radius: 16px;
-            align-self: center;
+            /* align-self: center; */
             max-height: 25rem;
+            /* min-height: 194.81px; */
             /* margin: 0.5rem 1rem; */
             /* margin: 1rem; */
         
         }
-        
+        .about-us--item-wrapper{
+            display: flex;
+            flex-direction: column;
+        }
         .about-us--item {
             margin: 0.5rem 1rem;
             text-align: center;

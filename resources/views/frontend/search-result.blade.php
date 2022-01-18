@@ -95,13 +95,13 @@
                             <img src="{{asset('cloapedia/images/TrangNgan.jpg')}}" alt=""
                                  class="admin-infor--avatar">
                             <span class="admin-infor--item"><b>Phan Thị Trang Ngân</b></span>
-                            <span class="admin-infor--name"><b>20194474</b></span>
+                            <span class="admin-infor--name"><b>20194634</b></span>
                             <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 03 - K64</span>
                         </div>
                         <div class="admin-infor--wrapper mx-5">
                             <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="admin-infor--avatar">
                             <span class="admin-infor--item"><b>Uông Hồng Minh</b></span>
-                            <span class="admin-infor--name"><b>20194474</b></span>
+                            <span class="admin-infor--name"><b>20194625</b></span>
                             <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                         </div>
                     </section>
