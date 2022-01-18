@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Follower;
 use App\Models\Like;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -19,9 +20,13 @@ class UserController extends Controller
             $blog->count_comment = count($blog->comment);
         }
         $followers = Follower::where('parent_id', $user->id)->get();
+        if (Auth::user()){
+            $follow = Follower::where('parent_ID', Auth::user()->id)->where('follower', $user->id)->first();
+            $user->checkFollow = empty($follow) ? false : true;
+        }
         $sumOfLikes = Like::join('blogs','blogs.id', '=', 'blog_id')
             ->where('author_id',$user->id)->get();
-                
+
         return view('frontend.user', compact('user', 'categories', 'blogs', 'followers', 'sumOfLikes'));
     }
 
