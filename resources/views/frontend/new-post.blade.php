@@ -15,7 +15,8 @@
                             <li class="breadcrumb-item"><a href="#">Blog</a></li>
                             <li class="breadcrumb-item active">Làm thế nào để được A+ môn CSDL lớp thầy Phương ?</li>
                         </ol> --}}
-                        <span class="color-aqua" style="font-size: 16px"><a href="{{$blog->cat_id}}" title="">{{$blog->category_name->cat_name}}</a></span>
+                        <span class="color-aqua" style="font-size: 16px"><a href="{{$blog->cat_id}}"
+                                                                            title="">{{$blog->category_name->cat_name}}</a></span>
                         <h3 style="font-size: 1.7rem">{{$blog->blog_heading}}</h3>
                         <div class="post-author--wrapper">
                             <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
@@ -24,24 +25,26 @@
                                    style="color: #000000;">{{$author->user_account}}</a>
                                 <button type="button" onclick="follow({{$blog->author_id}})"
                                         class="post-author--follow-btn"><i id="follow-btn-icon"
-                                                                           class="fa fa-plus follow-btn-icon"></i>
-                                    <span class="follow-btn">Theo dõi</span>
+                                                                           class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
+                                    <span
+                                        class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                                 </button>
                                 <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                             </div>
                             @if($blog->author_id == auth()->user()->id)
-                            <div class="dropdown" style="position:absolute; right:0px">
-                                <button type="button" class="post-alter--btn" data-toggle="dropdown">
-                                    <i class="fa fa-cog"></i>
-                                </button>
-                                
-                                <div class="dropdown-menu  dropdown-menu-right">
-                                    <a class="dropdown-item" href="/edit-post/{{$blog->id}}" style="color:#000000"><b>Chỉnh
-                                            sửa bài
-                                            viết</b></a>
+                                <div class="dropdown" style="position:absolute; right:0px">
+                                    <button type="button" class="post-alter--btn" data-toggle="dropdown">
+                                        <i class="fa fa-cog"></i>
+                                    </button>
+
+                                    <div class="dropdown-menu  dropdown-menu-right">
+                                        <a class="dropdown-item" href="/edit-post/{{$blog->id}}"
+                                           style="color:#000000"><b>Chỉnh
+                                                sửa bài
+                                                viết</b></a>
+                                    </div>
+
                                 </div>
-                                
-                            </div>
                             @endif
                         </div>
                     </div>
@@ -60,24 +63,24 @@
                     <div class="blog-likes-cmt">
                         @if(Auth::guest())
                             <button class="blog-likes-cmt--btn" onclick="loginRequest()"><i id="like"
-                                                                                                  class="fa fa-heart-o"
-                                                                                                  aria-hidden="true"></i>
+                                                                                            class="fa fa-heart-o"
+                                                                                            aria-hidden="true"></i>
                                 Like
                             </button>
                             <button class="blog-likes-cmt--btn" onclick="loginRequest()"><i class="fa fa-comment"
-                                                                   aria-hidden="true"></i>
-                                    Comments
+                                                                                            aria-hidden="true"></i>
+                                Comments
                             </button>
                         @else
-                        <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
-                                                                                              class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
-                                                                                              aria-hidden="true"></i>
-                            Like
-                        </button>
-                        <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
-                                                                                           aria-hidden="true"></i>
-                                Comments</a>
-                        </button>
+                            <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
+                                                                                                  class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
+                                                                                                  aria-hidden="true"></i>
+                                Like
+                            </button>
+                            <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
+                                                                                               aria-hidden="true"></i>
+                                    Comments</a>
+                            </button>
                         @endif
                     </div>
                     <div class="user-infor--wrapper">
@@ -96,18 +99,22 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
-                                class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
-                        </button>
+                        @if(Auth::user())
+                            <button type="button" onclick="follow({{$blog->author_id}})"
+                                    class="post-author--follow-btn"><i id="follow-btn-icon"
+                                                                       class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
+                                <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
+                            </button>
+                        @endif
                     </div>
                     <section id="comments-section">
                         @if(Auth::user())
-                        <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
+                            <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
                             <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
                                       id="add-comment-content" name="text" required></textarea>
 
-                            <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
+                            </form>
                         @endif
                         @foreach($comments as $comment)
                             <div class="comments-items">
@@ -173,6 +180,7 @@
         function loginRequest() {
             alert('Bạn cần phải đăng nhập để thực hiện chức năng này')
         }
+
         function liked(blog_id) {
             axios.post('/web-api/auth/like/' + blog_id).then(function (res) {
                 console.log(res);
