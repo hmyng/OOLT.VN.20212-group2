@@ -24,8 +24,8 @@
                                    style="color: #000000;">{{$author->user_account}}</a>
                                 <button type="button" onclick="follow({{$blog->author_id}})"
                                         class="post-author--follow-btn"><i id="follow-btn-icon"
-                                                                           class="fa fa-plus follow-btn-icon"></i>
-                                    <span class="follow-btn">Theo dõi</span>
+                                                                           class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
+                                    <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                                 </button>
                                 <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                             </div>
@@ -34,13 +34,13 @@
                                 <button type="button" class="post-alter--btn" data-toggle="dropdown">
                                     <i class="fa fa-cog"></i>
                                 </button>
-                                
+
                                 <div class="dropdown-menu  dropdown-menu-right">
                                     <a class="dropdown-item" href="/edit-post/{{$blog->id}}" style="color:#000000"><b>Chỉnh
                                             sửa bài
                                             viết</b></a>
                                 </div>
-                                
+
                             </div>
                             @endif
                         </div>
@@ -96,8 +96,10 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
-                                class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
+                        <button type="button" onclick="follow({{$blog->author_id}})"
+                                class="post-author--follow-btn"><i id="follow-btn-icon"
+                                                                   class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
+                            <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                         </button>
                     </div>
                     <section id="comments-section">
