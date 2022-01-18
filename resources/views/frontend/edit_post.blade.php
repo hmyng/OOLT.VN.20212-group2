@@ -60,7 +60,7 @@
                         blog_display: $("#picture").val(),
                     }).then(function (res) {
                         console.log(res)
-                        alert('Sửa bài thành công !')
+                        if(confirm("sửa bài thành công")) document.location = '/new-post/' + res.data.blog.id;
                     }).catch(function (e) {
                         console.log(e)
                     })
