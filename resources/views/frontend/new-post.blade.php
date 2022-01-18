@@ -49,7 +49,7 @@
                     <div class="blog-content">
                         {{-- <b></b> --}}
                         <img src="{{$blog->blog_display}}" alt="" class="img-fluid">
-                        <p class="pt-3">{{$blog->blog_content}}</p>
+                        <p class="pt-3">{{!!$blog->blog_content!!}}</p>
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"
                                                 id="like-count"> {{count($likes)}}</i></span>

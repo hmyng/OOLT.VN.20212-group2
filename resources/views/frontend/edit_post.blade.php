@@ -38,7 +38,7 @@
                                        class="form-control mt-2 mb-3" value="{{$blog->description}}" required>
                                 <label for="post-content">Nội dung :</label>
                                 <textarea placeholder="Nhập nội dung ..." class="form-control mb-3 mt-2" rows="5"
-                                          id="post-content" name="text"  required>{{$blog->blog_content}}</textarea>
+                                          id="ckeditor" name="ckeditor"  required>{!!$blog->blog_content!!}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -54,7 +54,7 @@
                     event.preventDefault();
                     axios.put('/web-api/blog/' + blog_id, {
                         blog_heading: $('#heading').val(),
-                        blog_content: $('#post-content').val(),
+                        blog_content: $('#ckeditor').val(),
                         cat_id: $('#category').val(),
                         description: $('#description').val(),
                         blog_display: $("#picture").val(),
