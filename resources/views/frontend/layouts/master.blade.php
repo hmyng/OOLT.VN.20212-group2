@@ -67,7 +67,12 @@
 <script src="{{asset('cloapedia/js/tether.min.js')}}"></script>
 <script src="{{asset('cloapedia/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('cloapedia/js/custom.js')}}"></script>
-
+<!-- <script src="{{asset('ckeditor/ckeditor.js')}}"></script> -->
+<script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('ckeditor');
+    CKEDITOR.replace('ckeditor1');
+</script>
 </body>
 
 </html>
