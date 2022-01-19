@@ -67,7 +67,7 @@
                         blog_display: $('#picture').val(),
                     }).then(function (res) {
                         $('#submit-btn').attr('disabled', true);
-                        alert('Đăng bài thành công !');
+                        if(confirm("Đăng bài thành công")) document.location = '/new-post/' + res.data.blog.id;
                     }).catch(function (e) {
                         console.log(e)
                     })

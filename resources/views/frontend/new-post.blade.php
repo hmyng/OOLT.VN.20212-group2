@@ -23,14 +23,17 @@
                             <div class="post-author--infor">
                                 <a class="post-author--name" href="/user/{{$blog->author_id}}"
                                    style="color: #000000;">{{$author->user_account}}</a>
+                                @auth
                                 <button type="button" onclick="follow({{$blog->author_id}})"
                                         class="post-author--follow-btn"><i id="follow-btn-icon"
                                                                            class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
                                     <span
                                         class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                                 </button>
+                                @endauth
                                 <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                             </div>
+                            @auth
                             @if($blog->author_id == auth()->user()->id)
                                 <div class="dropdown" style="position:absolute; right:0px">
                                     <button type="button" class="post-alter--btn" data-toggle="dropdown">
@@ -46,6 +49,7 @@
 
                                 </div>
                             @endif
+                            @endauth
                         </div>
                     </div>
 

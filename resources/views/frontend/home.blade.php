@@ -21,7 +21,7 @@
                         <div class="carousel-item ">
                             {{-- <img src="upload/Ezreal.jpg" alt="" class="d-block" style="width:100%"> --}}
                             <div class="masonry-box post-media">
-                                <img src="upload/HD.png" alt="" class="img-fluid">
+                                <img src="upload/HZuong.jpg" alt="" class="img-fluid">
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
@@ -126,7 +126,7 @@
                                 @endif
                             @endforeach
                         </div>
-                       
+                
                     </div>
                     {{-- <div class="col-4 aboutUs"> --}}
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -205,7 +205,7 @@
                                                             </div><!-- end hover -->
                                                         </a>
                                                     </div><!-- end media -->
-                                                    <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                                                    <p style="margin-top: 0.5rem">{{$blog->description}} [...]</p>
                                                     <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
                                                 </div><!-- end meta -->
                                             </div><!-- end blog-box -->
