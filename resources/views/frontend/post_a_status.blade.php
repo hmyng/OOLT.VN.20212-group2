@@ -25,12 +25,6 @@
                                 <div class="form-floating mb-3 mt-2">
                                     <select class="form-select" id="category" name="category"
                                             style="height: 38px; margin : 1px">
-                                        <!-- <option>Chọn chủ đề</option>
-                                        <option value="4">Tiếng Nhật</option>
-                                        <option value="2">Kiến thức IT</option>
-                                        <option value="1">Chia sẻ kinh nghiệm học</option>
-                                        <option value="3">Chia sẻ tài liệu</option>
-                                        <option value="5">Khác..</option> -->
                                         <option>Chọn chủ đề</option>
                                         @foreach ($categories as $category)
                                         <option value="{{$category->id}}">{{$category->cat_name}}</option>
