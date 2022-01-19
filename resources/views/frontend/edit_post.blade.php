@@ -36,7 +36,7 @@
                                 <label for="description">Mô tả :</label>
                                 <input type="text" placeholder="Nhập mô tả ngắn gọn ..." name="description" id="description"
                                        class="form-control mt-2 mb-3" value="{{$blog->description}}" required>
-                                <label for="ckeditor">Nội dung :</label>
+                                <label for="blog_content">Nội dung :</label>
                                 <textarea placeholder="Nhập nội dung ..." class="form-control mb-3 mt-2" rows="5"
                                           id="ckeditor" name="ckeditor" contenteditable="true" required>{!!$blog->blog_content!!}</textarea>
                             </div>
@@ -56,7 +56,7 @@
                     console.log($('#ckeditor').val());
                     axios.put('/web-api/blog/' + blog_id, {
                         blog_heading: $('#heading').val(),
-                        blog_content: $('#ckeditor').val(),
+                        blog_content: $('#ckeditor1').val(),
                         cat_id: $('#category').val(),
                         description: $('#description').val(),
                         blog_display: $("#picture").val(),

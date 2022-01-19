@@ -26,7 +26,7 @@
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
                                             <span class="bg-green"><a href="/blog-category/1" title="">Chia sẻ kinh nghiệm</a></span>
-                                            <h4><a href="/new-post/20" title="">Tôi không đóng học phí, tôi đầu tư để nhận lại gấp 1.5 lần</a>
+                                            <h4><a href="/new-post/20" title="">TÔI KHÔNG ĐÓNG HỌC PHÍ, TÔI ĐẦU TƯ ĐỂ NHẬN LẠI X1.5 LẦN</a>
                                             </h4>
                                             <small><a href="#" title="">2022-01-17</a></small>
                                             <small><a href="/user/4" title="">hoanh710</a></small>
@@ -42,9 +42,9 @@
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="/blog-category/2"
-                                                                      title="">Kiến thức IT</a></span>
-                                            <h4><a href="/new-post/8" title="">How to A+ C Basic</a></h4>
+                                            <span class="bg-green"><a href="/blog-category/3"
+                                                                      title="">Chia sẻ tài liệu</a></span>
+                                            <h4><a href="/new-post/13" title="">TÀI LIỆU CẤU LIỆU SIÊU XỊN HỌC LÀ AUTO A+</a></h4>
                                             <small><a href="#" title="">2022-01-12</a></small>
                                             <small><a href="/user/1" title="">HoanhDz</a></small>
                                         </div><!-- end meta -->
@@ -61,9 +61,9 @@
                                         <div class="blog-meta">
                                             <span class="bg-green"><a href="/blog-category/4"
                                                                       title="">Tiếng Nhật</a></span>
-                                            <h4><a href="/new-post/11" title="">How to Manten N2 mà k cần học ?</a></h4>
+                                            <h4><a href="/new-post/11" title="">[📑JLPT SERIES] – PART 1: 5️⃣ KINH NGHIỆM ÔN THI ĐẠT ĐIỂM CAO JLPT</a></h4>
                                             <small><a href="#" title="">30/12/2021</a></small>
-                                            <small><a href="/user/5" title="">HoaKhanhHelen</a></small>
+                                            <small><a href="/user/1" title="">HoanhDz</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->

@@ -57,7 +57,7 @@
                         {{-- <b></b> --}}
                         <img src="{{$blog->blog_display}}" alt="" class="img-fluid">
                         
-                        <div class="pt-3">{!!$blog->blog_content!!}</div>
+                        <div class="pt-4">{!!$blog->blog_content!!}</div>
 
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"
@@ -107,7 +107,7 @@
                         </div>
                         @if(Auth::user())
                             <button type="button" onclick="follow({{$blog->author_id}})"
-                                    class="post-author--follow-btn"><i id="follow-btn-icon"
+                                    class="post-author--follow-btn" style="padding: 0.5rem; margin: 0.5rem;"><i id="follow-btn-icon"
                                                                        class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
                                 <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                             </button>
