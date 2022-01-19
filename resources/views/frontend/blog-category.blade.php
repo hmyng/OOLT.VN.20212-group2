@@ -31,7 +31,7 @@
                                                         </div><!-- end hover -->
                                                     </a>
                                                 </div><!-- end media -->
-                                                <p style="margin-top: 0.5rem">{{$blog->blog_content}} [...]</p>
+                                                <p style="margin-top: 0.5rem">{{$blog->description}} [...]</p>
                                                 <a class="readmore-btn" href="/new-post/{{$blog->id}}">READ MORE</a>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
@@ -63,13 +63,13 @@
                             <img src="{{asset('cloapedia/images/TrangNgan.jpg')}}" alt=""
                                  class="admin-infor--avatar">
                             <span class="admin-infor--item"><b>Phan Thị Trang Ngân</b></span>
-                            <span class="admin-infor--name"><b>20194474</b></span>
+                            <span class="admin-infor--name"><b>20194634</b></span>
                             <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 03 - K64</span>
                         </div>
                         <div class="admin-infor--wrapper mx-5">
                             <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="admin-infor--avatar">
                             <span class="admin-infor--item"><b>Uông Hồng Minh</b></span>
-                            <span class="admin-infor--name"><b>20194474</b></span>
+                            <span class="admin-infor--name"><b>20194625</b></span>
                             <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                         </div>
                     </section>

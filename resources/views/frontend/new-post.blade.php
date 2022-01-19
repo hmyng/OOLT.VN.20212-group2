@@ -15,7 +15,8 @@
                             <li class="breadcrumb-item"><a href="#">Blog</a></li>
                             <li class="breadcrumb-item active">Làm thế nào để được A+ môn CSDL lớp thầy Phương ?</li>
                         </ol> --}}
-                        <span class="color-aqua" style="font-size: 16px"><a href="{{$blog->cat_id}}" title="">{{$blog->category_name->cat_name}}</a></span>
+                        <span class="color-aqua" style="font-size: 16px"><a href="{{$blog->cat_id}}"
+                                                                            title="">{{$blog->category_name->cat_name}}</a></span>
                         <h3 style="font-size: 1.7rem">{{$blog->blog_heading}}</h3>
                         <div class="post-author--wrapper">
                             <img class="post-author" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
@@ -24,24 +25,26 @@
                                    style="color: #000000;">{{$author->user_account}}</a>
                                 <button type="button" onclick="follow({{$blog->author_id}})"
                                         class="post-author--follow-btn"><i id="follow-btn-icon"
-                                                                           class="fa fa-plus follow-btn-icon"></i>
-                                    <span class="follow-btn">Theo dõi</span>
+                                                                           class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
+                                    <span
+                                        class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                                 </button>
                                 <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                             </div>
                             @if($blog->author_id == auth()->user()->id)
-                            <div class="dropdown" style="position:absolute; right:0px">
-                                <button type="button" class="post-alter--btn" data-toggle="dropdown">
-                                    <i class="fa fa-cog"></i>
-                                </button>
-                                
-                                <div class="dropdown-menu  dropdown-menu-right">
-                                    <a class="dropdown-item" href="/edit-post/{{$blog->id}}" style="color:#000000"><b>Chỉnh
-                                            sửa bài
-                                            viết</b></a>
+                                <div class="dropdown" style="position:absolute; right:0px">
+                                    <button type="button" class="post-alter--btn" data-toggle="dropdown">
+                                        <i class="fa fa-cog"></i>
+                                    </button>
+
+                                    <div class="dropdown-menu  dropdown-menu-right">
+                                        <a class="dropdown-item" href="/edit-post/{{$blog->id}}"
+                                           style="color:#000000"><b>Chỉnh
+                                                sửa bài
+                                                viết</b></a>
+                                    </div>
+
                                 </div>
-                                
-                            </div>
                             @endif
                         </div>
                     </div>
@@ -49,7 +52,9 @@
                     <div class="blog-content">
                         {{-- <b></b> --}}
                         <img src="{{$blog->blog_display}}" alt="" class="img-fluid">
-                        <p class="pt-3">{{!!$blog->blog_content!!}}</p>
+                        
+                        <div class="pt-3">{{!!$blog->blog_content!!}}</div>
+
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"
                                                 id="like-count"> {{count($likes)}}</i></span>
@@ -58,15 +63,27 @@
                     <span class="blog-likes"><i class="fa fa-eye"
                                                 aria-hidden="true"> {{$blog->blog_seen_num}}</i></span>
                     <div class="blog-likes-cmt">
-                        <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
-                                                                                              class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
-                                                                                              aria-hidden="true"></i>
-                            Like
-                        </button>
-                        <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
-                                                                                           aria-hidden="true"></i>
-                                Comments</a>
-                        </button>
+                        @if(Auth::guest())
+                            <button class="blog-likes-cmt--btn" onclick="loginRequest()"><i id="like"
+                                                                                            class="fa fa-heart-o"
+                                                                                            aria-hidden="true"></i>
+                                Like
+                            </button>
+                            <button class="blog-likes-cmt--btn" onclick="loginRequest()"><i class="fa fa-comment"
+                                                                                            aria-hidden="true"></i>
+                                Comments
+                            </button>
+                        @else
+                            <button class="blog-likes-cmt--btn" onclick="liked({{$blog->id}})"><i id="like"
+                                                                                                  class="fa {{$blog->checkLike ? 'fa-heart' : 'fa-heart-o'}}"
+                                                                                                  aria-hidden="true"></i>
+                                Like
+                            </button>
+                            <button class="blog-likes-cmt--btn"><a href="#comments-section"><i class="fa fa-comment"
+                                                                                               aria-hidden="true"></i>
+                                    Comments</a>
+                            </button>
+                        @endif
                     </div>
                     <div class="user-infor--wrapper">
                         <div class="user-infor--content">
@@ -84,17 +101,23 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <button type="button" onclick="follow({{$blog->author_id}})" class="user-infor--follow-btn"><i
-                                class="fa fa-plus follow-btn-icon"></i> <span class="follow-btn">Theo dõi</span>
-                        </button>
+                        @if(Auth::user())
+                            <button type="button" onclick="follow({{$blog->author_id}})"
+                                    class="post-author--follow-btn"><i id="follow-btn-icon"
+                                                                       class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
+                                <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
+                            </button>
+                        @endif
                     </div>
                     <section id="comments-section">
-                        <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
+                        @if(Auth::user())
+                            <form id="add-a-comment" onsubmit="submit_comment(event, {{$blog->id}})">
                             <textarea placeholder="Để lại bình luận của bạn..." class="form-control mb-3 mt-2" rows="5"
                                       id="add-comment-content" name="text" required></textarea>
 
-                            <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary comment_heading">Bình luận</button>
+                            </form>
+                        @endif
                         @foreach($comments as $comment)
                             <div class="comments-items">
 
@@ -105,8 +128,7 @@
                                     <b>
                                         <div class="user-infor--name" style=" color: #00B6F1;"><a
                                                 href="/user/{{$comment->commenter->id}}">{{$comment->commenter->user_account}}</a>
-                                            <span
-                                                class="comment-content--time">23 giờ</span></div>
+                                            <span class="comment-content--time">{{$comment->created_at}}</span></div>
                                     </b>
                                     <p>{{$comment->comment_content}} </p>
                                 </div>
@@ -135,13 +157,13 @@
                             <img src="{{asset('cloapedia/images/TrangNgan.jpg')}}" alt=""
                                  class="admin-infor--avatar">
                             <span class="admin-infor--item"><b>Phan Thị Trang Ngân</b></span>
-                            <span class="admin-infor--name"><b>20194474</b></span>
+                            <span class="admin-infor--name"><b>20194634</b></span>
                             <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 03 - K64</span>
                         </div>
                         <div class="admin-infor--wrapper mx-5">
                             <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="admin-infor--avatar">
                             <span class="admin-infor--item"><b>Uông Hồng Minh</b></span>
-                            <span class="admin-infor--name"><b>20194474</b></span>
+                            <span class="admin-infor--name"><b>20194625</b></span>
                             <span class="admin-infor--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                         </div>
                     </section>
@@ -157,6 +179,10 @@
 
 
     <script>
+        function loginRequest() {
+            alert('Bạn cần phải đăng nhập để thực hiện chức năng này')
+        }
+
         function liked(blog_id) {
             axios.post('/web-api/auth/like/' + blog_id).then(function (res) {
                 console.log(res);

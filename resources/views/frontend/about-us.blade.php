@@ -15,35 +15,43 @@
             <div class="about-us--wrapper">
                 <img src="{{asset('cloapedia/images/Hoanh.jpg')}}" alt=""
                      class="about-us--avatar">
+            <div class="about-us--item-wrapper">
                 <span class="about-us--item"><b>Nguyễn Hoàng Anh - 20194474</b></span>
                 <span class="about-us--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                 <span class="about-us--item">Cảm nhận .....</span>
+            </div>
             </div>
            </div>
            <div class="col-xl-6 col-md-6 col-sm-12">
             <div class="about-us--wrapper">
                 <img src="{{asset('cloapedia/images/hoakhanh.png')}}" alt=""
                      class="about-us--avatar">
+            <div class="about-us--item-wrapper">
                 <span class="about-us--item"><b>Lê Thị Khánh Hòa - 20194565</b></span>
                 <span class="about-us--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                 <span class="about-us--item">Cảm nhận .....</span>
+            </div>
             </div>
            </div>
            <div class="col-xl-6 col-md-6 col-sm-12">
             <div class="about-us--wrapper">
                 <img src="{{asset('cloapedia/images/TrangNgan.jpg')}}" alt=""
                      class="about-us--avatar">
-                <span class="about-us--item"><b>Phan Thị Trang Ngân - 20194474</b></span>
+            <div class="about-us--item-wrapper">
+                <span class="about-us--item"><b>Phan Thị Trang Ngân - 20194634</b></span>
                 <span class="about-us--item">Sinh viên năm 3 lớp Việt Nhật 03 - K64</span>
                 <span class="about-us--item">Cảm nhận .....</span>
+            </div>
             </div>
            </div>
            <div class="col-xl-6 col-md-6 col-sm-12">
             <div class="about-us--wrapper">
                 <img src="{{asset('cloapedia/images/UHM.png')}}" alt="" class="about-us--avatar">
-                <span class="about-us--item"><b>Uông Hồng Minh - 20194474</b></span>
+            <div class="about-us--item-wrapper">
+                <span class="about-us--item"><b>Uông Hồng Minh - 20194625</b></span>
                 <span class="about-us--item">Sinh viên năm 3 lớp Việt Nhật 04 - K64</span>
                 <span class="about-us--item">Cảm nhận .....</span>
+            </div>
             </div>
            </div> 
              

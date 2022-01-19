@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Follower;
 use App\Models\Like;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,7 +29,9 @@ class PostController extends Controller
         $blog->checkLike = false;
         if (Auth::user()){
             $like = Like::where('blog_id', $blog->id)->where('liker_id', Auth::user()->id)->first();
+            $follow = Follower::where('follower', $author->id)->where('parent_ID', Auth::user()->id)->first();
             $blog->checkLike = empty($like) ? false : true;
+            $author->checkFollow = empty($follow) ? false : true;
         }
         foreach($comments as $comment){
             $comment->commenter = User::find($comment->user_id);
@@ -52,7 +55,7 @@ class PostController extends Controller
     }
 
     public function trend(){
-        
+
         $categories = Category::all();
         $blogs = Blog::orderBy('blog_seen_num', 'desc')->paginate(10);
         foreach($blogs as $blog){
