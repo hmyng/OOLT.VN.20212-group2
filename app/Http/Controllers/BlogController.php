@@ -13,15 +13,14 @@ class BlogController extends Controller
     public function index(){
         $pageNumber = 15;
         // $blogs = Blog::paginate($pageNumber);
-        $categories = Category::orderBy('created_at', 'desc')->take(2);
+        $categories = Category::orderBy('created_at', 'desc')->get();
         foreach ($categories as $category){
-            $category->list_blog = $category->blogs;
+            $category->list_blog = $category->blogs->take(4);
             foreach ($category->list_blog as $item)
             {
                 $item->author_info = $item->author;
             }
         }
-
         //dd($categories[0]->cat_name);
         // return view('frontend.home', ['blogs'=>$blogs]);
         return view('frontend.home', compact('categories'));

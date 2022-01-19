@@ -36,9 +36,9 @@
                                 <label for="description">Mô tả :</label>
                                 <input type="text" placeholder="Nhập mô tả ngắn gọn ..." name="description" id="description"
                                        class="form-control mt-2 mb-3" value="{{$blog->description}}" required>
-                                <label for="post-content">Nội dung :</label>
+                                <label for="ckeditor">Nội dung :</label>
                                 <textarea placeholder="Nhập nội dung ..." class="form-control mb-3 mt-2" rows="5"
-                                          id="post-content" name="text"  required>{{$blog->blog_content}}</textarea>
+                                          id="ckeditor" name="ckeditor"  required>{!!$blog->blog_content!!}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -54,13 +54,13 @@
                     event.preventDefault();
                     axios.put('/web-api/blog/' + blog_id, {
                         blog_heading: $('#heading').val(),
-                        blog_content: $('#post-content').val(),
+                        blog_content: $('#ckeditor').val(),
                         cat_id: $('#category').val(),
                         description: $('#description').val(),
                         blog_display: $("#picture").val(),
                     }).then(function (res) {
                         console.log(res)
-                        alert('Sửa bài thành công !')
+                        if(confirm("sửa bài thành công")) document.location = '/new-post/' + res.data.blog.id;
                     }).catch(function (e) {
                         console.log(e)
                     })

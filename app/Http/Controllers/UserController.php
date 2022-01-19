@@ -14,6 +14,7 @@ class UserController extends Controller
     public function show(User $user) // laravel 8 tu dong mapping nen k can tim user theo id nua
     {
         $categories = Category::all();
+        $user->count_blog = count($user->blogs);
         $blogs = Blog::where('author_id', $user->id)->orderBy('created_at', 'desc')->paginate(5);
         foreach($blogs as $blog){
             $blog->count_like = count($blog->like);

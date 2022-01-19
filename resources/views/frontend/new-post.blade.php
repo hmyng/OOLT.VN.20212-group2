@@ -23,14 +23,17 @@
                             <div class="post-author--infor">
                                 <a class="post-author--name" href="/user/{{$blog->author_id}}"
                                    style="color: #000000;">{{$author->user_account}}</a>
+                                @auth
                                 <button type="button" onclick="follow({{$blog->author_id}})"
                                         class="post-author--follow-btn"><i id="follow-btn-icon"
                                                                            class="fa {{$author->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon"></i>
                                     <span
                                         class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                                 </button>
+                                @endauth
                                 <br><span class="post-author--posting-time">{{$blog->created_at->toDateString()}}</span>
                             </div>
+                            @auth
                             @if($blog->author_id == auth()->user()->id)
                                 <div class="dropdown" style="position:absolute; right:0px">
                                     <button type="button" class="post-alter--btn" data-toggle="dropdown">
@@ -46,13 +49,16 @@
 
                                 </div>
                             @endif
+                            @endauth
                         </div>
                     </div>
 
                     <div class="blog-content">
                         {{-- <b></b> --}}
                         <img src="{{$blog->blog_display}}" alt="" class="img-fluid">
-                        <p class="pt-3" style="font-size: 1.2rem">{{$blog->blog_content}}</p>
+                        
+                        <div class="pt-3">{!!$blog->blog_content!!}</div>
+
                     </div>
                     <span class="blog-likes"><i class="fa fa-heart" aria-hidden="true"
                                                 id="like-count"> {{count($likes)}}</i></span>

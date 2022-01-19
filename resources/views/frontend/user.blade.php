@@ -4,14 +4,14 @@
 <title>User</title>
 @endsection
 @section('content')
-<section class="section wb">
+<section class="section wb container">
     {{-- <div class="container"> --}}
     <div class="profile-wrapper">
         <div class="profile-items--container">
             <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
             <div class="profile-item-name"><b>{{$user->user_name}}</b> <i class="fa fa-check profile-item-check-icon" aria-hidden="true"></i></div>
             <div class="profile-item-infor">
-                <span>Bài đã đăng: <b>{{count($blogs)}}</b></span>
+                <span>Bài đã đăng: <b>{{$user->count_blog}}</b></span>
                 <span>Lượt Like: <b>{{count($sumOfLikes)}}</b></span>
                 <span>Followers: <b>{{count($followers)}}</b></span>
             </div>
@@ -19,7 +19,8 @@
     </div>
     <div class="container" >
         <div class="row">
-            <div class="sidebar-container col-lg-4 sticky-top">
+            <div class="col-4">
+            <div class="sidebar-container sticky-top">
                  <h3 class="sidebar-header">Giới thiệu <i class="fa fa-user" aria-hidden="true"></i></h3>
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
                 @auth()
@@ -31,7 +32,9 @@
                  <div class="sidebar-item">Nickname: <b> {{$user->user_account}}</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
             </div>
-            <div class="content-container col-lg-7">
+            </div>
+            <div class="col-8">
+            <div class="content-container ">
                 <h3 class="content-header">Bài viết <i class="fa fa-pencil" aria-hidden="true" style="font-size: 20px"></i></h3>
                 {{-- demo bài đăng trên timeline --}}
                 @foreach($blogs as $blog)
@@ -84,6 +87,7 @@
                 @endforeach
                 {{ $blogs->links('pagination::bootstrap-4') }}
             </div>
+        </div>
         </div>
     </div>
     <div class="dmtop">Scroll to Top</div>
