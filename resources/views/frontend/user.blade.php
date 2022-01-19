@@ -11,7 +11,7 @@
             <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="">
             <div class="profile-item-name"><b>{{$user->user_name}}</b> <i class="fa fa-check profile-item-check-icon" aria-hidden="true"></i></div>
             <div class="profile-item-infor">
-                <span>Bài đã đăng: <b>{{count($blogs)}}</b></span>
+                <span>Bài đã đăng: <b>{{$user->count_blog}}</b></span>
                 <span>Lượt Like: <b>{{count($sumOfLikes)}}</b></span>
                 <span>Followers: <b>{{count($followers)}}</b></span>
             </div>
@@ -23,9 +23,11 @@
             <div class="sidebar-container sticky-top">
                  <h3 class="sidebar-header">Giới thiệu <i class="fa fa-user" aria-hidden="true"></i></h3>
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
-                 <button  class="sidebar-follow-btn" onclick="follow({{$user->id}})"><i  class="fa fa-check follow-btn-icon" aria-hidden="true"></i>
-                    <span class="follow-btn">Bỏ theo dõi</span>
+                @auth()
+                <button  class="sidebar-follow-btn" onclick="follow({{$user->id}})"><i  class="fa {{$user->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon" aria-hidden="true"></i>
+                    <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                  </button>
+                @endauth
                  <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>
                  <div class="sidebar-item">Nickname: <b> {{$user->user_account}}</b></div>
                  <div class="sidebar-item">Vai trò: <b> Người dùng</b></div>
@@ -83,7 +85,7 @@
                 </div><!-- end blog-box -->
                 <hr class="invis">
                 @endforeach
-                {{ $blogs->links('pagination::bootstrap-4') }}  
+                {{ $blogs->links('pagination::bootstrap-4') }}
             </div>
         </div>
         </div>

@@ -25,5 +25,8 @@ class User extends Authenticatable
     protected $dates = ['created_at', 'updated_at'];
     protected $table = 'users';
 
+    public function blogs() {
+        return $this->hasMany(Blog::class,'author_id');
+    }
 
 }
