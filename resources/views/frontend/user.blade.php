@@ -25,7 +25,7 @@
                  <img class="profile-item-avatar" src="{{asset('cloapedia/images/gau-icon.png')}}" alt="" style="margin: 0.5rem 0;">
                 @auth()
                 <button  class="sidebar-follow-btn" onclick="follow({{$user->id}})"><i  class="fa {{$user->checkFollow ? 'fa-check' : 'fa-plus'}} follow-btn-icon" aria-hidden="true"></i>
-                    <span class="follow-btn">{{$author->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
+                    <span class="follow-btn">{{$user->checkFollow ? 'Bỏ theo dõi' : 'Theo dõi'}}</span>
                  </button>
                 @endauth
                  <div class="sidebar-item">Tên đầy đủ: <b> {{$user->user_name}}</b></div>

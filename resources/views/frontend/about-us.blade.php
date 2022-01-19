@@ -62,7 +62,9 @@
                                       title="">ABOUT THE BLOG</a></h3>
         </div><!-- end title -->
         <div class="about-the-blog--wrapper">
-            <p>Sau chuỗi ngày cạn kiệt ý tưởng, tramkam vì bug đến nỗi phải đập đi xây lại vài lần, chúng tớ cũng đã hoàn thành được trang blog này. KUMA GUMA được ra đời với mong muốn tạo nên một nơi chia sẻ kinh nghiệm, giao lưu học hỏi và cung cấp nhiều thông tin bổ ích chỉ dành riêng cho sinh viên HEDSPI chúng mình. Trong tương lai, trang blog sẽ ngày càng được cải thiện và mở rộng hơn nữa, để có thể mang đến một môi trường giao lưu tốt nhất dành cho các thế hệ HEDSPIERS</p>
+            <p>KUMA GUMA “Đôi bạn cùng tiến” - BLOG SỐ 1 ĐỒNG HÀNH CÙNG SINH VIÊN VIỆT NAM
+                Được học hỏi với các bạn, anh chị đi trước để hoàn thiện bản thân mỗi ngày tốt hơn là mục tiêu và mong ước của mỗi sinh viên. Với mong muốn truyền cảm hứng cho các bạn trẻ, nơi giải đáp những khó khăn, tạo nguồn năng lượng tích cực, chúng mình quyết định tạo nên KUMA GUMA.
+                Blog này bao gồm nhiều bài viết với những chủ đề khác nhau như cuộc sống hàng ngày, học tiếng nhật, chia sẻ kinh nghiệm, những bài viết liên quan đến kiến thức IT hay tài liệu học tập. Mong mọi người hãy viết và chia sẻ với nhau về những gì mình đã và đang trải nghiệm trong cuộc sống sinh viên.</p>
         </div>
     </div>
 

@@ -38,7 +38,7 @@
                                        class="form-control mt-2 mb-3" value="{{$blog->description}}" required>
                                 <label for="blog_content">Nội dung :</label>
                                 <textarea placeholder="Nhập nội dung ..." class="form-control mb-3 mt-2" rows="5"
-                                          id="ckeditor1" name="ckeditor1"  required>{!!$blog->blog_content!!}</textarea>
+                                          id="ckeditor" name="ckeditor" contenteditable="true" required>{!!$blog->blog_content!!}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -48,10 +48,12 @@
         </div>
     </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
     <script>
+            CKEDITOR.replace('ckeditor');
     function edit_blog(event, blog_id) {
                     event.preventDefault();
+                    console.log($('#ckeditor').val());
                     axios.put('/web-api/blog/' + blog_id, {
                         blog_heading: $('#heading').val(),
                         blog_content: $('#ckeditor1').val(),
@@ -66,6 +68,7 @@
                     })
             }
     </script>
+
      <div class="dmtop">Scroll to Top</div>
 </section>
 
